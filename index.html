@@ -258,6 +258,16 @@ textarea{min-height:120px;resize:vertical}
 .out small{color:var(--text-mute)}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:38px}.row2{grid-template-columns:1fr}}
 
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.out .acts[hidden]{display:none}
+.btn:disabled{opacity:.6;cursor:progress}
+.player{border:1px solid var(--line);background:#0A0A0A}
+.ptabs{display:flex;gap:2px;border-bottom:1px solid var(--line);padding:0 10px;flex-wrap:wrap}
+.ptabs button{font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:13px 12px;color:var(--text-mute);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s}
+.ptabs button:hover{color:var(--metal)}
+.ptabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--metal)}
+.pframe{height:352px;padding:10px}
+.pframe iframe{display:block;width:100%;height:100%;border:0;border-radius:6px}
 footer{border-top:1px solid var(--line);padding:38px 0;font-size:13px;color:var(--text-mute)}
 footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
 .socials{display:flex;gap:20px;flex-wrap:wrap}
@@ -484,30 +494,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       </div>
       <form id="inq" novalidate>
         <div class="row2">
-          <div class="field"><label for="f-name">Your name</label><input id="f-name" autocomplete="name"></div>
-          <div class="field"><label for="f-org">Company or venue</label><input id="f-org" autocomplete="organization"></div>
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Your email</label><input id="f-email" type="email" autocomplete="email" required></div>
         </div>
         <div class="row2">
+          <div class="field"><label for="f-org">Company or venue</label><input id="f-org" autocomplete="organization"></div>
           <div class="field"><label for="f-type">Project type</label>
             <select id="f-type"><option>Venue or destination development</option><option>Experience design &amp; production</option><option>Creative direction &amp; programming</option><option>Multimedia direction &amp; production</option><option>Something else</option></select></div>
+        </div>
+        <div class="row2">
           <div class="field"><label for="f-when">Timing</label>
             <select id="f-when"><option>Exploring</option><option>Within 3 months</option><option>3–6 months</option><option>6+ months</option></select></div>
         </div>
         <div class="field"><label for="f-msg">Tell me about the space or idea</label><textarea id="f-msg"></textarea></div>
-        <button class="btn solid" type="submit" style="align-self:flex-start">Prepare my inquiry</button>
+        <div class="hp" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" tabindex="-1" autocomplete="off"></div>
+        <button class="btn solid" type="submit" style="align-self:flex-start">Send inquiry</button>
         <div class="out" id="out" role="status" aria-live="polite"><pre id="out-text"></pre><div class="acts"><button class="btn ghost" type="button" id="copy">Copy message</button><a class="btn ghost" id="mail" href="#">Open in email</a></div><small id="out-note"></small></div>
       </form>
       <form id="zbook" novalidate hidden>
         <div class="row2">
-          <div class="field"><label for="z-name">Your name</label><input id="z-name" autocomplete="name"></div>
+          <div class="field"><label for="z-name">Your name</label><input id="z-name" autocomplete="name" required></div>
+          <div class="field"><label for="z-email">Your email</label><input id="z-email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row2">
           <div class="field"><label for="z-ev">Event or venue</label><input id="z-ev"></div>
+          <div class="field"><label for="z-city">City</label><input id="z-city"></div>
         </div>
         <div class="row2">
           <div class="field"><label for="z-date">Date</label><input id="z-date" type="date"></div>
-          <div class="field"><label for="z-city">City</label><input id="z-city"></div>
         </div>
         <div class="field"><label for="z-msg">Set length, lineup, anything else</label><textarea id="z-msg"></textarea></div>
-        <button class="btn solid" type="submit" style="align-self:flex-start">Prepare booking request</button>
+        <div class="hp" aria-hidden="true"><label for="z-web">Leave this empty</label><input id="z-web" tabindex="-1" autocomplete="off"></div>
+        <button class="btn solid" type="submit" style="align-self:flex-start">Send booking request</button>
         <div class="out" id="zout" role="status" aria-live="polite"><pre id="zout-text"></pre><div class="acts"><button class="btn ghost" type="button" id="zcopy">Copy message</button><a class="btn ghost" id="zmail" href="#">Open in email</a></div><small id="zout-note"></small></div>
       </form>
     </div>
@@ -582,6 +600,7 @@ label:{t:'THE LABEL',mood:'COSMOTION · LABEL &amp; PLATFORM · 2015 – NOW',su
 booth:{t:'THE BOOTH',mood:'.. MAGIC // MUSIC ..',sub:'ZENTI. International DJ and music producer.',dot:[290,100],
  html:'<img class="mark" src="img/zenti-logo.png" alt="ZENTI" width="145" height="56" style="height:56px">'+
  '<p class="lede">Hypnotic, unpredictable musical journeys where deep grooves, worldly rhythms and cinematic textures converge.</p>'+
+ '<div class="player"><div class="ptabs" role="tablist" aria-label="Listen to ZENTI"><button role="tab" aria-selected="true" data-src="spotify">Spotify</button><button role="tab" aria-selected="false" data-src="originals">Original tracks</button><button role="tab" aria-selected="false" data-src="podcasts">Guest podcasts</button></div><div class="pframe" id="pframe" role="tabpanel"></div></div>'+
  '<p>Rooted in Austin and shaped by years immersed in underground scenes from New York and Miami to Burning Man, his sound moves fluidly between cultures, genres and emotions. Known for intuitive, emotionally driven sets, and for approaching every creation with heart, soul and intention.</p>'+
  '<div class="links"><a class="lk lit" href="https://open.spotify.com/artist/5cwPDq4NrVBXRySkiLMkiL">Listen on Spotify</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/original-tracks">Original tracks</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/zenti-guest-podcasts">Guest podcasts</a><a class="lk" href="https://www.beatport.com/artist/zenti/1146352">Beatport</a><a class="lk" href="https://instagram.com/zentimusic">Instagram</a><a class="lk" href="https://drive.google.com/file/d/13JxnzFcBZDKWPX39h9uX-s_7mtdCrFCD/view">Press kit</a><a class="lk" href="#contact" data-book>Book ZENTI</a></div>'+
  '<div class="sec"><h4>ORIGINALS &amp; RELEASES</h4><div class="rel"><div><b>Find That Love</b><span>2026 · latest</span></div><div><b>Dust Bunny</b><span>2026</span></div><div><b>Boomin’ Now</b><span>2026</span></div><div><b>Zen Mood</b><span>2025 · EP</span></div><div><b>Zen Fur Elise</b><span>2025</span></div></div></div>'+
@@ -619,6 +638,24 @@ function nwShow(i){
   const m=document.createElement('p');m.className='m';m.textContent=NW[i][1];
   const p=document.createElement('p');p.textContent=NW[i][2];d.append(h,m,p);
 }
+const SC=u=>'https://w.soundcloud.com/player/?url='+encodeURIComponent(u)+'&color=%23b8a27a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
+const PLAY={
+  spotify:{src:'https://open.spotify.com/embed/artist/5cwPDq4NrVBXRySkiLMkiL?theme=0',title:'ZENTI on Spotify',allow:'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'},
+  originals:{src:SC('https://soundcloud.com/zentimusic/sets/original-tracks'),title:'ZENTI original tracks on SoundCloud',allow:'autoplay'},
+  podcasts:{src:SC('https://soundcloud.com/zentimusic/sets/zenti-guest-podcasts'),title:'ZENTI guest podcasts on SoundCloud',allow:'autoplay'}
+};
+function player(el){
+  const box=el.querySelector('#pframe');if(!box)return;
+  const tabs=[...el.querySelectorAll('.ptabs button')];
+  const load=k=>{
+    tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.src===k));
+    const p=PLAY[k],f=document.createElement('iframe');
+    f.src=p.src;f.title=p.title;f.loading='lazy';f.allow=p.allow;
+    box.textContent='';box.appendChild(f);
+  };
+  tabs.forEach(t=>t.addEventListener('click',()=>load(t.dataset.src)));
+  load('spotify');
+}
 function enter(k,scroll){
   if(!ROOMS[k])return;cur=k;const r=ROOMS[k],el=$('room');
   el.innerHTML='<div class="room-in"><header class="rhead"><p class="mood">'+r.mood+'</p><h3>'+r.t+'</h3><p class="sub">'+r.sub+'</p></header>'+r.html+'</div>';
@@ -628,6 +665,7 @@ function enter(k,scroll){
   if(k==='warehouse')nwShow(0);
   el.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{b.previousElementSibling.querySelectorAll('[hidden]').forEach(s=>s.hidden=false);b.remove()}));
   el.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>ftab(1)));
+  if(k==='booth')player(el);
   if(scroll&&innerWidth<980)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 try{
@@ -671,26 +709,42 @@ function ftab(i){
 try{
   $('ft-0').addEventListener('click',()=>ftab(0));$('ft-1').addEventListener('click',()=>ftab(1));
   const v=id=>($(id).value||'').trim();
-  const wire=(form,build,outId,txtId,noteId,copyId,mailId,subject)=>{
-    form.addEventListener('submit',e=>{
-      e.preventDefault();const msg=build();
-      if(!msg){$(noteId).textContent='Add your name, then try again.';$(txtId).textContent='';$(outId).classList.add('show');return}
-      $(txtId).textContent=msg;
-      $(mailId).href='mailto:thomaszente@gmail.com?subject='+encodeURIComponent(subject())+'&body='+encodeURIComponent(msg);
-      $(noteId).textContent='Your message is ready. Copy it or open it in your email app, then send it to thomaszente@gmail.com.';
-      $(outId).classList.add('show');
+  const okEmail=x=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x);
+  const wire=(form,o)=>{
+    const out=$(o.out),txt=$(o.txt),note=$(o.note),acts=out.querySelector('.acts'),btn=form.querySelector('button[type=submit]');
+    const tell=(m,body)=>{note.textContent=m;txt.textContent=body||'';acts.hidden=!body;out.classList.add('show')};
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      if(!v(o.name)){tell('Add your name, then try again.');$(o.name).focus();return}
+      if(!okEmail(v(o.email))){tell('Add your email address so I can reply.');$(o.email).focus();return}
+      const label=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
+      try{
+        const r=await fetch('/api/inquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o.payload())});
+        const j=await r.json().catch(()=>({}));
+        if(!r.ok||!j.ok)throw new Error(r.status);
+        form.reset();tell(o.sent);
+      }catch(_){
+        const msg=o.build();
+        $(o.mail).href='mailto:'+o.to+'?subject='+encodeURIComponent(o.subject())+'&body='+encodeURIComponent(msg);
+        tell('It didn’t send from here. Your message is written out below: copy it or open it in your email app, and send it to '+o.to+'.',msg);
+      }finally{btn.disabled=false;btn.textContent=label}
     });
-    $(copyId).addEventListener('click',async()=>{
-      try{await navigator.clipboard.writeText($(txtId).textContent);$(noteId).textContent='Copied. Paste it into an email to thomaszente@gmail.com.'}
-      catch(_){$(noteId).textContent='Copying isn’t available here. Select the text above and copy it manually.'}
+    $(o.copy).addEventListener('click',async()=>{
+      try{await navigator.clipboard.writeText(txt.textContent);note.textContent='Copied. Paste it into an email to '+o.to+'.'}
+      catch(_){note.textContent='Copying isn’t available here. Select the text above and copy it manually.'}
     });
   };
-  wire($('inq'),()=>v('f-name')?('Hi Thomas,\n\n'+(v('f-msg')?v('f-msg')+'\n\n':'')+'Project type: '+v('f-type')+'\nTiming: '+v('f-when')+'\n\n'+v('f-name')+(v('f-org')?'\n'+v('f-org'):'')):'','out','out-text','out-note','copy','mail',()=>'Project inquiry: '+v('f-type'));
-  wire($('zbook'),()=>{
-    if(!v('z-name'))return '';
-    const rows=[['Event or venue',v('z-ev')],['Date',v('z-date')],['City',v('z-city')]].filter(r=>r[1]).map(r=>r[0]+': '+r[1]).join('\n');
-    return 'Hi Thomas,\n\nI’d like to book ZENTI.'+(rows?'\n\n'+rows:'')+(v('z-msg')?'\n\n'+v('z-msg'):'')+'\n\n'+v('z-name');
-  },'zout','zout-text','zout-note','zcopy','zmail',()=>'ZENTI booking inquiry');
+  wire($('inq'),{out:'out',txt:'out-text',note:'out-note',copy:'copy',mail:'mail',name:'f-name',email:'f-email',to:'thomaszente@gmail.com',
+    sent:'Sent. Thanks, your inquiry is in my inbox and I’ll reply to the email you gave.',
+    subject:()=>'Project inquiry: '+v('f-type'),
+    payload:()=>({kind:'project',name:v('f-name'),email:v('f-email'),org:v('f-org'),type:v('f-type'),when:v('f-when'),message:v('f-msg'),website:v('f-web')}),
+    build:()=>'Hi Thomas,\n\n'+(v('f-msg')?v('f-msg')+'\n\n':'')+'Project type: '+v('f-type')+'\nTiming: '+v('f-when')+'\n\n'+v('f-name')+(v('f-org')?'\n'+v('f-org'):'')+'\n'+v('f-email')});
+  wire($('zbook'),{out:'zout',txt:'zout-text',note:'zout-note',copy:'zcopy',mail:'zmail',name:'z-name',email:'z-email',to:'zentimusic@gmail.com',
+    sent:'Sent. Thanks, your booking request is in. You’ll hear back at the email you gave.',
+    subject:()=>'ZENTI booking inquiry',
+    payload:()=>({kind:'zenti',name:v('z-name'),email:v('z-email'),event:v('z-ev'),date:v('z-date'),city:v('z-city'),message:v('z-msg'),website:v('z-web')}),
+    build:()=>{const rows=[['Event or venue',v('z-ev')],['Date',v('z-date')],['City',v('z-city')]].filter(r=>r[1]).map(r=>r[0]+': '+r[1]).join('\n');
+      return 'Hi,\n\nI’d like to book ZENTI.'+(rows?'\n\n'+rows:'')+(v('z-msg')?'\n\n'+v('z-msg'):'')+'\n\n'+v('z-name')+'\n'+v('z-email')}});
 }catch(_){}
 
 /* ---------- scroll: progress, active link, reveals, count-up ---------- */
