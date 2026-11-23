@@ -527,6 +527,32 @@ input,textarea{width:100%;min-width:0}
 .about img{height:auto;aspect-ratio:6/7;object-position:66% 28%}
 @media (max-width:880px){.about img{aspect-ratio:1/1;object-position:62% 24%}}
 
+/* ---------- network band ---------- */
+.network{margin-top:56px;display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding:40px clamp(24px,4vw,48px);border-radius:8px;
+  background:linear-gradient(135deg,#1a1815,#0f0e0c);color:var(--text);box-shadow:0 30px 70px -30px rgba(40,30,10,.55);position:relative;overflow:hidden}
+.network::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 0% 0%,rgba(226,207,164,.14),transparent 60%);pointer-events:none}
+.network>*{position:relative}
+.network .eyebrow{color:var(--metal)}
+.network h3{font-size:clamp(28px,3.2vw,40px);margin:12px 0 12px;color:var(--text)}
+.network p{color:var(--text-dim)!important;font-size:16px}
+.net-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.net-list li{font-family:var(--label);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal-lit);padding:11px 16px;border:1px solid rgba(184,162,122,.35);border-radius:999px;background:rgba(184,162,122,.05);transition:all .35s var(--ease)}
+.net-list li:hover{background:rgba(184,162,122,.14);border-color:var(--metal)}
+@media (max-width:860px){.network{grid-template-columns:1fr;gap:26px}}
+/* ---------- sound toggle ---------- */
+.snd{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border:1px solid var(--line);border-radius:999px;color:var(--text-mute);font-size:10.5px;letter-spacing:.2em;transition:all .35s var(--ease);margin-left:auto}
+.snd:hover{color:var(--metal-lit);border-color:var(--metal)}
+.snd[aria-pressed="true"]{color:var(--metal-lit);border-color:var(--metal);background:rgba(184,162,122,.08)}
+.snd .bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+.snd .bars i{width:2px;height:3px;background:currentColor;border-radius:1px;transition:height .3s}
+.snd[aria-pressed="true"] .bars i{animation:sndbar 1.6s ease-in-out infinite}
+.snd[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.3s}.snd[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.6s}.snd[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.9s}
+@keyframes sndbar{0%,100%{height:3px}50%{height:12px}}
+.nav .wrap>ul{margin-left:auto}
+.nav .wrap>.snd{margin-left:0}
+@media (max-width:980px){.snd{margin-left:auto}.nav .cta{margin-left:0}}
+@media (max-width:420px){.snd .lbl{display:none}.snd{padding:0 12px}}
+
 @media (prefers-reduced-motion:reduce){
   .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
   .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
@@ -546,6 +572,7 @@ input,textarea{width:100%;min-width:0}
       <li><a href="#work">Projects</a></li>
       <li><a href="#engage">Engage</a></li>
     </ul>
+    <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Play 432 Hz ambience" title="432 Hz ambience"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">432 Hz</span></button>
     <a class="cta" href="#contact">Start a project</a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
   </div>
@@ -652,6 +679,16 @@ input,textarea{width:100%;min-width:0}
         <details><summary>What you get</summary><ul><li>Programming calendar and residencies</li><li>Artist and partner relationships</li><li>Atmosphere and guest-experience audits</li><li>Community and audience growth</li></ul></details>
       </article>
     </div>
+    <div class="network rv">
+      <div class="net-head">
+        <p class="eyebrow">The network</p>
+        <h3>One call, the whole production.</h3>
+        <p>Fifteen years of nights, venues and festivals have built a deep, trusted rolodex. Whatever the project needs, I can bring in the right people for every part of it, already vetted and used to working together.</p>
+      </div>
+      <ul class="net-list">
+        <li>Lighting</li><li>Sound</li><li>Performers</li><li>Finding spaces</li><li>Media production</li><li>Artist curation</li><li>Promotion</li><li>Crews &amp; vendors</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -714,6 +751,7 @@ input,textarea{width:100%;min-width:0}
       <div class="pillar"><b>THE CULTURE</b><span>How programming, music, artists and community create a venue’s identity.</span></div>
       <div class="pillar"><b>THE AUDIENCE</b><span>How to attract people, earn their trust and bring them back.</span></div>
       <div class="pillar"><b>THE PRODUCTION</b><span>How to assemble teams and turn creative ideas into working experiences.</span></div>
+      <div class="pillar"><b>THE NETWORK</b><span>A rolodex built over fifteen years: lighting and sound, performers and artists, spaces, media, promotion. The right people for any part of production, one call away.</span></div>
       <div class="pillar"><b>THE BUSINESS</b><span>How programming, partnerships, positioning and operations drive results.</span></div>
     </div>
   </div>
@@ -819,7 +857,7 @@ try{
   const stages=[
     {h:'Concept',p:'Every destination starts with a clear idea of who it’s for and why it should exist. I shape the identity, atmosphere and cultural positioning before anything is built.',l:['Audience and market read','Venue identity, naming and story','Cultural positioning','Revenue model sketch']},
     {h:'Design',p:'Then the concept becomes a place: how guests arrive, move, gather and feel. Aesthetic, spatial flow, sound and light are designed as one experience.',l:['Room-by-room experience plan','Sound, lighting and material direction','Guest journey and flow','Brand world and visual language']},
-    {h:'Develop',p:'I turn unconventional spaces into working venues: assembling the creative team, coordinating vendors and setting up the systems that run the night.',l:['Creative team assembly','Vendor and production coordination','Operating systems and SOPs','Phased launch roadmap']},
+    {h:'Develop',p:'I turn unconventional spaces into working venues: assembling the creative team from a deep personal network, coordinating vendors and setting up the systems that run the night.',l:['Hand-picked crews: lights, sound, performers, media','Creative team assembly','Vendor and production coordination','Operating systems and SOPs','Phased launch roadmap']},
     {h:'Activate',p:'A space comes alive through culture. I program the music and art, bring in the artists, and build the community that fills the room on opening night and after.',l:['Music direction and talent programming','Artist and industry relationships','Launch events and marketing','Community and partnerships']},
     {h:'Sustain',p:'The best venues keep evolving. Recurring programming, partnerships and steady refinement keep people coming back, and keep the business healthy.',l:['Recurring series and residencies','Partnership and brand activations','Audience and membership growth','Performance reviews and tuning']}
   ];
@@ -1021,6 +1059,49 @@ try{
       addEventListener('scroll',()=>{if(!t2){t2=true;requestAnimationFrame(pa)}},{passive:true});pa()}
   }
 }catch(_){document.body.classList.remove('intro')}
+
+
+/* ---------- 432 Hz ambience: generated live (no file), starts only when asked ---------- */
+try{
+  const btn=$('snd');let ctx=null,master=null,on=false;
+  const build=()=>{
+    ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=0;
+    // hall reverb from generated noise impulse
+    const rv=ctx.createConvolver(),len=ctx.sampleRate*5,ir=ctx.createBuffer(2,len,ctx.sampleRate);
+    for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3)}
+    rv.buffer=ir;
+    const dry=ctx.createGain();dry.gain.value=.35;const wet=ctx.createGain();wet.gain.value=.9;
+    const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=900;lp.Q.value=.4;
+    const lfo=ctx.createOscillator(),lfoG=ctx.createGain();lfo.frequency.value=.035;lfoG.gain.value=420;lfo.connect(lfoG);lfoG.connect(lp.frequency);lfo.start();
+    lp.connect(dry);lp.connect(rv);rv.connect(wet);dry.connect(master);wet.connect(master);master.connect(ctx.destination);
+    // A = 432 Hz tuning: drone on A (108), E, A, C#, E, plus a soft high shimmer
+    const A=432,notes=[[A/4,.20,'sine'],[A/4*1.5,.10,'sine'],[A/2,.12,'triangle'],[A/2*1.25,.05,'sine'],[A*.75,.045,'sine'],[A,.022,'sine']];
+    notes.forEach(([f,g,type],i)=>{
+      [-1,1].forEach(side=>{
+        const o=ctx.createOscillator(),og=ctx.createGain(),pan=ctx.createStereoPanner?ctx.createStereoPanner():null;
+        o.type=type;o.frequency.value=f;o.detune.value=side*(3+i);og.gain.value=g/2;
+        const sw=ctx.createOscillator(),swg=ctx.createGain();sw.frequency.value=.02+i*.013;swg.gain.value=g/2*.8;sw.connect(swg);swg.connect(og.gain);sw.start();
+        o.connect(og);if(pan){pan.pan.value=side*.5;og.connect(pan);pan.connect(lp)}else og.connect(lp);o.start();
+      });
+    });
+    // soft air: filtered noise
+    const nb=ctx.createBuffer(1,ctx.sampleRate*4,ctx.sampleRate),nd=nb.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
+    const ns=ctx.createBufferSource();ns.buffer=nb;ns.loop=true;const bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=864;bp.Q.value=.8;const ng=ctx.createGain();ng.gain.value=.012;
+    ns.connect(bp);bp.connect(ng);ng.connect(rv);ns.start();
+  };
+  const set=v=>{
+    on=v;btn.setAttribute('aria-pressed',v);btn.setAttribute('aria-label',v?'Mute 432 Hz ambience':'Play 432 Hz ambience');
+    if(v){if(!ctx)build();ctx.resume();const t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(.8,t+4)}
+    else if(ctx){const t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(0,t+1.5);setTimeout(()=>{if(!on)ctx.suspend()},1700)}
+    try{localStorage.setItem('zc-sound',v?'1':'0')}catch(_){}
+  };
+  btn.addEventListener('click',()=>set(!on));
+  document.addEventListener('visibilitychange',()=>{if(!ctx)return;if(document.hidden)ctx.suspend();else if(on)ctx.resume()});
+  // browsers only allow sound after a tap/click: if the visitor turned it on before, resume on their first interaction
+  let pref=null;try{pref=localStorage.getItem('zc-sound')}catch(_){}
+  if(pref==='1'){const first=e=>{if(e.target&&e.target.closest&&e.target.closest('#snd'))return;removeEventListener('pointerdown',first);removeEventListener('keydown',first);if(!on)set(true)};addEventListener('pointerdown',first);addEventListener('keydown',first)}
+}catch(_){}
 
 /* ---------- cosmic fields: energy in motion, all connected ---------- */
 try{
