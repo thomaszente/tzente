@@ -13,10 +13,32 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Z CREATIV">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://zcreativ.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Z CREATIV">
+<meta property="og:title" content="Z CREATIV — Spaces, Sound, Culture">
+<meta property="og:description" content="Creative direction and experience studio led by Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
+<meta property="og:url" content="https://zcreativ.vercel.app/">
+<meta property="og:image" content="https://zcreativ.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/cinzel-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Z CREATIV","url":"https://zcreativ.vercel.app/","description":"Creative direction and experience studio led by Thomas Zente: venue and destination development, experience design and production, creative direction and cultural programming.","founder":{"@type":"Person","name":"Thomas Zente"},"email":"thomaszente@gmail.com","areaServed":["Austin","New York","Miami"],"sameAs":["https://instagram.com/zentimusic"]}</script>
 <style>
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cinzel-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cinzel-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/montserrat-latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/montserrat-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/montserrat-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/montserrat-latin-600-normal.woff2) format('woff2')}
 :root{
   /* One world: near-black stage, warm paper bands, champagne metal. Layout: proof-first scroll, with the work as a floor plan you walk through. */
   --ink:#0C0C0C; --ink-2:#151515; --line:#2C2C2C;
@@ -45,6 +67,7 @@ section{padding:108px 0;position:relative}
 .paper .eyebrow{color:var(--metal-deep)}
 .mid{background:var(--ink-2)}
 .cos{position:relative;overflow:hidden}
+@supports (overflow:clip){.cos{overflow:clip}}
 .cos>canvas.field{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:block}
 .cos>.wrap{position:relative;z-index:1}
 .sec-head{display:flex;flex-direction:column;gap:16px;max-width:780px;margin-bottom:52px;position:relative;padding-bottom:22px}
@@ -187,7 +210,7 @@ section{padding:108px 0;position:relative}
 .cols ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:15px;color:var(--text-dim)}
 .sec{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:10px}
 .flow{font-family:var(--display);font-size:clamp(17.5px,1.7vw,20.5px);line-height:1.6;color:var(--text-dim)}
-.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin:0 9px}
+.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin:0 4px 0 9px}
 .more{align-self:flex-start;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal)}
 .more:hover{color:var(--metal-lit)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;border-top:1px solid var(--line);padding-top:20px}
@@ -198,7 +221,7 @@ section{padding:108px 0;position:relative}
 .lk:hover{border-color:var(--metal);color:var(--metal)}
 .lk.lit{border-color:var(--metal);color:var(--metal)}
 .lk.lit:hover{background:var(--metal);color:var(--ink)}
-.mark{height:44px;width:auto;display:block}
+.mark{height:44px;width:auto;max-width:100%;display:block;align-self:flex-start;object-fit:contain}
 .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .shots img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--line)}
 .rel{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
@@ -279,10 +302,108 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
 .socials{display:flex;gap:20px;flex-wrap:wrap}
 .socials a{text-decoration:none;color:var(--text-dim)}
 .socials a:hover{color:var(--metal)}
+
+/* ===== Z CREATIV upgrade layer ===== */
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--metal);color:var(--ink);padding:10px 16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.skip:focus{left:12px}
+::selection{background:var(--metal);color:var(--ink)}
+html{scroll-padding-top:76px}
+/* depth: ambient light + grain on dark sections */
+.cos::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0;transition:opacity .6s;background:radial-gradient(520px circle at var(--sx,50%) var(--sy,30%),rgba(226,207,164,.075),transparent 62%)}
+.spot .cos.lit::before{opacity:1}
+.hero{background:radial-gradient(1200px 620px at 78% 30%,rgba(184,162,122,.07),transparent 60%),radial-gradient(900px 500px at 0% 100%,rgba(125,106,69,.06),transparent 65%),var(--ink)}
+.room{position:relative;background:linear-gradient(180deg,rgba(22,21,19,.92),rgba(12,12,12,.9));box-shadow:0 1px 0 rgba(226,207,164,.06) inset,0 40px 80px -40px rgba(0,0,0,.8)}
+/* nav: mobile menu */
+.menu-btn{display:none;width:44px;height:44px;margin-right:-10px;position:relative}
+.menu-btn i{position:absolute;left:11px;right:11px;height:1px;background:var(--text);transition:transform .35s cubic-bezier(.2,.7,.2,1),top .35s,opacity .2s}
+.menu-btn i:nth-child(1){top:17px}.menu-btn i:nth-child(2){top:26px}
+.menu-open .menu-btn i:nth-child(1){top:21.5px;transform:rotate(45deg)}
+.menu-open .menu-btn i:nth-child(2){top:21.5px;transform:rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:45;background:rgba(10,10,10,.97);backdrop-filter:blur(14px);display:flex;flex-direction:column;justify-content:flex-end;padding:96px 28px calc(36px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menu-open .sheet{opacity:1;visibility:visible}
+.sheet ol{list-style:none;counter-reset:n;display:flex;flex-direction:column}
+.sheet li{counter-increment:n;border-top:1px solid var(--line);transform:translateY(16px);opacity:0;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s;transition-delay:calc(var(--i)*45ms + 60ms)}
+.menu-open .sheet li{transform:none;opacity:1}
+.sheet li a{display:flex;align-items:baseline;gap:16px;padding:17px 0;text-decoration:none;font-family:var(--display);font-size:34px;line-height:1.1}
+.sheet li a::before{content:"0" counter(n);font-family:var(--label);font-size:11px;letter-spacing:.2em;color:var(--metal)}
+.sheet .btn{margin-top:26px;justify-content:center}
+.sheet .meta{margin-top:18px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-mute)}
+@media (max-width:980px){.menu-btn{display:block}.nav .cta{padding:9px 13px}}
+@media (max-width:420px){.nav .cta{display:none}}
+@media (min-width:981px){.sheet{display:none}}
+.menu-open{overflow:hidden}
+/* hero */
+.hero .for{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mute);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero .for b{font-weight:400;color:var(--metal)}
+.hero .for i{width:4px;height:4px;border:1px solid var(--metal);transform:rotate(45deg);display:inline-block}
+@media (max-width:560px){.hero .for{font-size:10.5px;letter-spacing:.14em;gap:8px}}
+@media (prefers-reduced-motion:no-preference){
+ .hero .wrap>*{animation:intro .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*90ms + 120ms)}
+ .zword .ch{display:inline-block;animation:ch 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--c)*55ms + 160ms)}
+ .hero .wrap>h1{animation:none}
+}
+@keyframes intro{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes ch{from{opacity:0;transform:translateY(.35em);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+/* buttons: magnetic + sheen */
+.btn,.nav .cta{transition:background .25s,color .25s,border-color .25s,transform .35s cubic-bezier(.2,.7,.2,1)}
+.btn.solid{position:relative;overflow:hidden;box-shadow:0 10px 30px -12px rgba(184,162,122,.55)}
+.btn.solid::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s}
+.btn.solid:hover::after{transform:translateX(120%)}
+/* service cards: light follows pointer */
+.svc{position:relative;overflow:hidden}
+.svc::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--px,50%) var(--py,0%),rgba(184,162,122,.16),transparent 60%)}
+.svc:hover::after{opacity:1}
+/* staged reveals */
+.anim .rv2:not(.seen){opacity:0;transform:translateY(26px)}
+.anim .rv2{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+/* floor plan: HTML rooms, 3D on desktop */
+@media (max-width:400px){.wrap{padding:0 22px}}
+.direct a{overflow-wrap:anywhere}
+.contact-grid>*{min-width:0}
+select{width:100%;max-width:100%;text-overflow:ellipsis}
+.stages>*{min-width:0}
+@media (max-width:360px){.stage .t{font-size:8.5px;letter-spacing:.02em}.ftabs button{padding:13px 10px;letter-spacing:.12em}}
+.iso-wrap{perspective:1500px;perspective-origin:50% 30%}
+.iso{position:relative;aspect-ratio:4/3;border:1px solid #333;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:5% 6.667%}
+.iso .rm{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);width:calc(var(--w)*1%);height:calc(var(--h)*1%);border:1px solid #444;background:rgba(255,255,255,.015);display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:clamp(8px,1.6vw,12px);text-align:left;transition:background .3s,border-color .3s,transform .55s cubic-bezier(.2,.7,.2,1)}
+.iso .rn{font-family:var(--label);font-size:clamp(9px,1.3vw,11px);letter-spacing:.16em;text-transform:uppercase;color:var(--text-mute);line-height:1.25;transition:color .3s}
+.iso .rp{font-size:clamp(7px,.9vw,8.5px);letter-spacing:.14em;text-transform:uppercase;color:#6e6a64;line-height:1.3}
+.iso .rm:focus-visible{border-color:var(--metal);background:rgba(184,162,122,.07);outline:none}
+@media (hover:hover){.iso .rm:hover{border-color:var(--metal);background:rgba(184,162,122,.07)}}
+.iso .rm.on{border-color:var(--metal-lit);background:rgba(184,162,122,.16)}
+.iso .rm.on .rn{color:var(--text)}
+@media (hover:hover){.iso .rm:hover .rn{color:var(--text)}}
+.iso .you{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--metal-lit);box-shadow:0 0 0 0 rgba(226,207,164,.5);animation:ping 2.2s ease-out infinite;transition:left .7s cubic-bezier(.2,.7,.2,1),top .7s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(226,207,164,.55)}80%,100%{box-shadow:0 0 0 14px rgba(226,207,164,0)}}
+.d3 .iso{transform-style:preserve-3d;transform:rotateX(var(--rx,40deg)) rotateZ(var(--rz,-20deg)) scale(.84);margin:2% 0 9%;transition:transform 1s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 0 1px rgba(184,162,122,.08)}
+.d3 .iso .rm{transform-style:preserve-3d;--z:5px;transform:translateZ(var(--z));background:rgba(20,20,20,.96)}
+.d3 .iso .rm:hover,.d3 .iso .rm:focus-visible{--z:14px;background:rgba(36,33,27,.97)}
+.d3 .iso .rm.on{--z:26px;background:rgba(52,46,35,.98);box-shadow:0 0 30px rgba(184,162,122,.18)}
+.d3 .iso .rm::before,.d3 .iso .rm::after{content:"";position:absolute;pointer-events:none;background:linear-gradient(rgba(184,162,122,.12),rgba(10,10,10,.95));border:1px solid rgba(184,162,122,.22);transition:height .55s cubic-bezier(.2,.7,.2,1),width .55s cubic-bezier(.2,.7,.2,1)}
+.d3 .iso .rm::before{left:-1px;right:-1px;top:100%;height:var(--z);transform-origin:top;transform:rotateX(-90deg)}
+.d3 .iso .rm::after{top:-1px;bottom:-1px;left:100%;width:var(--z);transform-origin:left;transform:rotateY(90deg);background:linear-gradient(90deg,rgba(184,162,122,.08),rgba(8,8,8,.95))}
+.d3 .iso .you{transform:translateZ(40px);width:11px;height:11px}
+.d3 .iso .rn{font-size:12px;color:var(--text-dim)}
+.d3 .iso .rp{font-size:9px}
+.d3 .plan-side .hint{margin-top:10px}
+/* NOWHERE curve */
+.curve{display:flex;flex-direction:column;gap:8px}
+.bars{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,1vw,9px);align-items:end;height:170px;border-bottom:1px solid var(--line);position:relative}
+.bars .b{position:relative;height:calc(var(--v)*1%);background:linear-gradient(180deg,rgba(184,162,122,.55),rgba(184,162,122,.14));border-top:1px solid var(--metal);transform-origin:bottom;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--k)*70ms)}
+.bars .b.soft{background:linear-gradient(180deg,rgba(140,135,127,.35),rgba(140,135,127,.08));border-top-color:#6e6a64}
+.bars .b.rec{background:linear-gradient(180deg,var(--metal-lit),rgba(184,162,122,.25));border-top:2px solid var(--metal-lit);box-shadow:0 0 30px rgba(226,207,164,.2)}
+.bars .b.rec span{position:absolute;bottom:calc(100% + 8px);right:0;white-space:nowrap;font-family:var(--display);font-size:20px;color:var(--metal-lit);line-height:1}
+.bars .b.rec span small{display:block;font-family:var(--label);font-size:9px;letter-spacing:.2em;color:var(--text-mute);margin-top:4px;text-align:right}
+.anim .curve:not(.seen) .b{transform:scaleY(0)}
+.axis{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,1vw,9px);font-size:10px;letter-spacing:.08em;color:var(--text-mute);text-align:center}
+.cap{font-size:14.5px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;letter-spacing:.06em;color:var(--text-mute)}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px;background:rgba(184,162,122,.5)}
+.legend i.s{background:rgba(140,135,127,.4)}
 </style>
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Z CREATIV"><span class="zm">Z</span> CREATIV</a>
@@ -294,23 +415,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       <li><a href="#engage">Engage</a></li>
     </ul>
     <a class="cta" href="#contact">Start a project</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><i></i><i></i></button>
   </div>
   <div class="prog" aria-hidden="true"><i id="prog"></i></div>
 </nav>
+<div class="sheet" id="sheet" aria-label="Menu" inert>
+  <ol>
+    <li style="--i:0"><a href="#proof">Proof</a></li>
+    <li style="--i:1"><a href="#arc">Approach</a></li>
+    <li style="--i:2"><a href="#services">Services</a></li>
+    <li style="--i:3"><a href="#work">The Rooms</a></li>
+    <li style="--i:4"><a href="#engage">Engage</a></li>
+  </ol>
+  <a class="btn solid" href="#contact">Start a project</a>
+  <p class="meta">thomaszente@gmail.com · ATX, NYC, MIA</p>
+</div>
+
+<main id="main">
 
 <header class="hero cos" id="top">
   <canvas class="field" id="herofield" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="eyebrow">Creative Direction &amp; Experience Studio · Led by Thomas Zente</p>
-    <h1 class="zword"><span class="zm">Z</span> CREATIV</h1>
-    <p class="tag">Music. Spaces. Experiences. Culture.</p>
-    <p class="sub">I take empty rooms and quiet nights and turn them into places people return to. Concept, space, programming, audience and execution, led as one vision.</p>
-    <div class="btns">
+    <p class="eyebrow" style="--i:0">Creative Direction &amp; Experience Studio · Led by Thomas Zente</p>
+    <h1 class="zword" aria-label="Z CREATIV"><span aria-hidden="true"><span class="ch zm" style="--c:0">Z</span> <span class="ch" style="--c:2">C</span><span class="ch" style="--c:3">R</span><span class="ch" style="--c:4">E</span><span class="ch" style="--c:5">A</span><span class="ch" style="--c:6">T</span><span class="ch" style="--c:7">I</span><span class="ch" style="--c:8">V</span></span></h1>
+    <p class="tag" style="--i:3">Music. Spaces. Experiences. Culture.</p>
+    <p class="sub" style="--i:4">I take empty rooms and quiet nights and turn them into places people return to. Concept, space, programming, audience and execution, led as one vision.</p>
+    <p class="for" style="--i:5"><b>For</b> developers <i></i> hospitality groups <i></i> brands <i></i> festivals</p>
+    <div class="btns" style="--i:6">
       <a class="btn solid" href="#contact">Start a project</a>
       <a class="btn ghost" href="#work">Walk the rooms</a>
     </div>
-    <p class="meta">ATX, NYC, MIA · Available internationally</p>
-    <div class="strip">
+    <p class="meta" style="--i:7">ATX, NYC, MIA · Available internationally</p>
+    <div class="strip" style="--i:8">
       <div><b data-to="96" data-pre="$" data-suf="K">$96K</b><span>in ten weeks, from an unfinished warehouse</span></div>
       <div><b data-to="10000">10,000</b><span>guests through NOWHERE to date</span></div>
       <div><b data-to="100" data-suf="+">100+</b><span>events produced with COSMOTION</span></div>
@@ -349,7 +485,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
         <div><b>ZENTI</b><span>Music Producer, Artist, DJ</span></div>
       </div>
     </div>
-    <figure class="rv"><img src="img/portrait-wood.jpg" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1537" height="1023" loading="lazy"></figure>
+    <figure class="rv"><img src="img/w/portrait-960.webp" srcset="img/w/portrait-640.webp 640w, img/w/portrait-960.webp 960w, img/w/portrait-1400.webp 1400w" sizes="(max-width:880px) 420px, 40vw" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1537" height="1023" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -385,7 +521,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       <p>Developers, hospitality groups, brands and festivals hire me for one of three things. Most projects end up touching all of them.</p>
     </div>
     <div class="svc-grid">
-      <article class="svc tilt">
+      <article class="svc tilt rv2">
         <span class="num">01</span>
         <h3>Venue &amp; Destination Development</h3>
         <span class="line">Creating places worth discovering.</span>
@@ -393,7 +529,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
         <p class="for"><b>For:</b> developers, hospitality groups, boutique hotels, nightlife venues and mixed-use destinations</p>
         <details><summary>What you get</summary><ul><li>Concept and positioning</li><li>Room-by-room experience plan</li><li>Programming and revenue model</li><li>Phased launch roadmap</li></ul></details>
       </article>
-      <article class="svc tilt">
+      <article class="svc tilt rv2">
         <span class="num">02</span>
         <h3>Experience Design &amp; Production</h3>
         <span class="line">Creating moments that become memories.</span>
@@ -401,7 +537,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
         <p class="for"><b>For:</b> lifestyle and luxury brands, festivals, private clients and experiential agencies</p>
         <details><summary>What you get</summary><ul><li>Creative concept and story</li><li>Talent curation and booking</li><li>Spatial, sound and light direction</li><li>Production and show-day lead</li></ul></details>
       </article>
-      <article class="svc tilt">
+      <article class="svc tilt rv2">
         <span class="num">03</span>
         <h3>Creative Direction &amp; Cultural Programming</h3>
         <span class="line">Building identity through culture.</span>
@@ -423,15 +559,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
     </div>
     <div class="plan-grid">
       <div class="plan-side">
-        <svg id="plan" viewBox="0 0 400 300" role="group" aria-label="Floor plan of projects">
-          <rect x="1" y="1" width="398" height="298" fill="none" stroke="#333" stroke-width="1"/>
-          <g class="rm" data-room="label" role="button" tabindex="0" aria-label="The Label: COSMOTION"><rect x="10" y="10" width="172" height="124"/><text class="rn" x="22" y="34">THE LABEL</text><text class="rp" x="22" y="48">COSMOTION · SINCE 2015</text></g>
-          <g class="rm" data-room="booth" role="button" tabindex="0" aria-label="The Booth: ZENTI"><rect x="190" y="10" width="200" height="124"/><text class="rn" x="202" y="34">THE BOOTH</text><text class="rp" x="202" y="48">ZENTI · DJ / PRODUCER</text></g>
-          <g class="rm" data-room="garage" role="button" tabindex="0" aria-label="The Garage: STARDUST GARAGE"><rect x="10" y="142" width="118" height="148"/><text class="rn" x="22" y="166">THE GARAGE</text><text class="rp" x="22" y="180">STARDUST · 2025</text></g>
-          <g class="rm" data-room="warehouse" role="button" tabindex="0" aria-label="The Warehouse: NOWHERE"><rect x="136" y="142" width="152" height="148"/><text class="rn" x="148" y="166">THE WAREHOUSE</text><text class="rp" x="148" y="180">NOWHERE · 2026</text></g>
-          <g class="rm" data-room="screen" role="button" tabindex="0" aria-label="The Screening Room: Multimedia"><rect x="296" y="142" width="94" height="148"/><text class="rn" x="306" y="166">SCREENING</text><text class="rn" x="306" y="179">ROOM</text><text class="rp" x="306" y="193">MULTIMEDIA</text></g>
-          <circle class="you" id="you" cx="96" cy="100" r="4"/>
-        </svg>
+        <div class="iso-wrap"><div class="iso" id="plan" role="group" aria-label="Floor plan of projects">
+          <button type="button" class="rm" data-room="label" data-name="COSMOTION" style="--x:2.5;--y:3.333;--w:43;--h:41.333"><span class="rn">The Label</span><span class="rp">COSMOTION · since 2015</span></button>
+          <button type="button" class="rm" data-room="booth" data-name="ZENTI" style="--x:47.5;--y:3.333;--w:50;--h:41.333"><span class="rn">The Booth</span><span class="rp">ZENTI · DJ / producer</span></button>
+          <button type="button" class="rm" data-room="garage" data-name="Stardust Garage" style="--x:2.5;--y:47.333;--w:29.5;--h:49.333"><span class="rn">The Garage</span><span class="rp">Stardust · 2025</span></button>
+          <button type="button" class="rm" data-room="warehouse" data-name="NOWHERE" style="--x:34;--y:47.333;--w:38;--h:49.333"><span class="rn">The Warehouse</span><span class="rp">NOWHERE · 2026</span></button>
+          <button type="button" class="rm" data-room="screen" data-name="Multimedia" style="--x:74;--y:47.333;--w:23.5;--h:49.333"><span class="rn">Screening Room</span><span class="rp">Multimedia</span></button>
+          <span class="you" id="you" aria-hidden="true"></span>
+        </div></div>
         <p class="hint">Click a room · arrow keys move between them</p>
         <div class="room-tabs" id="roomTabs" role="tablist" aria-label="Projects"></div>
       </div>
@@ -449,11 +584,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       <p>There are plenty of event planners, DJs and creative directors. The value is in connecting all of it, firsthand.</p>
     </div>
     <div class="pillars">
-      <div class="pillar"><b>THE SPACE</b><span>How architecture, flow, sound, light and environment shape an experience.</span></div>
-      <div class="pillar"><b>THE CULTURE</b><span>How programming, music, artists and community create a venue’s identity.</span></div>
-      <div class="pillar"><b>THE AUDIENCE</b><span>How to attract people, earn their trust and bring them back.</span></div>
-      <div class="pillar"><b>THE PRODUCTION</b><span>How to assemble teams and turn creative ideas into working experiences.</span></div>
-      <div class="pillar"><b>THE BUSINESS</b><span>How programming, partnerships, positioning and operations drive results.</span></div>
+      <div class="pillar rv2"><b>THE SPACE</b><span>How architecture, flow, sound, light and environment shape an experience.</span></div>
+      <div class="pillar rv2"><b>THE CULTURE</b><span>How programming, music, artists and community create a venue’s identity.</span></div>
+      <div class="pillar rv2"><b>THE AUDIENCE</b><span>How to attract people, earn their trust and bring them back.</span></div>
+      <div class="pillar rv2"><b>THE PRODUCTION</b><span>How to assemble teams and turn creative ideas into working experiences.</span></div>
+      <div class="pillar rv2"><b>THE BUSINESS</b><span>How programming, partnerships, positioning and operations drive results.</span></div>
     </div>
   </div>
 </section>
@@ -474,10 +609,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       </div>
     </div>
     <div class="eng-grid" id="eng-grid">
-      <article class="eng" data-id="concept" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Concept Development</h3><p>Concept, identity, room plan and positioning for a new or repositioned space.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="launch" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Launch Partnership</h3><p>Concept through opening: design, programming, team and activation, handed over running.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="production" data-type="Experience design &amp; production"><span class="rec">Best fit</span><h3>Experience Production</h3><p>A night, activation, stage or private experience, fully directed and produced.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="retainer" data-type="Creative direction &amp; programming"><span class="rec">Best fit</span><h3>Creative Direction Retainer</h3><p>Ongoing programming, talent and creative leadership for an operating venue.</p><button class="ask">Ask about this</button></article>
+      <article class="eng rv2" data-id="concept" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Concept Development</h3><p>Concept, identity, room plan and positioning for a new or repositioned space.</p><button class="ask">Ask about this</button></article>
+      <article class="eng rv2" data-id="launch" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Launch Partnership</h3><p>Concept through opening: design, programming, team and activation, handed over running.</p><button class="ask">Ask about this</button></article>
+      <article class="eng rv2" data-id="production" data-type="Experience design &amp; production"><span class="rec">Best fit</span><h3>Experience Production</h3><p>A night, activation, stage or private experience, fully directed and produced.</p><button class="ask">Ask about this</button></article>
+      <article class="eng rv2" data-id="retainer" data-type="Creative direction &amp; programming"><span class="rec">Best fit</span><h3>Creative Direction Retainer</h3><p>Ongoing programming, talent and creative leadership for an operating venue.</p><button class="ask">Ask about this</button></article>
     </div>
   </div>
 </section>
@@ -530,6 +665,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -573,7 +709,7 @@ try{
 
 /* ---------- rooms ---------- */
 const F=(h,items,cap)=>{
-  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join('');
+  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join(' ');
   return '<div class="sec"><h4>'+h+'</h4><p class="flow">'+sp+'</p>'+(cap&&items.length>cap?'<button class="more" data-more>Show all '+items.length+'</button>':'')+'</div>';
 };
 const NW=[
@@ -589,15 +725,15 @@ const NW=[
 const bars=Array.from({length:20},(_,i)=>'<i style="animation-delay:'+(i*0.12).toFixed(2)+'s"></i>').join('');
 const ROOMS={
 label:{t:'THE LABEL',mood:'COSMOTION · LABEL &amp; PLATFORM · 2015 – NOW',sub:'A cultural platform, an event series and an independent label, sustained for a decade.',dot:[96,100],
- html:'<img class="mark" src="img/cosmotion-logo.png" alt="COSMOTION" width="213" height="44">'+
+ html:'<img class="mark" src="img/w/cosmotion-logo-440.webp" alt="COSMOTION" width="213" height="44">'+
  '<p class="lede">More than ten years producing experiences rooted in music, art, community and human connection.</p>'+
- '<div class="shots"><img src="img/cm-moon.jpg" alt="A DJ playing beneath a projected full moon" style="object-position:60% 45%" loading="lazy"><img src="img/cm-crowd.jpg" alt="A phone filming a neon-lit performance from the crowd" loading="lazy"><img src="img/cm-candles.jpg" alt="A DJ playing behind a wall of candles" style="object-position:45% 40%" loading="lazy"></div>'+
+ '<div class="shots"><img src="img/w/cm-moon-360.webp" srcset="img/w/cm-moon-360.webp 360w, img/w/cm-moon-640.webp 640w" sizes="(max-width:700px) 30vw, 200px" width="360" height="360" decoding="async" alt="A DJ playing beneath a projected full moon" style="object-position:60% 45%" loading="lazy"><img src="img/w/cm-crowd-360.webp" srcset="img/w/cm-crowd-360.webp 360w, img/w/cm-crowd-640.webp 640w" sizes="(max-width:700px) 30vw, 200px" width="360" height="360" decoding="async" alt="A phone filming a neon-lit performance from the crowd" loading="lazy"><img src="img/w/cm-candles-360.webp" srcset="img/w/cm-candles-360.webp 360w, img/w/cm-candles-640.webp 640w" sizes="(max-width:700px) 30vw, 200px" width="360" height="360" decoding="async" alt="A DJ playing behind a wall of candles" style="object-position:45% 40%" loading="lazy"></div>'+
  '<div class="stats"><div><b>100+</b><span>events produced</span></div><div><b>15,000</b><span>mailing-list subscribers</span></div><div><b>10+</b><span>years running</span></div></div>'+
  F('BOOKED ARTISTS',['Just Emma','Lemurian','Sarkis Mikael','Noema','Eli Light','The Soul Brothers','Brian Cid','Allen Hulsey','KMLN','Nico Stojan','Oceanvs Orientalis','Fabian Krooss','Joeski','Unders','Modd','Caleesi &amp; Sarah Kreis','Bodaishin','Cioz','Kora','Anstacia','Sam Shure','Magician On Duty','Patrik Katch','McFly','Manumat','Crsto','Robert Roman','Novasi'],12)+
  F('PARTNERED EXPERIENCES',['Opulent Temple','Art With Me','Orijins','JunXion','Sonic Jungle','Stil Vor Talent','AESTHESIS','FAIRYTALES','ARTBOMB','Concourse Project','Indra’s Awarehouse'])+
  '<div class="links"><a class="lk lit" href="https://instagram.com/cosmotion.space">Instagram</a><a class="lk" href="https://linktr.ee/cosmotion.space">All COSMOTION links</a></div>'},
 booth:{t:'THE BOOTH',mood:'.. MAGIC // MUSIC ..',sub:'ZENTI. International DJ and music producer.',dot:[290,100],
- html:'<img class="mark" src="img/zenti-logo.png" alt="ZENTI" width="145" height="56" style="height:56px">'+
+ html:'<img class="mark" src="img/w/zenti-logo-300.webp" alt="ZENTI" width="145" height="56" style="height:56px">'+
  '<p class="lede">Hypnotic, unpredictable musical journeys where deep grooves, worldly rhythms and cinematic textures converge.</p>'+
  '<p>Rooted in Austin and shaped by years immersed in underground scenes from New York and Miami to Burning Man, his sound moves fluidly between cultures, genres and emotions. Known for intuitive, emotionally driven sets, and for approaching every creation with heart, soul and intention.</p>'+
  '<div class="links"><a class="lk lit" href="https://open.spotify.com/artist/5cwPDq4NrVBXRySkiLMkiL">Listen on Spotify</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/original-tracks">Original tracks</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/zenti-guest-podcasts">Guest podcasts</a><a class="lk" href="https://www.beatport.com/artist/zenti/1146352">Beatport</a><a class="lk" href="https://instagram.com/zentimusic">Instagram</a><a class="lk" href="https://drive.google.com/file/d/13JxnzFcBZDKWPX39h9uX-s_7mtdCrFCD/view">Press kit</a><a class="lk" href="#contact" data-book>Book ZENTI</a></div>'+
@@ -614,12 +750,13 @@ garage:{t:'THE GARAGE',mood:'STARDUST GARAGE · VENUE · AUSTIN · 2025',sub:'A 
  '<div class="stats"><div><b>~4,400</b><span>sq ft of indoor event space</span></div><div><b>800</b><span>capacity, plus outdoor areas</span></div></div>'+
  '<div class="links"><a class="lk" href="https://www.sdgatx.com">sdgatx.com</a></div>'},
 warehouse:{t:'THE WAREHOUSE',mood:'NOWHERE · VENUE · AUSTIN · 2026',sub:'Austin’s Conscious Creative Center. Come as you are. Become more.',dot:[212,236],
- html:'<img class="mark" src="img/nowhere-logo.png" alt="NOWHERE" width="84" height="84" style="height:84px">'+
+ html:'<img class="mark" src="img/w/nowhere-logo-180.webp" alt="NOWHERE" width="84" height="84" style="height:84px">'+
  '<p class="lede">Part club, part gallery, part wellness space, launched in a 12,000 sq ft warehouse in the St. Elmo Arts District.</p>'+
  '<div class="stats"><div><b>25</b><span>events produced</span></div><div><b>10,000</b><span>guests to date</span></div><div><b>$100K</b><span>revenue to date</span></div></div>'+
  '<div class="cols"><div><h4>THE CHALLENGE</h4><ul><li>Prove Austin wanted this before asking anyone to fund the finished vision: identity, recurring programming and a paying audience, built in an unfinished room.</li></ul></div><div><h4>MY ROLE</h4><ul><li>Co-Founder, Creative Director, Lead Producer and Programmer</li><li>Concept, programming, guest experience, brand, talent, marketing and execution</li></ul></div></div>'+
  '<div class="sec"><h4>PHASE I · MAY 22 – JULY 25, 2026</h4><div class="stats" style="border:0;padding:0"><div><b>10</b><span>consecutive weekends, none missed</span></div><div><b>20</b><span>event nights</span></div><div><b>$96K</b><span>gross revenue</span></div></div>'+
  '<div class="cols" style="margin-top:8px"><ul><li>A $30 door held all season, with advance sales growing week over week</li><li>Finished at peak: the final weekend set the record at $20,383</li><li>Ardalan, Sarkis Mikael and the official Adam Ten afterparty</li><li>Live painting, projection mapping, aerialists, vendors and gallery showcases</li></ul></div></div>'+
+'<div class="sec"><h4>THE CURVE · GROSS REVENUE BY WEEKEND</h4><div class="curve" role="img" aria-label="Gross revenue by weekend across Phase I: it opened near $8,400, dipped in weekends six and seven, then climbed to a record $20,383 in the final weekend."><div class="bars"><div class="b" style="--v:41.2;--k:0"></div><div class="b" style="--v:50.3;--k:1"></div><div class="b" style="--v:38.8;--k:2"></div><div class="b" style="--v:35.6;--k:3"></div><div class="b" style="--v:46.0;--k:4"></div><div class="b soft" style="--v:22.9;--k:5"></div><div class="b soft" style="--v:24.6;--k:6"></div><div class="b" style="--v:39.0;--k:7"></div><div class="b" style="--v:71.8;--k:8"></div><div class="b rec" style="--v:100.0;--k:9"><span>$20,383<small>RECORD</small></span></div></div><div class="axis" aria-hidden="true"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span><span>W9</span><span>W10</span></div></div><div class="legend" aria-hidden="true"><span><i></i>Weekend</span><span><i class="s"></i>Soft weekends, disclosed</span></div><p class="cap">Every weekend is in the Phase I impact report, including the two soft ones. The last two weekends brought in 36% of the run.</p><div class="links"><a class="lk lit" href="#contact" data-report>Request the impact report</a></div></div>'+
  '<div class="sec"><h4>THE VENUE PLAN · EIGHT ROOMS, EACH A DIFFERENT WORLD</h4><div class="nwrooms"><div class="list" role="tablist" aria-label="NOWHERE rooms">'+NW.map((r,i)=>'<button role="tab" data-nw="'+i+'" aria-selected="'+(i===0)+'">'+r[0]+'</button>').join('')+'</div><div id="nwd"></div></div></div>'+
  '<div class="links"><a class="lk" href="https://nowhereaustin.com">nowhereaustin.com</a></div>'},
 screen:{t:'THE SCREENING ROOM',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I came up as a film producer. That craft now goes into the media around the work.',dot:[343,236],
@@ -641,18 +778,19 @@ function enter(k,scroll){
   el.innerHTML='<div class="room-in"><header class="rhead"><p class="mood">'+r.mood+'</p><h3>'+r.t+'</h3><p class="sub">'+r.sub+'</p></header>'+r.html+'</div>';
   document.querySelectorAll('#plan .rm').forEach(g=>g.classList.toggle('on',g.dataset.room===k));
   document.querySelectorAll('#roomTabs button').forEach(b=>{const on=b.dataset.room===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);if(on&&b.parentNode.scrollWidth>b.parentNode.clientWidth)b.parentNode.scrollTo({left:b.offsetLeft-b.parentNode.offsetLeft-16,behavior:'smooth'})});
-  const y=$('you');y.setAttribute('cx',r.dot[0]);y.setAttribute('cy',r.dot[1]);
+  const y=$('you');y.style.left=(r.dot[0]/4)+'%';y.style.top=(r.dot[1]/3)+'%';
   el.querySelectorAll('[data-nw]').forEach(b=>b.addEventListener('click',()=>nwShow(+b.dataset.nw)));
   if(k==='warehouse')nwShow(0);
   el.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{b.previousElementSibling.querySelectorAll('[hidden]').forEach(s=>s.hidden=false);b.remove()}));
   el.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>ftab(1)));
+  el.querySelectorAll('[data-report]').forEach(a=>a.addEventListener('click',()=>{ftab(0);$('f-type').value='Venue or destination development';const m=$('f-msg');if(!m.value)m.value='I’d like to request the NOWHERE Phase I impact report. ';}));
+  const cv=el.querySelector('.curve');if(cv){if(reduce||!('IntersectionObserver' in window))cv.classList.add('seen');else{const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cv.classList.add('seen');o.disconnect()}}),{threshold:.35});o.observe(cv)}}
   if(scroll&&innerWidth<980)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 try{
   document.querySelectorAll('#plan .rm').forEach(g=>{
     g.addEventListener('click',()=>enter(g.dataset.room,true));
     g.addEventListener('keydown',e=>{
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();enter(g.dataset.room,true)}
       if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key==='ArrowLeft'||e.key==='ArrowUp'){
         e.preventDefault();const d=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;
         const n=order[(order.indexOf(g.dataset.room)+d+order.length)%order.length];
@@ -660,7 +798,7 @@ try{
       }
     });
   });
-  const tabs=$('roomTabs');document.querySelectorAll('#plan .rm').forEach(g=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.room=g.dataset.room;b.textContent=(g.getAttribute('aria-label')||'').split(':').pop().trim();b.addEventListener('click',()=>enter(g.dataset.room,false));tabs.append(b)});
+  const tabs=$('roomTabs');document.querySelectorAll('#plan .rm').forEach(g=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.room=g.dataset.room;b.textContent=g.dataset.name;b.addEventListener('click',()=>enter(g.dataset.room,false));tabs.append(b)});
   document.querySelectorAll('a[data-room]').forEach(a=>a.addEventListener('click',()=>enter(a.dataset.room,false)));
   enter('label',false);
 }catch(_){}
@@ -747,19 +885,62 @@ try{
   }
 }catch(_){}
 
+
+/* ---------- mobile menu ---------- */
+try{
+  const btn=$('menuBtn'),sh=$('sheet'),root=document.documentElement;
+  const set=on=>{root.classList.toggle('menu-open',on);btn.setAttribute('aria-expanded',on);btn.setAttribute('aria-label',on?'Close menu':'Open menu');if(on){sh.removeAttribute('inert');setTimeout(()=>sh.querySelector('a').focus(),60)}else sh.setAttribute('inert','')};
+  btn.addEventListener('click',()=>set(!root.classList.contains('menu-open')));
+  sh.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&root.classList.contains('menu-open')){set(false);btn.focus()}});
+  addEventListener('resize',()=>{if(innerWidth>980)set(false)});
+}catch(_){}
+
+/* ---------- staged reveals ---------- */
+try{
+  if(!reduce&&'IntersectionObserver' in window){
+    const groups=new Map();document.querySelectorAll('.rv2').forEach(el=>{const p=el.parentElement;groups.set(p,(groups.get(p)||0)+1);el.style.setProperty('--d',((groups.get(p)-1)*90)+'ms')});
+    const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add('seen');o.unobserve(el);setTimeout(()=>{el.classList.remove('rv2');el.style.removeProperty('--d')},1400)}}),{rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv2').forEach(el=>o.observe(el));
+  }else document.querySelectorAll('.rv2').forEach(el=>el.classList.remove('rv2'));
+}catch(_){document.querySelectorAll('.rv2').forEach(el=>el.classList.remove('rv2'))}
+
+/* ---------- desktop depth: ambient light, magnetic buttons, card light, 3D plan ---------- */
+try{
+  const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine&&!reduce){
+    document.documentElement.classList.add('spot');
+    const secs=[...document.querySelectorAll('.cos')];let raf=0,ev=null;
+    addEventListener('pointermove',e=>{ev=e;if(!raf)raf=requestAnimationFrame(()=>{raf=0;for(const sc of secs){const r=sc.getBoundingClientRect();const inside=ev.clientY>=r.top&&ev.clientY<=r.bottom;sc.classList.toggle('lit',inside);if(inside){sc.style.setProperty('--sx',(ev.clientX-r.left)+'px');sc.style.setProperty('--sy',(ev.clientY-r.top)+'px')}}})},{passive:true});
+    document.querySelectorAll('.btn.solid,.nav .cta').forEach(b=>{
+      b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.16).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*.28).toFixed(1)+'px)'});
+      b.addEventListener('pointerleave',()=>{b.style.transform=''});
+    });
+    document.querySelectorAll('.svc').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--px',(e.clientX-r.left)+'px');c.style.setProperty('--py',(e.clientY-r.top)+'px')}));
+  }
+  const side=document.querySelector('.plan-side'),iso=$('plan');
+  const mq=matchMedia('(min-width:981px) and (hover:hover) and (pointer:fine)');
+  const d3=()=>side.classList.toggle('d3',mq.matches&&!reduce);
+  d3();(mq.addEventListener?mq.addEventListener('change',d3):mq.addListener(d3));
+  if(!reduce){
+    side.addEventListener('pointermove',e=>{if(!side.classList.contains('d3'))return;const r=side.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;iso.style.setProperty('--rx',(40-y*8).toFixed(1)+'deg');iso.style.setProperty('--rz',(-20+x*10).toFixed(1)+'deg')});
+    side.addEventListener('pointerleave',()=>{iso.style.removeProperty('--rx');iso.style.removeProperty('--rz')});
+  }
+}catch(_){}
+
 /* ---------- cosmic fields: energy in motion, all connected ---------- */
 try{
-  const hero=$('top');
+  const hero=$('top'),coarse=matchMedia('(pointer:coarse)').matches||innerWidth<760;
   const fs=[...document.querySelectorAll('canvas.field')].map(c=>({c:c,x:c.getContext('2d'),host:c.parentElement,pts:[],w:0,h:0,vis:true,hero:c.id==='herofield',mx:-999,my:-999,a:0}));
   const size=o=>{
-    const d=Math.min(devicePixelRatio||1,2),r=o.host.getBoundingClientRect();
+    const d=Math.min(devicePixelRatio||1,coarse?1.5:2),r=o.host.getBoundingClientRect();
     o.w=Math.max(1,r.width);o.h=Math.max(1,r.height);o.c.width=Math.round(o.w*d);o.c.height=Math.round(o.h*d);o.x.setTransform(d,0,0,d,0,0);
-    const n=Math.max(14,Math.min(o.hero?64:40,Math.round(o.w*o.h/(o.hero?17000:26000))));
+    const n=Math.max(12,Math.min(o.hero?(coarse?40:64):(coarse?24:40),Math.round(o.w*o.h/(o.hero?17000:26000))));
     o.pts=Array.from({length:n},()=>({x:Math.random()*o.w,y:Math.random()*o.h,vx:(Math.random()-.5)*.17,vy:(Math.random()-.5)*.17,r:Math.random()*1.4+.5}));
   };
   const geo=o=>{
-    const x=o.x,R=Math.min(o.h*.42,300),cx=o.w-Math.min(o.w*.24,330),cy=o.h*.42;o.a+=0.0011;
-    if(o.w<760)return;
+    const x=o.x,sm=o.w<760,R=sm?o.w*.62:Math.min(o.h*.42,300),px=o.mx>-900?(o.mx/o.w-.5)*-18:0,py=o.mx>-900?(o.my/o.h-.5)*-14:0;o.gx=(o.gx||0)+(px-(o.gx||0))*.05;o.gy=(o.gy||0)+(py-(o.gy||0))*.05;const cx=(sm?o.w*1.02:o.w-Math.min(o.w*.24,330))+o.gx,cy=(sm?o.h*.13:o.h*.42)+o.gy;o.a+=0.0011;
+    x.globalAlpha=sm?.32:1;
     x.save();x.translate(cx,cy);x.rotate(o.a);x.strokeStyle='rgba(184,162,122,0.3)';x.lineWidth=1;
     x.beginPath();x.arc(0,0,R,0,Math.PI*2);x.stroke();
     x.setLineDash([2,10]);x.beginPath();x.arc(0,0,R*.8,0,Math.PI*2);x.stroke();x.setLineDash([]);
@@ -768,7 +949,7 @@ try{
     x.beginPath();x.arc(0,0,r*2,0,Math.PI*2);x.stroke();x.restore();
     x.save();x.translate(cx,cy);x.rotate(-o.a*1.7);x.strokeStyle='rgba(184,162,122,0.16)';
     for(let k=0;k<2;k++){x.beginPath();for(let i=0;i<3;i++){const t=i*2*Math.PI/3+k*Math.PI,px=Math.cos(t)*R*.68,py=Math.sin(t)*R*.68;i?x.lineTo(px,py):x.moveTo(px,py)}x.closePath();x.stroke()}
-    x.restore();
+    x.restore();x.globalAlpha=1;
   };
   const paint=o=>{
     const x=o.x;x.clearRect(0,0,o.w,o.h);
@@ -780,17 +961,19 @@ try{
       if(p.y<-20)p.y=o.h+20;else if(p.y>o.h+20)p.y=-20;
     }
     x.lineWidth=1;
+    const B=[[],[],[],[]];
     for(let i=0;i<o.pts.length;i++)for(let j=i+1;j<o.pts.length;j++){
       const a=o.pts[i],b=o.pts[j],dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy;
-      if(d2<19600){x.strokeStyle='rgba(184,162,122,'+(0.13*(1-Math.sqrt(d2)/140)).toFixed(3)+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      if(d2<19600)B[Math.min(3,(d2/4900)|0)].push(a.x,a.y,b.x,b.y);
     }
+    for(let k=0;k<4;k++){const L=B[k];if(!L.length)continue;x.strokeStyle='rgba(184,162,122,'+(0.13*(1-(k+.5)/4)).toFixed(3)+')';x.beginPath();for(let i=0;i<L.length;i+=4){x.moveTo(L[i],L[i+1]);x.lineTo(L[i+2],L[i+3])}x.stroke()}
     if(o.hero&&o.mx>-900){
       for(const p of o.pts){const dx=o.mx-p.x,dy=o.my-p.y,d2=dx*dx+dy*dy;
         if(d2<32400){x.strokeStyle='rgba(226,207,164,'+(0.34*(1-Math.sqrt(d2)/180)).toFixed(3)+')';x.beginPath();x.moveTo(o.mx,o.my);x.lineTo(p.x,p.y);x.stroke()}}
       x.fillStyle='rgba(226,207,164,0.8)';x.beginPath();x.arc(o.mx,o.my,2.4,0,Math.PI*2);x.fill();
     }
-    x.fillStyle='rgba(206,186,146,0.36)';
-    for(const p of o.pts){x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fill()}
+    x.fillStyle='rgba(206,186,146,0.36)';x.beginPath();
+    for(const p of o.pts){x.moveTo(p.x+p.r,p.y);x.arc(p.x,p.y,p.r,0,Math.PI*2)}x.fill();
   };
   if(fs.length){
     fs.forEach(size);
@@ -805,7 +988,8 @@ try{
         const io=new IntersectionObserver(es=>es.forEach(e=>{const o=fs.find(v=>v.c===e.target);if(o)o.vis=e.isIntersecting}),{rootMargin:'140px'});
         fs.forEach(o=>io.observe(o.c));
       }
-      const loop=()=>{for(const o of fs)if(o.vis)paint(o);requestAnimationFrame(loop)};
+      let last=0;const gap=coarse?33:0;
+      const loop=t=>{requestAnimationFrame(loop);if(document.hidden||t-last<gap)return;last=t;for(const o of fs)if(o.vis)paint(o)};
       requestAnimationFrame(loop);
     }
     let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{fs.forEach(size);if(reduce)fs.forEach(paint)},200)});
