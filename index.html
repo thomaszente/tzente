@@ -152,7 +152,13 @@ section{padding:108px 0;position:relative}
 @media (max-width:900px){.svc-grid{grid-template-columns:1fr}}
 
 /* THE PLAN (work) */
-.plan-grid{display:grid;grid-template-columns:minmax(300px,440px) 1fr;gap:48px;align-items:start}
+.plan-grid{display:grid;grid-template-columns:minmax(300px,440px) minmax(0,1fr);gap:48px;align-items:start}
+.plan-grid>*{min-width:0}
+.room img{max-width:100%}
+.room-tabs{display:none;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+.room-tabs::-webkit-scrollbar{display:none}
+.room-tabs button{flex:none;font-family:var(--label);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-mute);border:1px solid var(--line);border-radius:999px;padding:10px 14px}
+.room-tabs button.on{color:var(--metal-lit);border-color:var(--metal)}
 .plan-side{position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
 .plan-side .hint{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mute)}
 #plan{width:100%;height:auto;display:block}
@@ -215,7 +221,8 @@ section{padding:108px 0;position:relative}
 .mm-wave{display:flex;align-items:center;gap:4px;height:50px}
 .mm-wave i{display:block;width:3px;border-radius:2px;background:var(--metal);height:10px;animation:mmbar 1.9s ease-in-out infinite}
 @keyframes mmbar{0%,100%{height:8px;opacity:.45}50%{height:46px;opacity:1}}
-@media (max-width:980px){.plan-grid{grid-template-columns:1fr}.plan-side{position:static;max-width:520px}.nwrooms{grid-template-columns:1fr}.shots{grid-template-columns:1fr 1fr 1fr}}
+@media (max-width:700px){.room-tabs{display:flex}.plan-side .hint{display:none}.room{min-height:0}.mark{height:auto;max-width:100%}}
+@media (max-width:980px){.plan-grid{grid-template-columns:minmax(0,1fr);gap:28px}.plan-side{position:static;max-width:520px}.nwrooms{grid-template-columns:1fr}.shots{grid-template-columns:1fr 1fr 1fr}}
 
 /* DIFFERENCE */
 .pillars{border-top:1px solid var(--line)}
@@ -426,6 +433,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
           <circle class="you" id="you" cx="96" cy="100" r="4"/>
         </svg>
         <p class="hint">Click a room · arrow keys move between them</p>
+        <div class="room-tabs" id="roomTabs" role="tablist" aria-label="Projects"></div>
       </div>
       <div class="room" id="room" aria-live="polite"></div>
     </div>
@@ -632,6 +640,7 @@ function enter(k,scroll){
   if(!ROOMS[k])return;cur=k;const r=ROOMS[k],el=$('room');
   el.innerHTML='<div class="room-in"><header class="rhead"><p class="mood">'+r.mood+'</p><h3>'+r.t+'</h3><p class="sub">'+r.sub+'</p></header>'+r.html+'</div>';
   document.querySelectorAll('#plan .rm').forEach(g=>g.classList.toggle('on',g.dataset.room===k));
+  document.querySelectorAll('#roomTabs button').forEach(b=>{const on=b.dataset.room===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);if(on&&b.parentNode.scrollWidth>b.parentNode.clientWidth)b.parentNode.scrollTo({left:b.offsetLeft-b.parentNode.offsetLeft-16,behavior:'smooth'})});
   const y=$('you');y.setAttribute('cx',r.dot[0]);y.setAttribute('cy',r.dot[1]);
   el.querySelectorAll('[data-nw]').forEach(b=>b.addEventListener('click',()=>nwShow(+b.dataset.nw)));
   if(k==='warehouse')nwShow(0);
@@ -651,6 +660,7 @@ try{
       }
     });
   });
+  const tabs=$('roomTabs');document.querySelectorAll('#plan .rm').forEach(g=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.room=g.dataset.room;b.textContent=(g.getAttribute('aria-label')||'').split(':').pop().trim();b.addEventListener('click',()=>enter(g.dataset.room,false));tabs.append(b)});
   document.querySelectorAll('a[data-room]').forEach(a=>a.addEventListener('click',()=>enter(a.dataset.room,false)));
   enter('label',false);
 }catch(_){}
