@@ -279,6 +279,234 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
 .socials{display:flex;gap:20px;flex-wrap:wrap}
 .socials a{text-decoration:none;color:var(--text-dim)}
 .socials a:hover{color:var(--metal)}
+
+/* ======================================================================
+   PREMIUM LAYER — "lit gallery": warm light pools on a black stage,
+   film grain, champagne metal, architectural hairlines. Depth from light,
+   not from effects. Everything degrades cleanly on touch / reduced motion.
+   ====================================================================== */
+:root{
+  --ease:cubic-bezier(.2,.7,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --hair:rgba(226,207,164,.14); --glow:rgba(226,207,164,.10);
+  --metal-grad:linear-gradient(100deg,#8a7548 0%,#d9c393 28%,#f6e7c3 44%,#b8a27a 60%,#7d6a45 100%);
+  --sh-1:0 1px 0 rgba(255,255,255,.03) inset,0 1px 2px rgba(0,0,0,.4);
+  --sh-2:0 1px 0 rgba(255,255,255,.04) inset,0 10px 30px -12px rgba(0,0,0,.7),0 30px 80px -30px rgba(0,0,0,.8);
+  --sh-paper:0 1px 0 #fff inset,0 2px 4px rgba(60,48,24,.05),0 18px 40px -18px rgba(60,48,24,.22);
+}
+::selection{background:rgba(184,162,122,.35);color:#fff}
+html{scrollbar-color:#3a352c var(--ink)}
+body{text-rendering:optimizeLegibility;font-feature-settings:"kern","liga"}
+/* film grain over everything (static, GPU-cheap) */
+body::after{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.055;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* dark sections get a soft overhead light + vignette for depth */
+.cos::before,.mid::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(70% 55% at 50% -8%,var(--glow),transparent 70%),radial-gradient(120% 90% at 50% 120%,rgba(0,0,0,.55),transparent 60%)}
+.mid>.wrap{position:relative;z-index:1}
+/* paper bands: warm light raking from top-left, fine paper tooth */
+.paper{position:relative;background:radial-gradient(90% 70% at 12% 0%,#fffdf8 0%,transparent 60%),linear-gradient(180deg,#f6f4ef,#efece5)}
+.paper::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(125,106,69,.35),transparent)}
+section+section,header+section{box-shadow:0 -1px 0 var(--hair)}
+.paper+section,.paper{box-shadow:none}
+
+/* ---------- type refinements ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7}
+.sec-head .eyebrow::before,.hero .eyebrow::before{width:34px}
+.sec-head h2{letter-spacing:-.012em}
+.sec-head::after{height:1px;background:linear-gradient(90deg,var(--metal),transparent)}
+
+/* ---------- NAV: smoked glass that settles as you scroll ---------- */
+.nav{background:linear-gradient(180deg,rgba(12,12,12,.72),rgba(12,12,12,.55));backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s,box-shadow .4s}
+.nav.scrolled{background:rgba(10,10,10,.82);border-bottom-color:var(--hair);box-shadow:0 10px 30px -20px rgba(0,0,0,.9)}
+.nav .wrap{transition:height .4s var(--ease)}
+.nav.scrolled .wrap{height:58px}
+.brand{display:inline-flex;align-items:center;gap:.5em;transition:letter-spacing .4s var(--ease)}
+.brand:hover{letter-spacing:.34em}
+.nav ul a{position:relative;border-bottom:0}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--metal);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav ul a:hover::after,.nav ul a.on::after{transform:scaleX(1);transform-origin:left}
+.nav .cta{border-radius:999px;padding:10px 18px;position:relative;overflow:hidden;isolation:isolate}
+.nav .cta::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--metal-grad);transform:translateY(101%);transition:transform .5s var(--ease-out)}
+.nav .cta:hover{background:transparent}
+.nav .cta:hover::before{transform:none}
+.prog i{background:var(--metal-grad);box-shadow:0 0 12px rgba(226,207,164,.55)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:999px;position:relative;flex:none}
+.menu-btn i{position:absolute;left:12px;right:12px;height:1px;background:var(--text);transition:transform .4s var(--ease),opacity .3s}
+.menu-btn i:nth-child(1){top:16px}.menu-btn i:nth-child(2){top:20px;right:17px}.menu-btn i:nth-child(3){top:24px}
+.menu-open .menu-btn i:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .menu-btn i:nth-child(2){opacity:0}
+.menu-open .menu-btn i:nth-child(3){transform:translateY(-4px) rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:49;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:90px 32px 40px;
+  background:radial-gradient(80% 60% at 50% 0%,rgba(184,162,122,.14),transparent 70%),rgba(8,8,8,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
+.menu-open .sheet{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.sheet a{font-family:var(--display);font-size:clamp(36px,10vw,54px);line-height:1.15;text-decoration:none;color:var(--text);display:flex;align-items:baseline;gap:18px;
+  transform:translateY(18px);opacity:0;transition:transform .6s var(--ease-out),opacity .6s,color .2s}
+.sheet a small{font-family:var(--label);font-size:11px;letter-spacing:.3em;color:var(--metal)}
+.sheet a:hover{color:var(--metal-lit)}
+.menu-open .sheet a{transform:none;opacity:1}
+.sheet a:nth-child(2){transition-delay:.04s}.sheet a:nth-child(3){transition-delay:.08s}.sheet a:nth-child(4){transition-delay:.12s}.sheet a:nth-child(5){transition-delay:.16s}.sheet a:nth-child(6){transition-delay:.2s}
+.sheet .btn{margin-top:28px;align-self:flex-start}
+@media (max-width:980px){.menu-btn{display:block}.nav .wrap{gap:12px}.nav .cta{margin-left:auto}}
+@media (max-width:420px){.nav .cta{display:none}}
+body.menu-open{overflow:hidden}
+
+/* ---------- BUTTONS: metal that catches light ---------- */
+.btn{border-radius:999px;padding:17px 28px;position:relative;overflow:hidden;isolation:isolate;transition:color .35s var(--ease),border-color .35s,box-shadow .35s,transform .35s var(--ease-out)}
+.btn::after{content:"→";display:inline-block;transition:transform .45s var(--ease-out);font-family:var(--body);letter-spacing:0}
+.btn:hover::after{transform:translateX(4px)}
+.btn.solid{background:var(--metal-grad);background-size:220% 100%;background-position:60% 0;border-color:transparent;color:#14110b;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 10px 30px -10px rgba(184,162,122,.55);transition:background-position .8s var(--ease),box-shadow .35s,transform .35s var(--ease-out)}
+.btn.solid:hover{background:var(--metal-grad);background-size:220% 100%;background-position:0 0;color:#14110b;box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 14px 40px -10px rgba(226,207,164,.7)}
+.btn.ghost{border-color:rgba(184,162,122,.55);background:rgba(255,255,255,.015);backdrop-filter:blur(6px)}
+.btn.ghost::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--metal-grad);transform:translateY(101%);transition:transform .55s var(--ease-out)}
+.btn.ghost:hover{background:transparent;color:#14110b;border-color:transparent}
+.btn.ghost:hover::before{transform:none}
+.paper .btn.ghost:hover{color:#14110b}
+.btn:active{transform:scale(.98)}
+form .btn::after,.out .btn::after{content:none}
+
+/* ---------- HERO: a light source, layered depth, metal wordmark ---------- */
+.hero{position:relative;padding-top:clamp(70px,11vh,120px);min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:flex-end}
+.hero::before{background:
+  radial-gradient(42% 46% at 78% 40%,rgba(226,207,164,.13),transparent 70%),
+  radial-gradient(60% 50% at 10% 0%,rgba(255,255,255,.035),transparent 70%),
+  radial-gradient(120% 70% at 50% 115%,rgba(0,0,0,.7),transparent 60%)}
+.hero .wrap{width:100%;will-change:transform}
+.hero h1.zword{position:relative;line-height:.95;margin-left:-.04em}
+.hero h1.zword .zm{background:var(--metal-grad);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(226,207,164,.25));animation:sheen 9s var(--ease) infinite}
+.hero h1.zword .cw{background:linear-gradient(180deg,#fbf8f1 0%,#e9e3d6 55%,#b9b2a4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes sheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.hero .tag{color:var(--text)}
+.hero .meta{display:flex;align-items:center;gap:12px}
+.hero .meta::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--metal-lit);box-shadow:0 0 0 4px rgba(226,207,164,.12),0 0 14px rgba(226,207,164,.6);animation:pulse 2.6s ease-in-out infinite}
+.strip{border-top:1px solid var(--hair);background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);backdrop-filter:blur(2px)}
+.strip div+div{border-left-color:var(--hair)}
+.strip b{background:linear-gradient(180deg,#f6e7c3,#b8a27a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.scroll-cue{position:absolute;left:50%;bottom:22px;width:1px;height:46px;background:linear-gradient(var(--metal),transparent);transform-origin:top;animation:cue 2.4s var(--ease) infinite;z-index:1}
+@keyframes cue{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:760px){.scroll-cue{display:none}.hero{min-height:0}}
+/* staged entrance */
+.intro .hero .wrap>*{opacity:0;transform:translateY(18px);filter:blur(6px)}
+.intro-go .hero .wrap>*{opacity:1;transform:none;filter:none;transition:opacity 1.1s var(--ease-out),transform 1.1s var(--ease-out),filter 1.1s var(--ease-out)}
+.intro-go .hero .wrap>*:nth-child(2){transition-delay:.08s}.intro-go .hero .wrap>*:nth-child(3){transition-delay:.2s}
+.intro-go .hero .wrap>*:nth-child(4){transition-delay:.3s}.intro-go .hero .wrap>*:nth-child(5){transition-delay:.38s}
+.intro-go .hero .wrap>*:nth-child(6){transition-delay:.46s}.intro-go .hero .wrap>*:nth-child(7){transition-delay:.56s}
+
+/* ---------- reveals: rise + fade + focus ---------- */
+.rv{transition:transform 1.1s var(--ease-out),opacity 1.1s var(--ease-out),filter 1.1s var(--ease-out)}
+.anim .rv:not(.seen){transform:translateY(28px);opacity:0;filter:blur(4px)}
+
+/* ---------- PROOF ---------- */
+.proof-list{border-top-color:var(--hair)}
+.proof-list li{border-bottom-color:var(--hair);transition:padding-left .45s var(--ease),background .45s}
+.proof-list li:hover{padding-left:10px;background:linear-gradient(90deg,rgba(226,207,164,.05),transparent)}
+.proof-say em{background:linear-gradient(90deg,#f6e7c3,#b8a27a);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+
+/* ---------- ABOUT: framed portrait with offset plate + corner marks ---------- */
+.about figure{position:relative;border:0;overflow:visible;isolation:isolate}
+.about figure::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(184,162,122,.35);z-index:-1;transition:inset .8s var(--ease-out)}
+.about figure:hover::before{inset:10px -10px -10px 10px}
+.about figure .ph{overflow:hidden;box-shadow:var(--sh-2);position:relative}
+.about figure .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,12,12,.55)),radial-gradient(80% 60% at 70% 30%,rgba(226,207,164,.08),transparent 70%);pointer-events:none}
+.about img{transform:scale(1.06);transition:transform 1.6s var(--ease-out);will-change:transform}
+.about figure:hover img{transform:scale(1.02)}
+.about figure i.cm{position:absolute;width:16px;height:16px;border-color:var(--metal-lit);border-style:solid;border-width:0;z-index:2}
+.about figure i.cm.tl{top:-8px;left:-8px;border-top-width:1px;border-left-width:1px}
+.about figure i.cm.br{bottom:-8px;right:-8px;border-bottom-width:1px;border-right-width:1px}
+.about figure figcaption{position:absolute;left:18px;bottom:16px;z-index:2;font-family:var(--label);font-size:10.5px;letter-spacing:.3em;color:var(--metal-lit)}
+.about blockquote{position:relative}
+.about blockquote::before{content:"“";position:absolute;left:-.42em;top:-.28em;font-size:2.6em;color:rgba(184,162,122,.35);font-style:normal;line-height:1}
+.idents{border-top-color:var(--hair)}
+@media (max-width:880px){.about figure{margin-right:18px}.about blockquote::before{left:-.1em;top:-.62em}}
+
+/* ---------- ARC: stages as lit tabs ---------- */
+.arc-line{background:var(--hair)}
+.arc-line i{height:1px;top:0;background:var(--metal-grad);box-shadow:0 0 14px rgba(226,207,164,.7),0 0 2px rgba(226,207,164,.9)}
+.stage{position:relative;transition:transform .45s var(--ease-out)}
+.stage:hover{transform:translateY(-3px)}
+.stage[aria-selected="true"] .n{background:linear-gradient(180deg,#f6e7c3,#b8a27a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage-panel{animation:rise .6s var(--ease-out) both}
+.stage-panel ul,.stage-panel li{border-color:var(--hair)}
+
+/* ---------- SERVICE + ENGAGEMENT CARDS: paper objects with real depth ---------- */
+.svc,.eng{position:relative;overflow:hidden;border-radius:6px;box-shadow:var(--sh-paper);background:linear-gradient(180deg,#fffefb,#f8f6f1);transform-style:preserve-3d}
+.svc::before,.eng::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--metal-grad);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease-out)}
+.svc:hover::before,.eng:hover::before,.eng.pick::before{transform:none}
+.svc::after,.eng::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(184,162,122,.16),transparent 45%)}
+.svc:hover::after,.eng:hover::after{opacity:1}
+.svc:hover,.eng:hover{box-shadow:0 1px 0 #fff inset,0 4px 8px rgba(60,48,24,.05),0 34px 70px -24px rgba(60,48,24,.35)}
+.svc .num{display:flex;align-items:center;gap:12px}
+.svc .num::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(125,106,69,.4),transparent)}
+.eng{transition:border-color .25s,box-shadow .4s var(--ease),opacity .35s,transform .45s var(--ease-out)}
+.eng:hover{transform:translateY(-4px)}
+.fit-opts button{transition:all .35s var(--ease);box-shadow:0 1px 0 #fff inset,0 2px 6px rgba(60,48,24,.06)}
+.fit-opts button:hover{border-color:var(--metal-deep);transform:translateY(-1px)}
+.fit-opts button[aria-pressed="true"]{background:linear-gradient(180deg,#25221d,#161514);box-shadow:0 8px 20px -8px rgba(22,21,20,.5)}
+
+/* ---------- ROOMS: plan as a lit model, panel as smoked glass ---------- */
+#plan{filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+#plan .rm rect{transition:fill .5s var(--ease),stroke .5s}
+#plan .rm.on rect{fill:url(#roomGlow);stroke:var(--metal-lit)}
+.plan-wrap{perspective:1100px}
+.plan-wrap svg{transform:rotateX(14deg) rotateZ(0deg);transform-origin:50% 60%;transition:transform 1s var(--ease-out)}
+.plan-wrap:hover svg{transform:rotateX(6deg)}
+.room{position:relative;border:1px solid var(--hair);border-radius:6px;background:linear-gradient(180deg,rgba(24,23,21,.78),rgba(12,12,12,.86));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--sh-2)}
+.room::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(70% 40% at 20% 0%,rgba(226,207,164,.07),transparent 70%)}
+.room>*{position:relative}
+.room-tabs button{transition:all .35s var(--ease);background:rgba(255,255,255,.02)}
+.room-tabs button.on{background:rgba(184,162,122,.12);box-shadow:0 0 0 1px rgba(184,162,122,.25) inset}
+.shots img{border-radius:3px;transition:transform .8s var(--ease-out),filter .6s;filter:saturate(.9)}
+.shots img:hover{transform:scale(1.03);filter:none}
+.lk{border-radius:999px;transition:all .35s var(--ease)}
+.lk.lit{background:rgba(184,162,122,.06)}
+.nwrooms{border-color:var(--hair);border-radius:4px;background:rgba(255,255,255,.012)}
+.rel div{border-left:1px solid;border-image:linear-gradient(180deg,var(--metal-lit),transparent) 1}
+@media (max-width:700px){.plan-wrap svg{transform:none!important}}
+
+/* ---------- DIFFERENCE ---------- */
+.pillars,.pillar{border-color:var(--hair)}
+.pillar{position:relative;transition:padding-left .5s var(--ease-out)}
+.pillar::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--metal-grad);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease-out)}
+.pillar:hover::before{transform:none}
+
+/* ---------- CONTACT: inset fields with a focus glow ---------- */
+.contact-grid>div:last-child{position:relative;padding:clamp(22px,3vw,36px);border:1px solid var(--hair);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));box-shadow:var(--sh-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+input,select,textarea{background:rgba(0,0,0,.35);border-color:#2a2824;border-radius:6px;box-shadow:0 1px 0 rgba(255,255,255,.03),0 2px 6px rgba(0,0,0,.35) inset;transition:border-color .3s,box-shadow .3s}
+input:hover,select:hover,textarea:hover{border-color:#3a3630}
+input:focus,select:focus,textarea:focus{border-color:var(--metal);box-shadow:0 0 0 4px rgba(184,162,122,.12),0 2px 6px rgba(0,0,0,.35) inset}
+.ftabs{border-bottom-color:var(--hair)}
+.ftabs button{transition:color .3s}
+.out{border-color:rgba(184,162,122,.5);background:rgba(184,162,122,.04);animation:rise .5s var(--ease-out) both}
+.direct a{transition:color .3s,border-color .3s}
+
+/* ---------- FOOTER ---------- */
+footer{position:relative;border-top:0;padding:64px 0 46px;background:radial-gradient(60% 120% at 50% 0%,rgba(226,207,164,.06),transparent 70%)}
+footer::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,162,122,.45),transparent)}
+.f-mark{width:100%;font-family:var(--label);font-size:clamp(46px,13vw,190px);letter-spacing:.12em;line-height:1;text-align:center;margin:0 0 40px;white-space:nowrap;
+  background:linear-gradient(180deg,rgba(226,207,164,.22),rgba(226,207,164,0) 85%);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.socials a{position:relative;transition:color .3s}
+.socials a:hover{color:var(--metal-lit)}
+
+/* ---------- magnetic + misc ---------- */
+.mag{transition:transform .5s var(--ease-out)}
+:focus-visible{outline:1px solid var(--metal-lit);outline-offset:4px;border-radius:2px}
+
+.sheet .btn{font-family:var(--body);font-size:12px;line-height:1;letter-spacing:.2em;display:inline-flex;gap:10px;padding:17px 28px}
+.contact-grid>*{min-width:0}
+select{width:100%;max-width:100%;text-overflow:ellipsis}
+.row2>*,.field{min-width:0}
+section[id]{scroll-margin-top:56px}
+input,textarea{width:100%;min-width:0}
+.nav.scrolled{background:rgba(10,10,10,.92)}
+
+@media (prefers-reduced-motion:reduce){
+  .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
+  .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
+  body::after{display:none}
+}
 </style>
 </head>
 <body>
@@ -294,15 +522,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       <li><a href="#engage">Engage</a></li>
     </ul>
     <a class="cta" href="#contact">Start a project</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
   </div>
   <div class="prog" aria-hidden="true"><i id="prog"></i></div>
 </nav>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <a href="#proof"><small>01</small>Proof</a>
+  <a href="#arc"><small>02</small>Approach</a>
+  <a href="#services"><small>03</small>Services</a>
+  <a href="#work"><small>04</small>The Rooms</a>
+  <a href="#engage"><small>05</small>Engage</a>
+  <a class="btn solid" href="#contact">Start a project</a>
+</div>
 
 <header class="hero cos" id="top">
   <canvas class="field" id="herofield" aria-hidden="true"></canvas>
   <div class="wrap">
     <p class="eyebrow">Creative Direction &amp; Experience Studio · Led by Thomas Zente</p>
-    <h1 class="zword"><span class="zm">Z</span> CREATIV</h1>
+    <h1 class="zword"><span class="zm">Z</span> <span class="cw">CREATIV</span></h1>
     <p class="tag">Music. Spaces. Experiences. Culture.</p>
     <p class="sub">I take empty rooms and quiet nights and turn them into places people return to. Concept, space, programming, audience and execution, led as one vision.</p>
     <div class="btns">
@@ -317,6 +554,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       <div><b data-to="15000">15,000</b><span>people in the community</span></div>
     </div>
   </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
 </header>
 
 <section class="mid cos" id="proof">
@@ -349,7 +587,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
         <div><b>ZENTI</b><span>Music Producer, Artist, DJ</span></div>
       </div>
     </div>
-    <figure class="rv"><img src="img/portrait-wood.jpg" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1537" height="1023" loading="lazy"></figure>
+    <figure class="rv"><i class="cm tl" aria-hidden="true"></i><div class="ph"><img src="img/portrait-wood.jpg" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1200" height="799" loading="lazy" decoding="async"></div><i class="cm br" aria-hidden="true"></i><figcaption>Thomas Zente · Founder</figcaption></figure>
   </div>
 </section>
 
@@ -423,7 +661,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
     </div>
     <div class="plan-grid">
       <div class="plan-side">
-        <svg id="plan" viewBox="0 0 400 300" role="group" aria-label="Floor plan of projects">
+        <div class="plan-wrap"><svg id="plan" viewBox="0 0 400 300" role="group" aria-label="Floor plan of projects">
+          <defs><radialGradient id="roomGlow" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#E2CFA4" stop-opacity=".30"/><stop offset="1" stop-color="#B8A27A" stop-opacity=".06"/></radialGradient></defs>
           <rect x="1" y="1" width="398" height="298" fill="none" stroke="#333" stroke-width="1"/>
           <g class="rm" data-room="label" role="button" tabindex="0" aria-label="The Label: COSMOTION"><rect x="10" y="10" width="172" height="124"/><text class="rn" x="22" y="34">THE LABEL</text><text class="rp" x="22" y="48">COSMOTION · SINCE 2015</text></g>
           <g class="rm" data-room="booth" role="button" tabindex="0" aria-label="The Booth: ZENTI"><rect x="190" y="10" width="200" height="124"/><text class="rn" x="202" y="34">THE BOOTH</text><text class="rp" x="202" y="48">ZENTI · DJ / PRODUCER</text></g>
@@ -431,7 +670,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
           <g class="rm" data-room="warehouse" role="button" tabindex="0" aria-label="The Warehouse: NOWHERE"><rect x="136" y="142" width="152" height="148"/><text class="rn" x="148" y="166">THE WAREHOUSE</text><text class="rp" x="148" y="180">NOWHERE · 2026</text></g>
           <g class="rm" data-room="screen" role="button" tabindex="0" aria-label="The Screening Room: Multimedia"><rect x="296" y="142" width="94" height="148"/><text class="rn" x="306" y="166">SCREENING</text><text class="rn" x="306" y="179">ROOM</text><text class="rp" x="306" y="193">MULTIMEDIA</text></g>
           <circle class="you" id="you" cx="96" cy="100" r="4"/>
-        </svg>
+        </svg></div>
         <p class="hint">Click a room · arrow keys move between them</p>
         <div class="room-tabs" id="roomTabs" role="tablist" aria-label="Projects"></div>
       </div>
@@ -474,10 +713,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
       </div>
     </div>
     <div class="eng-grid" id="eng-grid">
-      <article class="eng" data-id="concept" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Concept Development</h3><p>Concept, identity, room plan and positioning for a new or repositioned space.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="launch" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Launch Partnership</h3><p>Concept through opening: design, programming, team and activation, handed over running.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="production" data-type="Experience design &amp; production"><span class="rec">Best fit</span><h3>Experience Production</h3><p>A night, activation, stage or private experience, fully directed and produced.</p><button class="ask">Ask about this</button></article>
-      <article class="eng" data-id="retainer" data-type="Creative direction &amp; programming"><span class="rec">Best fit</span><h3>Creative Direction Retainer</h3><p>Ongoing programming, talent and creative leadership for an operating venue.</p><button class="ask">Ask about this</button></article>
+      <article class="eng tilt-lite" data-id="concept" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Concept Development</h3><p>Concept, identity, room plan and positioning for a new or repositioned space.</p><button class="ask">Ask about this</button></article>
+      <article class="eng tilt-lite" data-id="launch" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Launch Partnership</h3><p>Concept through opening: design, programming, team and activation, handed over running.</p><button class="ask">Ask about this</button></article>
+      <article class="eng tilt-lite" data-id="production" data-type="Experience design &amp; production"><span class="rec">Best fit</span><h3>Experience Production</h3><p>A night, activation, stage or private experience, fully directed and produced.</p><button class="ask">Ask about this</button></article>
+      <article class="eng tilt-lite" data-id="retainer" data-type="Creative direction &amp; programming"><span class="rec">Best fit</span><h3>Creative Direction Retainer</h3><p>Ongoing programming, talent and creative leadership for an operating venue.</p><button class="ask">Ask about this</button></article>
     </div>
   </div>
 </section>
@@ -533,6 +772,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
+    <p class="f-mark" aria-hidden="true">Z CREATIV</p>
     <span>© Z CREATIV · Thomas Zente · Creative Direction &amp; Experience Design</span>
     <div class="socials">
       <a href="https://instagram.com/zentimusic">Instagram</a>
@@ -746,6 +986,43 @@ try{
     });
   }
 }catch(_){}
+
+
+/* ---------- premium layer: nav, menu, intro, spotlight, magnetic, parallax ---------- */
+try{
+  const nav=document.querySelector('.nav'),fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const ns=()=>nav.classList.toggle('scrolled',scrollY>24);addEventListener('scroll',ns,{passive:true});ns();
+  // mobile menu
+  const mb=$('menuBtn'),sh=$('sheet');
+  const setMenu=o=>{document.body.classList.toggle('menu-open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu');sh.setAttribute('aria-hidden',!o);if(o)sh.querySelector('a').focus()};
+  mb.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+  sh.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setMenu(false);mb.focus()}});
+  addEventListener('resize',()=>{if(innerWidth>980)setMenu(false)});
+  if(!reduce){
+    // staged hero entrance
+    document.body.classList.add('intro');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add('intro-go')));
+    setTimeout(()=>document.body.classList.remove('intro'),2200);
+    // cursor spotlight on cards
+    if(fine)document.querySelectorAll('.svc,.eng').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+    // magnetic buttons
+    if(fine)document.querySelectorAll('.btn,.nav .cta').forEach(b=>{b.classList.add('mag');
+      b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.18).toFixed(1)+'px,'+(y*.28).toFixed(1)+'px)'});
+      b.addEventListener('pointerleave',()=>{b.style.transform=''})});
+    // hero depth: content drifts against pointer; scroll lifts and fades it
+    const hw=document.querySelector('.hero .wrap'),hero=$('top');let px=0,py=0,tick=false;
+    const apply=()=>{tick=false;const y=Math.min(scrollY,innerHeight),k=y/innerHeight;
+      hw.style.transform='translate3d('+(px*-8).toFixed(1)+'px,'+(y*.18+py*-6).toFixed(1)+'px,0)';hw.style.opacity=(1-k*.9).toFixed(3)};
+    const req=()=>{if(!tick){tick=true;requestAnimationFrame(apply)}};
+    if(fine)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;req()});
+    addEventListener('scroll',()=>{if(scrollY<innerHeight*1.1)req()},{passive:true});
+    // portrait parallax
+    const img=document.querySelector('.about figure img');
+    if(img){let t2=false;const pa=()=>{t2=false;const r=img.parentElement.getBoundingClientRect(),c=(r.top+r.height/2-innerHeight/2)/innerHeight;if(Math.abs(c)<1.2)img.style.transform='scale(1.08) translate3d(0,'+(c*-22).toFixed(1)+'px,0)'};
+      addEventListener('scroll',()=>{if(!t2){t2=true;requestAnimationFrame(pa)}},{passive:true});pa()}
+  }
+}catch(_){document.body.classList.remove('intro')}
 
 /* ---------- cosmic fields: energy in motion, all connected ---------- */
 try{
