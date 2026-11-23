@@ -6,6 +6,20 @@
 <meta name="description" content="Z CREATIV, the creative direction and experience design practice of Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
 <meta name="theme-color" content="#0C0C0C">
 <title>Z CREATIV — Spaces, Sound, Culture</title>
+<link rel="canonical" href="https://zcreativ.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Z CREATIV">
+<meta property="og:url" content="https://zcreativ.vercel.app/">
+<meta property="og:title" content="Z CREATIV — Spaces, Sound, Culture">
+<meta property="og:description" content="Creative direction and experience design by Thomas Zente: venues, immersive experiences and cultural programming. Austin, NYC, Miami.">
+<meta property="og:image" content="https://zcreativ.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Z CREATIV wordmark in gold and ivory on black">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Z CREATIV — Spaces, Sound, Culture">
+<meta name="twitter:description" content="Creative direction and experience design by Thomas Zente: venues, immersive experiences and cultural programming. Austin, NYC, Miami.">
+<meta name="twitter:image" content="https://zcreativ.vercel.app/img/og.jpg">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="img/app/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="img/app/apple-touch-icon.png">
@@ -253,6 +267,7 @@ section{padding:108px 0;position:relative}
 .ftabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:22px}
 .ftabs button{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 16px;color:var(--text-mute);border-bottom:2px solid transparent;margin-bottom:-1px}
 .ftabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--metal)}
+.ft-one{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 0;color:var(--text);border-bottom:2px solid var(--metal);margin-bottom:-1px}
 form{display:flex;flex-direction:column;gap:16px}
 form[hidden]{display:none}
 .field{display:flex;flex-direction:column;gap:7px}
@@ -704,7 +719,7 @@ input,textarea{width:100%;min-width:0}
       <li><b data-to="25">25</b><span>events produced, across multi-room nights of music, art and performance</span></li>
       <li><b data-to="100" data-pre="$" data-suf="K">$100K</b><span>in revenue to date, with a $30 door held all season</span></li>
       <li><b data-to="20383" data-pre="$">$20,383</b><span>record final weekend, more than double the average</span></li>
-      <li><b data-to="12000">12,000</b><span>square feet, programmed as eight distinct rooms</span></li>
+      <li><b data-to="12000">12,000</b><span>square feet, programmed as multi-room nights</span></li>
     </ul>
   </div>
 </section>
@@ -796,10 +811,7 @@ input,textarea{width:100%;min-width:0}
       </div>
     </div>
     <div>
-      <div class="ftabs" role="tablist" aria-label="Inquiry type">
-        <button role="tab" id="ft-0" aria-selected="true" aria-controls="inq">Project inquiry</button>
-        <button role="tab" id="ft-1" aria-selected="false" aria-controls="zbook">Book ZENTI</button>
-      </div>
+      <div class="ftabs"><span class="ft-one">Project inquiry</span></div>
       <form id="inq" novalidate>
         <div class="row2">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" autocomplete="name"></div>
@@ -815,19 +827,6 @@ input,textarea{width:100%;min-width:0}
         <button class="btn solid" type="submit" style="align-self:flex-start">Prepare my inquiry</button>
         <div class="out" id="out" role="status" aria-live="polite"><pre id="out-text"></pre><div class="acts"><button class="btn ghost" type="button" id="copy">Copy message</button><a class="btn ghost" id="mail" href="#">Open in email</a></div><small id="out-note"></small></div>
       </form>
-      <form id="zbook" novalidate hidden>
-        <div class="row2">
-          <div class="field"><label for="z-name">Your name</label><input id="z-name" autocomplete="name"></div>
-          <div class="field"><label for="z-ev">Event or venue</label><input id="z-ev"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="z-date">Date</label><input id="z-date" type="date"></div>
-          <div class="field"><label for="z-city">City</label><input id="z-city"></div>
-        </div>
-        <div class="field"><label for="z-msg">Set length, lineup, anything else</label><textarea id="z-msg"></textarea></div>
-        <button class="btn solid" type="submit" style="align-self:flex-start">Prepare booking request</button>
-        <div class="out" id="zout" role="status" aria-live="polite"><pre id="zout-text"></pre><div class="acts"><button class="btn ghost" type="button" id="zcopy">Copy message</button><a class="btn ghost" id="zmail" href="#">Open in email</a></div><small id="zout-note"></small></div>
-      </form>
     </div>
   </div>
 </section>
@@ -837,10 +836,7 @@ input,textarea{width:100%;min-width:0}
     <p class="f-mark" aria-hidden="true">Z CREATIV</p>
     <span>© Z CREATIV · Thomas Zente · Creative Direction &amp; Experience Design</span>
     <div class="socials">
-      <a href="https://instagram.com/zentimusic">Instagram</a>
-      <a href="https://soundcloud.com/zentimusic">SoundCloud</a>
-      <a href="https://linktr.ee/zenti">Linktree</a>
-      <a href="mailto:thomaszente@gmail.com">Email</a>
+      <a href="mailto:thomaszente@gmail.com">thomaszente@gmail.com</a>
     </div>
   </div>
 </footer>
@@ -919,7 +915,6 @@ function enter(k,scroll){
   const y=$('you');y.setAttribute('cx',r.dot[0]);y.setAttribute('cy',r.dot[1]);
   el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>enter(b.dataset.go,false)));
   el.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{b.previousElementSibling.querySelectorAll('[hidden]').forEach(s=>s.hidden=false);b.remove()}));
-  el.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>ftab(1)));
   if(scroll&&innerWidth<980)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 try{
@@ -949,7 +944,7 @@ try{
     grid.querySelectorAll('.eng').forEach(e=>e.classList.toggle('pick',on&&e.dataset.id===b.dataset.pick));
   }));
   grid.querySelectorAll('.ask').forEach(b=>b.addEventListener('click',()=>{
-    const card=b.closest('.eng');ftab(0);
+    const card=b.closest('.eng');
     $('f-type').value=card.dataset.type.replace('&amp;','&');
     const m=$('f-msg');if(!m.value)m.value='I’m interested in '+card.querySelector('h3').textContent+'. ';
     $('contact').scrollIntoView({behavior:reduce?'auto':'smooth'});
@@ -957,12 +952,7 @@ try{
 }catch(_){}
 
 /* ---------- forms ---------- */
-function ftab(i){
-  const t=[$('ft-0'),$('ft-1')],f=[$('inq'),$('zbook')];
-  t.forEach((b,j)=>b.setAttribute('aria-selected',j===i));f.forEach((x,j)=>x.hidden=j!==i);
-}
 try{
-  $('ft-0').addEventListener('click',()=>ftab(0));$('ft-1').addEventListener('click',()=>ftab(1));
   const v=id=>($(id).value||'').trim();
   const wire=(form,build,outId,txtId,noteId,copyId,mailId,subject)=>{
     form.addEventListener('submit',e=>{
@@ -979,11 +969,6 @@ try{
     });
   };
   wire($('inq'),()=>v('f-name')?('Hi Thomas,\n\n'+(v('f-msg')?v('f-msg')+'\n\n':'')+'Project type: '+v('f-type')+'\nTiming: '+v('f-when')+'\n\n'+v('f-name')+(v('f-org')?'\n'+v('f-org'):'')):'','out','out-text','out-note','copy','mail',()=>'Project inquiry: '+v('f-type'));
-  wire($('zbook'),()=>{
-    if(!v('z-name'))return '';
-    const rows=[['Event or venue',v('z-ev')],['Date',v('z-date')],['City',v('z-city')]].filter(r=>r[1]).map(r=>r[0]+': '+r[1]).join('\n');
-    return 'Hi Thomas,\n\nI’d like to book ZENTI.'+(rows?'\n\n'+rows:'')+(v('z-msg')?'\n\n'+v('z-msg'):'')+'\n\n'+v('z-name');
-  },'zout','zout-text','zout-note','zcopy','zmail',()=>'ZENTI booking inquiry');
 }catch(_){}
 
 /* ---------- scroll: progress, active link, reveals, count-up ---------- */
