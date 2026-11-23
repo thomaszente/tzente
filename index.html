@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Z CREATIV, the creative direction and experience studio of Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
+<meta name="description" content="Z CREATIV, the creative direction and experience design practice of Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
 <meta name="theme-color" content="#0C0C0C">
 <title>Z CREATIV — Spaces, Sound, Culture</title>
 <link rel="manifest" href="manifest.webmanifest">
@@ -187,7 +187,8 @@ section{padding:108px 0;position:relative}
 .cols ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:15px;color:var(--text-dim)}
 .sec{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:10px}
 .flow{font-family:var(--display);font-size:clamp(17.5px,1.7vw,20.5px);line-height:1.6;color:var(--text-dim)}
-.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin:0 9px}
+.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin-left:9px}
+.flow{overflow-wrap:anywhere}
 .more{align-self:flex-start;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal)}
 .more:hover{color:var(--metal-lit)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;border-top:1px solid var(--line);padding-top:20px}
@@ -205,12 +206,6 @@ section{padding:108px 0;position:relative}
 .rel div{border-left:2px solid var(--metal);padding-left:12px}
 .rel b{display:block;font-family:var(--display);font-size:21px;font-weight:500}
 .rel span{font-size:12.5px;color:var(--text-mute)}
-.nwrooms{display:grid;grid-template-columns:210px 1fr;gap:24px;border:1px solid var(--line);padding:20px}
-.nwrooms .list{display:flex;flex-direction:column}
-.nwrooms .list button{text-align:left;padding:8px 10px;font-size:14px;color:var(--text-mute);border-left:2px solid transparent;transition:all .2s}
-.nwrooms .list button[aria-selected="true"]{color:var(--text);border-left-color:var(--metal);background:#181818}
-.nwrooms h5{font-family:var(--display);font-size:28px;font-weight:500;margin-bottom:6px}
-.nwrooms .m{font-family:var(--label);font-size:10.5px;letter-spacing:.22em;color:var(--metal);margin-bottom:10px}
 .mm-banner{position:relative;height:150px;background:#0A0A0A;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .mm-strip{position:absolute;inset:0;opacity:.45}
 .mm-strip svg{display:block;height:100%;width:200%;animation:mmscroll 22s linear infinite}
@@ -222,8 +217,7 @@ section{padding:108px 0;position:relative}
 .mm-wave i{display:block;width:3px;border-radius:2px;background:var(--metal);height:10px;animation:mmbar 1.9s ease-in-out infinite}
 @keyframes mmbar{0%,100%{height:8px;opacity:.45}50%{height:46px;opacity:1}}
 @media (max-width:700px){.room-tabs{display:flex}.plan-side .hint{display:none}.room{min-height:0}.mark{height:auto;max-width:100%}}
-@media (max-width:980px){.plan-grid{grid-template-columns:minmax(0,1fr);gap:28px}.plan-side{position:static;max-width:520px}.nwrooms{grid-template-columns:1fr}.shots{grid-template-columns:1fr 1fr 1fr}}
-
+@media (max-width:980px){.plan-grid{grid-template-columns:minmax(0,1fr);gap:28px}.plan-side{position:static;max-width:520px}.shots{grid-template-columns:1fr 1fr 1fr}}
 /* DIFFERENCE */
 .pillars{border-top:1px solid var(--line)}
 .pillar{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding-left .3s}
@@ -367,7 +361,7 @@ body.menu-open{overflow:hidden}
 form .btn::after,.out .btn::after{content:none}
 
 /* ---------- HERO: a light source, layered depth, metal wordmark ---------- */
-.hero{position:relative;padding-top:clamp(70px,11vh,120px);min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:flex-end}
+.hero{position:relative;padding-top:clamp(56px,9vh,110px);min-height:min(calc(100svh - 66px),920px);display:flex;flex-direction:column;justify-content:flex-end}
 .hero::before{background:
   radial-gradient(42% 46% at 78% 40%,rgba(226,207,164,.13),transparent 70%),
   radial-gradient(60% 50% at 10% 0%,rgba(255,255,255,.035),transparent 70%),
@@ -462,7 +456,6 @@ form .btn::after,.out .btn::after{content:none}
 .shots img:hover{transform:scale(1.03);filter:none}
 .lk{border-radius:999px;transition:all .35s var(--ease)}
 .lk.lit{background:rgba(184,162,122,.06)}
-.nwrooms{border-color:var(--hair);border-radius:4px;background:rgba(255,255,255,.012)}
 .rel div{border-left:1px solid;border-image:linear-gradient(180deg,var(--metal-lit),transparent) 1}
 @media (max-width:700px){.plan-wrap svg{transform:none!important}}
 
@@ -502,6 +495,15 @@ section[id]{scroll-margin-top:56px}
 input,textarea{width:100%;min-width:0}
 .nav.scrolled{background:rgba(10,10,10,.92)}
 
+/* hero stats: sit on their own dark plate, clear of the geometry */
+.strip{position:relative;z-index:2;margin-top:52px;background:linear-gradient(180deg,rgba(12,12,12,.55),rgba(12,12,12,.92));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(226,207,164,.22);box-shadow:0 -30px 60px -30px rgba(0,0,0,.9)}
+.strip::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(226,207,164,.6),transparent)}
+.strip div{padding-left:22px}
+.strip div:first-child{padding-left:0}
+.strip span{color:var(--text-dim)}
+@media (max-width:760px){.strip div:nth-child(3){padding-left:0}}
+@media (max-width:760px){.hero::before{background:radial-gradient(60% 40% at 80% 20%,rgba(226,207,164,.12),transparent 70%)}}
+
 @media (prefers-reduced-motion:reduce){
   .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
   .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
@@ -518,7 +520,7 @@ input,textarea{width:100%;min-width:0}
       <li><a href="#proof">Proof</a></li>
       <li><a href="#arc">Approach</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#work">The Rooms</a></li>
+      <li><a href="#work">Projects</a></li>
       <li><a href="#engage">Engage</a></li>
     </ul>
     <a class="cta" href="#contact">Start a project</a>
@@ -530,7 +532,7 @@ input,textarea{width:100%;min-width:0}
   <a href="#proof"><small>01</small>Proof</a>
   <a href="#arc"><small>02</small>Approach</a>
   <a href="#services"><small>03</small>Services</a>
-  <a href="#work"><small>04</small>The Rooms</a>
+  <a href="#work"><small>04</small>Projects</a>
   <a href="#engage"><small>05</small>Engage</a>
   <a class="btn solid" href="#contact">Start a project</a>
 </div>
@@ -538,13 +540,13 @@ input,textarea{width:100%;min-width:0}
 <header class="hero cos" id="top">
   <canvas class="field" id="herofield" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="eyebrow">Creative Direction &amp; Experience Studio · Led by Thomas Zente</p>
+    <p class="eyebrow">Creative Direction &amp; Experience Design · Led by Thomas Zente</p>
     <h1 class="zword"><span class="zm">Z</span> <span class="cw">CREATIV</span></h1>
     <p class="tag">Music. Spaces. Experiences. Culture.</p>
     <p class="sub">I take empty rooms and quiet nights and turn them into places people return to. Concept, space, programming, audience and execution, led as one vision.</p>
     <div class="btns">
       <a class="btn solid" href="#contact">Start a project</a>
-      <a class="btn ghost" href="#work">Walk the rooms</a>
+      <a class="btn ghost" href="#work">Explore projects</a>
     </div>
     <p class="meta">ATX, NYC, MIA · Available internationally</p>
     <div class="strip">
@@ -582,7 +584,7 @@ input,textarea{width:100%;min-width:0}
       <blockquote>The goal is not to create something people attend. It’s to create something they remember, return to and become part of.</blockquote>
       <p>For more than 15 years I’ve developed immersive events, cultural concepts and experiential environments. Great spaces are more than architecture, and great events are more than entertainment. Everything is energy in motion, and a room works when every part of it moves together.</p>
       <div class="idents">
-        <div><b>Z CREATIV</b><span>Creative direction &amp; experience studio</span></div>
+        <div><b>Z CREATIV</b><span>Creative direction &amp; experience design</span></div>
         <div><b>COSMOTION</b><span>Platform &amp; label, since 2015</span></div>
         <div><b>ZENTI</b><span>Music Producer, Artist, DJ</span></div>
       </div>
@@ -656,7 +658,7 @@ input,textarea{width:100%;min-width:0}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Selected work</p>
-      <h2>Walk the rooms</h2>
+      <h2>Explore projects</h2>
       <p>Every project is a room. Step into one on the plan.</p>
     </div>
     <div class="plan-grid">
@@ -813,19 +815,9 @@ try{
 
 /* ---------- rooms ---------- */
 const F=(h,items,cap)=>{
-  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join('');
+  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join(' ');
   return '<div class="sec"><h4>'+h+'</h4><p class="flow">'+sp+'</p>'+(cap&&items.length>cap?'<button class="more" data-more>Show all '+items.length+'</button>':'')+'</div>';
 };
-const NW=[
-  ['Artist Lounge','MOODY · REFINED · GALLERY','The arrival. A gallery-style front desk and reception that sets the tone the moment guests walk in.'],
-  ['Sacred Salon','SENSUAL · INTIMATE · TRANSFORMATIVE','Dark bar, velvet drapes and candlelight under the neon line “Enter. Feel. Transform.”'],
-  ['Casablanca Lounge','WARM · WANDERING · NEON','Moroccan-influenced: deep red velvet, lanterns, Persian rugs and plants, under “Not all who wander are lost.”'],
-  ['The Wanderer’s Room','HIDDEN · DARK WOOD · CANDLES','A private library from another era, tucked away for those who go looking.'],
-  ['The Bar','DRINK · CREATE · CONNECT','Industrial and warm, with three modes: evening, late night and event.'],
-  ['Main Event Hall','300–600 CAPACITY','The full-depth warehouse hall with production-grade sound, light and AV.'],
-  ['Market & Stage Hall','MARKET BY DAY · STAGE BY NIGHT','Vendor niches along a draped hall with a music stage at the far end.'],
-  ['Wellness Room','DAYTIME · RESTORATIVE','Breathwork, movement and sound sessions that put the venue to work all week.']
-];
 const bars=Array.from({length:20},(_,i)=>'<i style="animation-delay:'+(i*0.12).toFixed(2)+'s"></i>').join('');
 const ROOMS={
 label:{t:'THE LABEL',mood:'COSMOTION · LABEL &amp; PLATFORM · 2015 – NOW',sub:'A cultural platform, an event series and an independent label, sustained for a decade.',dot:[96,100],
@@ -837,10 +829,9 @@ label:{t:'THE LABEL',mood:'COSMOTION · LABEL &amp; PLATFORM · 2015 – NOW',su
  F('PARTNERED EXPERIENCES',['Opulent Temple','Art With Me','Orijins','JunXion','Sonic Jungle','Stil Vor Talent','AESTHESIS','FAIRYTALES','ARTBOMB','Concourse Project','Indra’s Awarehouse'])+
  '<div class="links"><a class="lk lit" href="https://instagram.com/cosmotion.space">Instagram</a><a class="lk" href="https://linktr.ee/cosmotion.space">All COSMOTION links</a></div>'},
 booth:{t:'THE BOOTH',mood:'.. MAGIC // MUSIC ..',sub:'ZENTI. International DJ and music producer.',dot:[290,100],
- html:'<img class="mark" src="img/zenti-logo.png" alt="ZENTI" width="145" height="56" style="height:56px">'+
- '<p class="lede">Hypnotic, unpredictable musical journeys where deep grooves, worldly rhythms and cinematic textures converge.</p>'+
+ html: '<p class="lede">Hypnotic, unpredictable musical journeys where deep grooves, worldly rhythms and cinematic textures converge.</p>'+
  '<p>Rooted in Austin and shaped by years immersed in underground scenes from New York and Miami to Burning Man, his sound moves fluidly between cultures, genres and emotions. Known for intuitive, emotionally driven sets, and for approaching every creation with heart, soul and intention.</p>'+
- '<div class="links"><a class="lk lit" href="https://open.spotify.com/artist/5cwPDq4NrVBXRySkiLMkiL">Listen on Spotify</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/original-tracks">Original tracks</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/zenti-guest-podcasts">Guest podcasts</a><a class="lk" href="https://www.beatport.com/artist/zenti/1146352">Beatport</a><a class="lk" href="https://instagram.com/zentimusic">Instagram</a><a class="lk" href="https://drive.google.com/file/d/13JxnzFcBZDKWPX39h9uX-s_7mtdCrFCD/view">Press kit</a><a class="lk" href="#contact" data-book>Book ZENTI</a></div>'+
+ '<div class="links"><a class="lk lit" href="https://zenti-epk.vercel.app" target="_blank" rel="noopener">ZENTI press kit</a></div>'+
  '<div class="sec"><h4>ORIGINALS &amp; RELEASES</h4><div class="rel"><div><b>Find That Love</b><span>2026 · latest</span></div><div><b>Dust Bunny</b><span>2026</span></div><div><b>Boomin’ Now</b><span>2026</span></div><div><b>Zen Mood</b><span>2025 · EP</span></div><div><b>Zen Fur Elise</b><span>2025</span></div></div></div>'+
  F('FESTIVALS',['Envision Festival','TX Eclipse Festival','Lightning In A Bottle','LoveBurn','Electric Fuel Station'])+
  F('LABELS',['Still Play','Cafe De Anatolia','A Magic Sun','Lump Records','Kosa','COSMOTION'])+
@@ -854,13 +845,11 @@ garage:{t:'THE GARAGE',mood:'STARDUST GARAGE · VENUE · AUSTIN · 2025',sub:'A 
  '<div class="stats"><div><b>~4,400</b><span>sq ft of indoor event space</span></div><div><b>800</b><span>capacity, plus outdoor areas</span></div></div>'+
  '<div class="links"><a class="lk" href="https://www.sdgatx.com">sdgatx.com</a></div>'},
 warehouse:{t:'THE WAREHOUSE',mood:'NOWHERE · VENUE · AUSTIN · 2026',sub:'Austin’s Conscious Creative Center. Come as you are. Become more.',dot:[212,236],
- html:'<img class="mark" src="img/nowhere-logo.png" alt="NOWHERE" width="84" height="84" style="height:84px">'+
- '<p class="lede">Part club, part gallery, part wellness space, launched in a 12,000 sq ft warehouse in the St. Elmo Arts District.</p>'+
+ html:'<p class="lede">Part club, part gallery, part wellness space, launched in a 12,000 sq ft warehouse in the St. Elmo Arts District.</p>'+
  '<div class="stats"><div><b>25</b><span>events produced</span></div><div><b>10,000</b><span>guests to date</span></div><div><b>$100K</b><span>revenue to date</span></div></div>'+
  '<div class="cols"><div><h4>THE CHALLENGE</h4><ul><li>Prove Austin wanted this before asking anyone to fund the finished vision: identity, recurring programming and a paying audience, built in an unfinished room.</li></ul></div><div><h4>MY ROLE</h4><ul><li>Co-Founder, Creative Director, Lead Producer and Programmer</li><li>Concept, programming, guest experience, brand, talent, marketing and execution</li></ul></div></div>'+
  '<div class="sec"><h4>PHASE I · MAY 22 – JULY 25, 2026</h4><div class="stats" style="border:0;padding:0"><div><b>10</b><span>consecutive weekends, none missed</span></div><div><b>20</b><span>event nights</span></div><div><b>$96K</b><span>gross revenue</span></div></div>'+
  '<div class="cols" style="margin-top:8px"><ul><li>A $30 door held all season, with advance sales growing week over week</li><li>Finished at peak: the final weekend set the record at $20,383</li><li>Ardalan, Sarkis Mikael and the official Adam Ten afterparty</li><li>Live painting, projection mapping, aerialists, vendors and gallery showcases</li></ul></div></div>'+
- '<div class="sec"><h4>THE VENUE PLAN · EIGHT ROOMS, EACH A DIFFERENT WORLD</h4><div class="nwrooms"><div class="list" role="tablist" aria-label="NOWHERE rooms">'+NW.map((r,i)=>'<button role="tab" data-nw="'+i+'" aria-selected="'+(i===0)+'">'+r[0]+'</button>').join('')+'</div><div id="nwd"></div></div></div>'+
  '<div class="links"><a class="lk" href="https://nowhereaustin.com">nowhereaustin.com</a></div>'},
 screen:{t:'THE SCREENING ROOM',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I came up as a film producer. That craft now goes into the media around the work.',dot:[343,236],
  html:'<div class="mm-banner" aria-hidden="true"><div class="mm-strip"><svg viewBox="0 0 1200 200" preserveAspectRatio="none"><defs><pattern id="perf" width="60" height="200" patternUnits="userSpaceOnUse"><rect x="18" y="14" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/><rect x="18" y="166" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/></pattern></defs><rect width="1200" height="200" fill="url(#perf)"/><line x1="0" y1="48" x2="1200" y2="48" stroke="#B8A27A"/><line x1="0" y1="152" x2="1200" y2="152" stroke="#B8A27A"/></svg></div><div class="mm-art"><svg class="mm-ap" viewBox="0 0 120 120" width="78" height="78"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="60" cy="60" r="52"/><polygon points="60,18 96,39 96,81 60,102 24,81 24,39"/><path d="M60 18 L60 102 M96 39 L24 81 M96 81 L24 39" opacity=".4"/><circle cx="60" cy="60" r="13"/></g></svg><span class="mm-wave">'+bars+'</span></div></div>'+
@@ -869,21 +858,12 @@ screen:{t:'THE SCREENING ROOM',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I 
 };
 const order=['label','booth','garage','warehouse','screen'];
 let cur='label';
-function nwShow(i){
-  const d=$('nwd');if(!d)return;
-  document.querySelectorAll('[data-nw]').forEach(b=>b.setAttribute('aria-selected',+b.dataset.nw===i));
-  d.innerHTML='';const h=document.createElement('h5');h.textContent=NW[i][0];
-  const m=document.createElement('p');m.className='m';m.textContent=NW[i][1];
-  const p=document.createElement('p');p.textContent=NW[i][2];d.append(h,m,p);
-}
 function enter(k,scroll){
   if(!ROOMS[k])return;cur=k;const r=ROOMS[k],el=$('room');
   el.innerHTML='<div class="room-in"><header class="rhead"><p class="mood">'+r.mood+'</p><h3>'+r.t+'</h3><p class="sub">'+r.sub+'</p></header>'+r.html+'</div>';
   document.querySelectorAll('#plan .rm').forEach(g=>g.classList.toggle('on',g.dataset.room===k));
   document.querySelectorAll('#roomTabs button').forEach(b=>{const on=b.dataset.room===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);if(on&&b.parentNode.scrollWidth>b.parentNode.clientWidth)b.parentNode.scrollTo({left:b.offsetLeft-b.parentNode.offsetLeft-16,behavior:'smooth'})});
   const y=$('you');y.setAttribute('cx',r.dot[0]);y.setAttribute('cy',r.dot[1]);
-  el.querySelectorAll('[data-nw]').forEach(b=>b.addEventListener('click',()=>nwShow(+b.dataset.nw)));
-  if(k==='warehouse')nwShow(0);
   el.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{b.previousElementSibling.querySelectorAll('[hidden]').forEach(s=>s.hidden=false);b.remove()}));
   el.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>ftab(1)));
   if(scroll&&innerWidth<980)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
@@ -1013,10 +993,10 @@ try{
     // hero depth: content drifts against pointer; scroll lifts and fades it
     const hw=document.querySelector('.hero .wrap'),hero=$('top');let px=0,py=0,tick=false;
     const apply=()=>{tick=false;const y=Math.min(scrollY,innerHeight),k=y/innerHeight;
-      hw.style.transform='translate3d('+(px*-8).toFixed(1)+'px,'+(y*.18+py*-6).toFixed(1)+'px,0)';hw.style.opacity=(1-k*.9).toFixed(3)};
+      hw.style.transform='translate3d('+(px*-8).toFixed(1)+'px,'+(y*.18+py*-6).toFixed(1)+'px,0)';hw.style.opacity=(1-k*.55).toFixed(3)};
     const req=()=>{if(!tick){tick=true;requestAnimationFrame(apply)}};
     if(fine)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;req()});
-    addEventListener('scroll',()=>{if(scrollY<innerHeight*1.1)req()},{passive:true});
+    if(fine&&innerWidth>900)addEventListener('scroll',()=>{if(scrollY<innerHeight*1.1)req()},{passive:true});
     // portrait parallax
     const img=document.querySelector('.about figure img');
     if(img){let t2=false;const pa=()=>{t2=false;const r=img.parentElement.getBoundingClientRect(),c=(r.top+r.height/2-innerHeight/2)/innerHeight;if(Math.abs(c)<1.2)img.style.transform='scale(1.08) translate3d(0,'+(c*-22).toFixed(1)+'px,0)'};
@@ -1035,7 +1015,7 @@ try{
     o.pts=Array.from({length:n},()=>({x:Math.random()*o.w,y:Math.random()*o.h,vx:(Math.random()-.5)*.17,vy:(Math.random()-.5)*.17,r:Math.random()*1.4+.5}));
   };
   const geo=o=>{
-    const x=o.x,R=Math.min(o.h*.42,300),cx=o.w-Math.min(o.w*.24,330),cy=o.h*.42;o.a+=0.0011;
+    const x=o.x,R=Math.min(o.h*.33,290),cx=o.w-Math.min(o.w*.24,330),cy=o.h*.38;o.a+=0.0011;
     if(o.w<760)return;
     x.save();x.translate(cx,cy);x.rotate(o.a);x.strokeStyle='rgba(184,162,122,0.3)';x.lineWidth=1;
     x.beginPath();x.arc(0,0,R,0,Math.PI*2);x.stroke();
