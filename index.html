@@ -3,9 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Z CREATIV, the creative direction and experience studio of Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
+<meta name="description" content="Z CREATIV, the creative direction and experience design practice of Thomas Zente. Venue concepts, immersive experiences and cultural programming. ATX, NYC, MIA.">
 <meta name="theme-color" content="#0C0C0C">
 <title>Z CREATIV — Spaces, Sound, Culture</title>
+<link rel="canonical" href="https://zcreativ.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Z CREATIV">
+<meta property="og:url" content="https://zcreativ.vercel.app/">
+<meta property="og:title" content="Z CREATIV — Spaces, Sound, Culture">
+<meta property="og:description" content="Creative direction and experience design by Thomas Zente: venues, immersive experiences and cultural programming. Austin, NYC, Miami.">
+<meta property="og:image" content="https://zcreativ.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Z CREATIV wordmark in gold and ivory on black">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Z CREATIV — Spaces, Sound, Culture">
+<meta name="twitter:description" content="Creative direction and experience design by Thomas Zente: venues, immersive experiences and cultural programming. Austin, NYC, Miami.">
+<meta name="twitter:image" content="https://zcreativ.vercel.app/img/og.jpg">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="img/app/icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="img/app/apple-touch-icon.png">
@@ -187,7 +201,8 @@ section{padding:108px 0;position:relative}
 .cols ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:15px;color:var(--text-dim)}
 .sec{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:10px}
 .flow{font-family:var(--display);font-size:clamp(17.5px,1.7vw,20.5px);line-height:1.6;color:var(--text-dim)}
-.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin:0 9px}
+.flow span:not(:last-child)::after{content:"·";color:var(--metal);margin-left:9px}
+.flow{overflow-wrap:anywhere}
 .more{align-self:flex-start;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal)}
 .more:hover{color:var(--metal-lit)}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;border-top:1px solid var(--line);padding-top:20px}
@@ -205,12 +220,6 @@ section{padding:108px 0;position:relative}
 .rel div{border-left:2px solid var(--metal);padding-left:12px}
 .rel b{display:block;font-family:var(--display);font-size:21px;font-weight:500}
 .rel span{font-size:12.5px;color:var(--text-mute)}
-.nwrooms{display:grid;grid-template-columns:210px 1fr;gap:24px;border:1px solid var(--line);padding:20px}
-.nwrooms .list{display:flex;flex-direction:column}
-.nwrooms .list button{text-align:left;padding:8px 10px;font-size:14px;color:var(--text-mute);border-left:2px solid transparent;transition:all .2s}
-.nwrooms .list button[aria-selected="true"]{color:var(--text);border-left-color:var(--metal);background:#181818}
-.nwrooms h5{font-family:var(--display);font-size:28px;font-weight:500;margin-bottom:6px}
-.nwrooms .m{font-family:var(--label);font-size:10.5px;letter-spacing:.22em;color:var(--metal);margin-bottom:10px}
 .mm-banner{position:relative;height:150px;background:#0A0A0A;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .mm-strip{position:absolute;inset:0;opacity:.45}
 .mm-strip svg{display:block;height:100%;width:200%;animation:mmscroll 22s linear infinite}
@@ -222,8 +231,7 @@ section{padding:108px 0;position:relative}
 .mm-wave i{display:block;width:3px;border-radius:2px;background:var(--metal);height:10px;animation:mmbar 1.9s ease-in-out infinite}
 @keyframes mmbar{0%,100%{height:8px;opacity:.45}50%{height:46px;opacity:1}}
 @media (max-width:700px){.room-tabs{display:flex}.plan-side .hint{display:none}.room{min-height:0}.mark{height:auto;max-width:100%}}
-@media (max-width:980px){.plan-grid{grid-template-columns:minmax(0,1fr);gap:28px}.plan-side{position:static;max-width:520px}.nwrooms{grid-template-columns:1fr}.shots{grid-template-columns:1fr 1fr 1fr}}
-
+@media (max-width:980px){.plan-grid{grid-template-columns:minmax(0,1fr);gap:28px}.plan-side{position:static;max-width:520px}.shots{grid-template-columns:1fr 1fr 1fr}}
 /* DIFFERENCE */
 .pillars{border-top:1px solid var(--line)}
 .pillar{display:grid;grid-template-columns:260px 1fr;gap:40px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding-left .3s}
@@ -259,6 +267,7 @@ section{padding:108px 0;position:relative}
 .ftabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:22px}
 .ftabs button{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 16px;color:var(--text-mute);border-bottom:2px solid transparent;margin-bottom:-1px}
 .ftabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--metal)}
+.ft-one{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:13px 0;color:var(--text);border-bottom:2px solid var(--metal);margin-bottom:-1px}
 form{display:flex;flex-direction:column;gap:16px}
 form[hidden]{display:none}
 .field{display:flex;flex-direction:column;gap:7px}
@@ -367,7 +376,7 @@ body.menu-open{overflow:hidden}
 form .btn::after,.out .btn::after{content:none}
 
 /* ---------- HERO: a light source, layered depth, metal wordmark ---------- */
-.hero{position:relative;padding-top:clamp(70px,11vh,120px);min-height:min(100svh,980px);display:flex;flex-direction:column;justify-content:flex-end}
+.hero{position:relative;padding-top:clamp(56px,9vh,110px);min-height:min(calc(100svh - 66px),920px);display:flex;flex-direction:column;justify-content:flex-end}
 .hero::before{background:
   radial-gradient(42% 46% at 78% 40%,rgba(226,207,164,.13),transparent 70%),
   radial-gradient(60% 50% at 10% 0%,rgba(255,255,255,.035),transparent 70%),
@@ -462,7 +471,6 @@ form .btn::after,.out .btn::after{content:none}
 .shots img:hover{transform:scale(1.03);filter:none}
 .lk{border-radius:999px;transition:all .35s var(--ease)}
 .lk.lit{background:rgba(184,162,122,.06)}
-.nwrooms{border-color:var(--hair);border-radius:4px;background:rgba(255,255,255,.012)}
 .rel div{border-left:1px solid;border-image:linear-gradient(180deg,var(--metal-lit),transparent) 1}
 @media (max-width:700px){.plan-wrap svg{transform:none!important}}
 
@@ -502,6 +510,64 @@ section[id]{scroll-margin-top:56px}
 input,textarea{width:100%;min-width:0}
 .nav.scrolled{background:rgba(10,10,10,.92)}
 
+/* hero stats: sit on their own dark plate, clear of the geometry */
+.strip{position:relative;z-index:2;margin-top:52px;background:linear-gradient(180deg,rgba(12,12,12,.55),rgba(12,12,12,.92));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(226,207,164,.22);box-shadow:0 -30px 60px -30px rgba(0,0,0,.9)}
+.strip::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(226,207,164,.6),transparent)}
+.strip div{padding-left:22px}
+.strip div:first-child{padding-left:0}
+.strip span{color:var(--text-dim)}
+@media (max-width:760px){.strip div:nth-child(3){padding-left:0}}
+@media (max-width:760px){.hero::before{background:radial-gradient(60% 40% at 80% 20%,rgba(226,207,164,.12),transparent 70%)}}
+
+/* hero without stats: centred composition */
+.hero{justify-content:center;padding-bottom:clamp(70px,10vh,120px)}
+/* co-founded venues */
+#plan .cof path{fill:none;stroke:var(--metal);stroke-width:1;opacity:.7}
+#plan .cof text{font-family:var(--label);font-size:8.5px;letter-spacing:2px;fill:var(--metal-lit)}
+.cofound{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:14px 16px;border:1px solid rgba(184,162,122,.35);border-radius:6px;background:linear-gradient(90deg,rgba(184,162,122,.10),rgba(184,162,122,.02))}
+.cofound .badge{font-family:var(--label);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#14110b;background:var(--metal-grad);padding:6px 12px;border-radius:999px}
+.cofound p{flex:1 1 220px;font-size:14.5px;color:var(--text-dim);margin:0}
+.cofound .pair{display:flex;gap:6px;flex-wrap:wrap}
+.cofound .pair button{font-family:var(--label);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-mute);border:1px solid var(--line);border-radius:999px;padding:8px 12px;transition:all .3s var(--ease)}
+.cofound .pair button.on{color:var(--metal-lit);border-color:var(--metal)}
+.cofound .pair button:hover{color:var(--text)}
+/* five engagements: 3 + 2 */
+.eng-grid{grid-template-columns:repeat(6,1fr)}
+.eng-grid .eng{grid-column:span 2}
+.eng-grid .eng:nth-child(4),.eng-grid .eng:nth-child(5){grid-column:span 3}
+@media (max-width:1000px){.eng-grid{grid-template-columns:repeat(2,1fr)}.eng-grid .eng,.eng-grid .eng:nth-child(4){grid-column:auto}.eng-grid .eng:nth-child(5){grid-column:1/-1}}
+@media (max-width:560px){.eng-grid{grid-template-columns:1fr}.eng-grid .eng:nth-child(5){grid-column:auto}}
+
+/* shorter portrait crop */
+.about img{height:auto;aspect-ratio:6/7;object-position:66% 28%}
+@media (max-width:880px){.about img{aspect-ratio:1/1;object-position:62% 24%}}
+
+/* ---------- network band ---------- */
+.network{margin-top:56px;display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;padding:40px clamp(24px,4vw,48px);border-radius:8px;
+  background:linear-gradient(135deg,#1a1815,#0f0e0c);color:var(--text);box-shadow:0 30px 70px -30px rgba(40,30,10,.55);position:relative;overflow:hidden}
+.network::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 0% 0%,rgba(226,207,164,.14),transparent 60%);pointer-events:none}
+.network>*{position:relative}
+.network .eyebrow{color:var(--metal)}
+.network h3{font-size:clamp(28px,3.2vw,40px);margin:12px 0 12px;color:var(--text)}
+.network p{color:var(--text-dim)!important;font-size:16px}
+.net-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.net-list li{font-family:var(--label);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal-lit);padding:11px 16px;border:1px solid rgba(184,162,122,.35);border-radius:999px;background:rgba(184,162,122,.05);transition:all .35s var(--ease)}
+.net-list li:hover{background:rgba(184,162,122,.14);border-color:var(--metal)}
+@media (max-width:860px){.network{grid-template-columns:1fr;gap:26px}}
+/* ---------- sound toggle ---------- */
+.snd{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border:1px solid var(--line);border-radius:999px;color:var(--text-mute);font-size:10.5px;letter-spacing:.2em;transition:all .35s var(--ease);margin-left:auto}
+.snd:hover{color:var(--metal-lit);border-color:var(--metal)}
+.snd[aria-pressed="true"]{color:var(--metal-lit);border-color:var(--metal);background:rgba(184,162,122,.08)}
+.snd .bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+.snd .bars i{width:2px;height:3px;background:currentColor;border-radius:1px;transition:height .3s}
+.snd[aria-pressed="true"] .bars i{animation:sndbar 1.6s ease-in-out infinite}
+.snd[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.3s}.snd[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.6s}.snd[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.9s}
+@keyframes sndbar{0%,100%{height:3px}50%{height:12px}}
+.nav .wrap>ul{margin-left:auto}
+.nav .wrap>.snd{margin-left:0}
+@media (max-width:980px){.snd{margin-left:auto}.nav .cta{margin-left:0}}
+@media (max-width:420px){.snd .lbl{display:none}.snd{padding:0 12px}}
+
 @media (prefers-reduced-motion:reduce){
   .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
   .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
@@ -515,22 +581,23 @@ input,textarea{width:100%;min-width:0}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Z CREATIV"><span class="zm">Z</span> CREATIV</a>
     <ul id="navlinks">
-      <li><a href="#proof">Proof</a></li>
       <li><a href="#arc">Approach</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#work">The Rooms</a></li>
+      <li><a href="#proof">Proof</a></li>
+      <li><a href="#work">Projects</a></li>
       <li><a href="#engage">Engage</a></li>
     </ul>
+    <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Play 432 Hz ambience" title="432 Hz ambience"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">432 Hz</span></button>
     <a class="cta" href="#contact">Start a project</a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
   </div>
   <div class="prog" aria-hidden="true"><i id="prog"></i></div>
 </nav>
 <div class="sheet" id="sheet" aria-hidden="true">
-  <a href="#proof"><small>01</small>Proof</a>
-  <a href="#arc"><small>02</small>Approach</a>
-  <a href="#services"><small>03</small>Services</a>
-  <a href="#work"><small>04</small>The Rooms</a>
+  <a href="#arc"><small>01</small>Approach</a>
+  <a href="#services"><small>02</small>Services</a>
+  <a href="#proof"><small>03</small>Proof</a>
+  <a href="#work"><small>04</small>Projects</a>
   <a href="#engage"><small>05</small>Engage</a>
   <a class="btn solid" href="#contact">Start a project</a>
 </div>
@@ -538,41 +605,19 @@ input,textarea{width:100%;min-width:0}
 <header class="hero cos" id="top">
   <canvas class="field" id="herofield" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="eyebrow">Creative Direction &amp; Experience Studio · Led by Thomas Zente</p>
+    <p class="eyebrow">Creative Direction &amp; Experience Design · Led by Thomas Zente</p>
     <h1 class="zword"><span class="zm">Z</span> <span class="cw">CREATIV</span></h1>
     <p class="tag">Music. Spaces. Experiences. Culture.</p>
     <p class="sub">I take empty rooms and quiet nights and turn them into places people return to. Concept, space, programming, audience and execution, led as one vision.</p>
     <div class="btns">
       <a class="btn solid" href="#contact">Start a project</a>
-      <a class="btn ghost" href="#work">Walk the rooms</a>
+      <a class="btn ghost" href="#work">Explore projects</a>
     </div>
     <p class="meta">ATX, NYC, MIA · Available internationally</p>
-    <div class="strip">
-      <div><b data-to="96" data-pre="$" data-suf="K">$96K</b><span>in ten weeks, from an unfinished warehouse</span></div>
-      <div><b data-to="10000">10,000</b><span>guests through NOWHERE to date</span></div>
-      <div><b data-to="100" data-suf="+">100+</b><span>events produced with COSMOTION</span></div>
-      <div><b data-to="15000">15,000</b><span>people in the community</span></div>
-    </div>
   </div>
   <span class="scroll-cue" aria-hidden="true"></span>
 </header>
 
-<section class="mid cos" id="proof">
-  <canvas class="field" aria-hidden="true"></canvas>
-  <div class="wrap proof-grid">
-    <div class="rv">
-      <p class="eyebrow" style="margin-bottom:22px">Proof before promise · NOWHERE, Austin, 2026</p>
-      <p class="proof-say">We opened an unfinished warehouse and ran it for <em>ten consecutive weekends</em> without missing one. It finished on its <em>strongest weekend</em>.</p>
-      <div class="btns" style="margin-top:30px"><a class="btn ghost" href="#work" data-room="warehouse">See the full case</a></div>
-    </div>
-    <ul class="proof-list rv">
-      <li><b data-to="25">25</b><span>events produced, across multi-room nights of music, art and performance</span></li>
-      <li><b data-to="100" data-pre="$" data-suf="K">$100K</b><span>in revenue to date, with a $30 door held all season</span></li>
-      <li><b data-to="20383" data-pre="$">$20,383</b><span>record final weekend, more than double the average</span></li>
-      <li><b data-to="12000">12,000</b><span>square feet, programmed as eight distinct rooms</span></li>
-    </ul>
-  </div>
-</section>
 
 <section class="cos" id="about">
   <canvas class="field" aria-hidden="true"></canvas>
@@ -582,12 +627,13 @@ input,textarea{width:100%;min-width:0}
       <blockquote>The goal is not to create something people attend. It’s to create something they remember, return to and become part of.</blockquote>
       <p>For more than 15 years I’ve developed immersive events, cultural concepts and experiential environments. Great spaces are more than architecture, and great events are more than entertainment. Everything is energy in motion, and a room works when every part of it moves together.</p>
       <div class="idents">
-        <div><b>Z CREATIV</b><span>Creative direction &amp; experience studio</span></div>
+        <div><b>THOMAS ZENTE</b><span>Venue Founder / Owner</span></div>
+        <div><b>Z CREATIV</b><span>Creative direction &amp; experience design</span></div>
         <div><b>COSMOTION</b><span>Platform &amp; label, since 2015</span></div>
         <div><b>ZENTI</b><span>Music Producer, Artist, DJ</span></div>
       </div>
     </div>
-    <figure class="rv"><i class="cm tl" aria-hidden="true"></i><div class="ph"><img src="img/portrait-wood.jpg" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1200" height="799" loading="lazy" decoding="async"></div><i class="cm br" aria-hidden="true"></i><figcaption>Thomas Zente · Founder</figcaption></figure>
+    <figure class="rv"><i class="cm tl" aria-hidden="true"></i><div class="ph"><img src="img/portrait-wood.jpg" alt="Thomas Zente in a warmly lit, wood-paneled room" width="1200" height="799" loading="lazy" decoding="async"></div><i class="cm br" aria-hidden="true"></i><figcaption>Thomas Zente · Venue Founder / Owner</figcaption></figure>
   </div>
 </section>
 
@@ -648,6 +694,33 @@ input,textarea{width:100%;min-width:0}
         <details><summary>What you get</summary><ul><li>Programming calendar and residencies</li><li>Artist and partner relationships</li><li>Atmosphere and guest-experience audits</li><li>Community and audience growth</li></ul></details>
       </article>
     </div>
+    <div class="network rv">
+      <div class="net-head">
+        <p class="eyebrow">The network</p>
+        <h3>One call, the whole production.</h3>
+        <p>Fifteen years of nights, venues and festivals have built a deep, trusted rolodex. Whatever the project needs, I can bring in the right people for every part of it, already vetted and used to working together.</p>
+      </div>
+      <ul class="net-list">
+        <li>Event design</li><li>Programming</li><li>Lighting</li><li>Sound</li><li>Performers</li><li>Live artists</li><li>Healers</li><li>Finding spaces</li><li>Media production</li><li>Artist curation</li><li>Promotion</li><li>Vendors</li><li>Crews</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mid cos" id="proof">
+  <canvas class="field" aria-hidden="true"></canvas>
+  <div class="wrap proof-grid">
+    <div class="rv">
+      <p class="eyebrow" style="margin-bottom:22px">Proof before promise · NOWHERE, Austin, 2026</p>
+      <p class="proof-say">We opened an unfinished warehouse and ran it for <em>ten consecutive weekends</em> without missing one. It finished on its <em>strongest weekend</em>.</p>
+      <div class="btns" style="margin-top:30px"><a class="btn ghost" href="#work" data-room="warehouse">See the full case</a></div>
+    </div>
+    <ul class="proof-list rv">
+      <li><b data-to="25">25</b><span>events produced, across multi-room nights of music, art and performance</span></li>
+      <li><b data-to="100" data-pre="$" data-suf="K">$100K</b><span>in revenue to date, with a $30 door held all season</span></li>
+      <li><b data-to="20383" data-pre="$">$20,383</b><span>record final weekend, more than double the average</span></li>
+      <li><b data-to="12000">12,000</b><span>square feet, programmed as multi-room nights</span></li>
+    </ul>
   </div>
 </section>
 
@@ -656,18 +729,19 @@ input,textarea{width:100%;min-width:0}
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Selected work</p>
-      <h2>Walk the rooms</h2>
-      <p>Every project is a room. Step into one on the plan.</p>
+      <h2>Explore projects</h2>
+      <p>Two Austin venues I co-founded from empty buildings, a decade-long platform, a sound and a camera. Choose one and step inside.</p>
     </div>
     <div class="plan-grid">
       <div class="plan-side">
-        <div class="plan-wrap"><svg id="plan" viewBox="0 0 400 300" role="group" aria-label="Floor plan of projects">
+        <div class="plan-wrap"><svg id="plan" viewBox="0 0 400 326" role="group" aria-label="Floor plan of projects">
           <defs><radialGradient id="roomGlow" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#E2CFA4" stop-opacity=".30"/><stop offset="1" stop-color="#B8A27A" stop-opacity=".06"/></radialGradient></defs>
           <rect x="1" y="1" width="398" height="298" fill="none" stroke="#333" stroke-width="1"/>
+          <g class="cof" aria-hidden="true"><path d="M10 300 V308 H288 V300"/><text x="149" y="321" text-anchor="middle">CO-FOUNDER · STARDUST + NOWHERE</text></g>
           <g class="rm" data-room="label" role="button" tabindex="0" aria-label="The Label: COSMOTION"><rect x="10" y="10" width="172" height="124"/><text class="rn" x="22" y="34">THE LABEL</text><text class="rp" x="22" y="48">COSMOTION · SINCE 2015</text></g>
           <g class="rm" data-room="booth" role="button" tabindex="0" aria-label="The Booth: ZENTI"><rect x="190" y="10" width="200" height="124"/><text class="rn" x="202" y="34">THE BOOTH</text><text class="rp" x="202" y="48">ZENTI · DJ / PRODUCER</text></g>
-          <g class="rm" data-room="garage" role="button" tabindex="0" aria-label="The Garage: STARDUST GARAGE"><rect x="10" y="142" width="118" height="148"/><text class="rn" x="22" y="166">THE GARAGE</text><text class="rp" x="22" y="180">STARDUST · 2025</text></g>
-          <g class="rm" data-room="warehouse" role="button" tabindex="0" aria-label="The Warehouse: NOWHERE"><rect x="136" y="142" width="152" height="148"/><text class="rn" x="148" y="166">THE WAREHOUSE</text><text class="rp" x="148" y="180">NOWHERE · 2026</text></g>
+          <g class="rm" data-room="garage" role="button" tabindex="0" aria-label="The Garage: STARDUST GARAGE, co-founded"><rect x="10" y="142" width="118" height="148"/><text class="rn" x="22" y="166">THE GARAGE</text><text class="rp" x="22" y="180">STARDUST · 2025</text></g>
+          <g class="rm" data-room="warehouse" role="button" tabindex="0" aria-label="The Warehouse: NOWHERE, co-founded"><rect x="136" y="142" width="152" height="148"/><text class="rn" x="148" y="166">THE WAREHOUSE</text><text class="rp" x="148" y="180">NOWHERE · 2026</text></g>
           <g class="rm" data-room="screen" role="button" tabindex="0" aria-label="The Screening Room: Multimedia"><rect x="296" y="142" width="94" height="148"/><text class="rn" x="306" y="166">SCREENING</text><text class="rn" x="306" y="179">ROOM</text><text class="rp" x="306" y="193">MULTIMEDIA</text></g>
           <circle class="you" id="you" cx="96" cy="100" r="4"/>
         </svg></div>
@@ -692,6 +766,7 @@ input,textarea{width:100%;min-width:0}
       <div class="pillar"><b>THE CULTURE</b><span>How programming, music, artists and community create a venue’s identity.</span></div>
       <div class="pillar"><b>THE AUDIENCE</b><span>How to attract people, earn their trust and bring them back.</span></div>
       <div class="pillar"><b>THE PRODUCTION</b><span>How to assemble teams and turn creative ideas into working experiences.</span></div>
+      <div class="pillar"><b>THE NETWORK</b><span>A rolodex built over fifteen years: lighting and sound, performers and artists, spaces, media, promotion. The right people for any part of production, one call away.</span></div>
       <div class="pillar"><b>THE BUSINESS</b><span>How programming, partnerships, positioning and operations drive results.</span></div>
     </div>
   </div>
@@ -710,6 +785,7 @@ input,textarea{width:100%;min-width:0}
         <button aria-pressed="false" data-pick="launch">I’m opening a venue</button>
         <button aria-pressed="false" data-pick="production">I need one unforgettable event</button>
         <button aria-pressed="false" data-pick="retainer">My venue needs a new energy</button>
+        <button aria-pressed="false" data-pick="culture">I want to build a community</button>
       </div>
     </div>
     <div class="eng-grid" id="eng-grid">
@@ -717,6 +793,7 @@ input,textarea{width:100%;min-width:0}
       <article class="eng tilt-lite" data-id="launch" data-type="Venue or destination development"><span class="rec">Best fit</span><h3>Launch Partnership</h3><p>Concept through opening: design, programming, team and activation, handed over running.</p><button class="ask">Ask about this</button></article>
       <article class="eng tilt-lite" data-id="production" data-type="Experience design &amp; production"><span class="rec">Best fit</span><h3>Experience Production</h3><p>A night, activation, stage or private experience, fully directed and produced.</p><button class="ask">Ask about this</button></article>
       <article class="eng tilt-lite" data-id="retainer" data-type="Creative direction &amp; programming"><span class="rec">Best fit</span><h3>Creative Direction Retainer</h3><p>Ongoing programming, talent and creative leadership for an operating venue.</p><button class="ask">Ask about this</button></article>
+      <article class="eng tilt-lite" data-id="culture" data-type="Culture &amp; community development"><span class="rec">Best fit</span><h3>Culture Development</h3><p>Gathering a community of like-minded, beautiful people: the regulars, artists and creators who give a place its soul and keep it alive long after opening night.</p><button class="ask">Ask about this</button></article>
     </div>
   </div>
 </section>
@@ -734,10 +811,7 @@ input,textarea{width:100%;min-width:0}
       </div>
     </div>
     <div>
-      <div class="ftabs" role="tablist" aria-label="Inquiry type">
-        <button role="tab" id="ft-0" aria-selected="true" aria-controls="inq">Project inquiry</button>
-        <button role="tab" id="ft-1" aria-selected="false" aria-controls="zbook">Book ZENTI</button>
-      </div>
+      <div class="ftabs"><span class="ft-one">Project inquiry</span></div>
       <form id="inq" novalidate>
         <div class="row2">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" autocomplete="name"></div>
@@ -745,26 +819,13 @@ input,textarea{width:100%;min-width:0}
         </div>
         <div class="row2">
           <div class="field"><label for="f-type">Project type</label>
-            <select id="f-type"><option>Venue or destination development</option><option>Experience design &amp; production</option><option>Creative direction &amp; programming</option><option>Multimedia direction &amp; production</option><option>Something else</option></select></div>
+            <select id="f-type"><option>Venue or destination development</option><option>Experience design &amp; production</option><option>Creative direction &amp; programming</option><option>Culture &amp; community development</option><option>Multimedia direction &amp; production</option><option>Something else</option></select></div>
           <div class="field"><label for="f-when">Timing</label>
             <select id="f-when"><option>Exploring</option><option>Within 3 months</option><option>3–6 months</option><option>6+ months</option></select></div>
         </div>
         <div class="field"><label for="f-msg">Tell me about the space or idea</label><textarea id="f-msg"></textarea></div>
         <button class="btn solid" type="submit" style="align-self:flex-start">Prepare my inquiry</button>
         <div class="out" id="out" role="status" aria-live="polite"><pre id="out-text"></pre><div class="acts"><button class="btn ghost" type="button" id="copy">Copy message</button><a class="btn ghost" id="mail" href="#">Open in email</a></div><small id="out-note"></small></div>
-      </form>
-      <form id="zbook" novalidate hidden>
-        <div class="row2">
-          <div class="field"><label for="z-name">Your name</label><input id="z-name" autocomplete="name"></div>
-          <div class="field"><label for="z-ev">Event or venue</label><input id="z-ev"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="z-date">Date</label><input id="z-date" type="date"></div>
-          <div class="field"><label for="z-city">City</label><input id="z-city"></div>
-        </div>
-        <div class="field"><label for="z-msg">Set length, lineup, anything else</label><textarea id="z-msg"></textarea></div>
-        <button class="btn solid" type="submit" style="align-self:flex-start">Prepare booking request</button>
-        <div class="out" id="zout" role="status" aria-live="polite"><pre id="zout-text"></pre><div class="acts"><button class="btn ghost" type="button" id="zcopy">Copy message</button><a class="btn ghost" id="zmail" href="#">Open in email</a></div><small id="zout-note"></small></div>
       </form>
     </div>
   </div>
@@ -775,12 +836,7 @@ input,textarea{width:100%;min-width:0}
     <p class="f-mark" aria-hidden="true">Z CREATIV</p>
     <span>© Z CREATIV · Thomas Zente · Creative Direction &amp; Experience Design</span>
     <div class="socials">
-      <a href="https://instagram.com/zentimusic">Instagram</a>
-      <a href="https://soundcloud.com/zentimusic">SoundCloud</a>
-      <a href="https://open.spotify.com/artist/5cwPDq4NrVBXRySkiLMkiL">Spotify</a>
-      <a href="https://www.beatport.com/artist/zenti/1146352">Beatport</a>
-      <a href="https://linktr.ee/zenti">Linktree</a>
-      <a href="mailto:thomaszente@gmail.com">Email</a>
+      <a href="mailto:thomaszente@gmail.com">thomaszente@gmail.com</a>
     </div>
   </div>
 </footer>
@@ -795,7 +851,7 @@ try{
   const stages=[
     {h:'Concept',p:'Every destination starts with a clear idea of who it’s for and why it should exist. I shape the identity, atmosphere and cultural positioning before anything is built.',l:['Audience and market read','Venue identity, naming and story','Cultural positioning','Revenue model sketch']},
     {h:'Design',p:'Then the concept becomes a place: how guests arrive, move, gather and feel. Aesthetic, spatial flow, sound and light are designed as one experience.',l:['Room-by-room experience plan','Sound, lighting and material direction','Guest journey and flow','Brand world and visual language']},
-    {h:'Develop',p:'I turn unconventional spaces into working venues: assembling the creative team, coordinating vendors and setting up the systems that run the night.',l:['Creative team assembly','Vendor and production coordination','Operating systems and SOPs','Phased launch roadmap']},
+    {h:'Develop',p:'I turn unconventional spaces into working venues: assembling the creative team from a deep personal network, coordinating vendors and setting up the systems that run the night.',l:['Hand-picked crews: lights, sound, performers, media','Creative team assembly','Vendor and production coordination','Operating systems and SOPs','Phased launch roadmap']},
     {h:'Activate',p:'A space comes alive through culture. I program the music and art, bring in the artists, and build the community that fills the room on opening night and after.',l:['Music direction and talent programming','Artist and industry relationships','Launch events and marketing','Community and partnerships']},
     {h:'Sustain',p:'The best venues keep evolving. Recurring programming, partnerships and steady refinement keep people coming back, and keep the business healthy.',l:['Recurring series and residencies','Partnership and brand activations','Audience and membership growth','Performance reviews and tuning']}
   ];
@@ -813,54 +869,36 @@ try{
 
 /* ---------- rooms ---------- */
 const F=(h,items,cap)=>{
-  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join('');
+  const sp=items.map((t,i)=>'<span'+(cap&&i>=cap?' hidden':'')+'>'+t+'</span>').join(' ');
   return '<div class="sec"><h4>'+h+'</h4><p class="flow">'+sp+'</p>'+(cap&&items.length>cap?'<button class="more" data-more>Show all '+items.length+'</button>':'')+'</div>';
 };
-const NW=[
-  ['Artist Lounge','MOODY · REFINED · GALLERY','The arrival. A gallery-style front desk and reception that sets the tone the moment guests walk in.'],
-  ['Sacred Salon','SENSUAL · INTIMATE · TRANSFORMATIVE','Dark bar, velvet drapes and candlelight under the neon line “Enter. Feel. Transform.”'],
-  ['Casablanca Lounge','WARM · WANDERING · NEON','Moroccan-influenced: deep red velvet, lanterns, Persian rugs and plants, under “Not all who wander are lost.”'],
-  ['The Wanderer’s Room','HIDDEN · DARK WOOD · CANDLES','A private library from another era, tucked away for those who go looking.'],
-  ['The Bar','DRINK · CREATE · CONNECT','Industrial and warm, with three modes: evening, late night and event.'],
-  ['Main Event Hall','300–600 CAPACITY','The full-depth warehouse hall with production-grade sound, light and AV.'],
-  ['Market & Stage Hall','MARKET BY DAY · STAGE BY NIGHT','Vendor niches along a draped hall with a music stage at the far end.'],
-  ['Wellness Room','DAYTIME · RESTORATIVE','Breathwork, movement and sound sessions that put the venue to work all week.']
-];
 const bars=Array.from({length:20},(_,i)=>'<i style="animation-delay:'+(i*0.12).toFixed(2)+'s"></i>').join('');
 const ROOMS={
 label:{t:'THE LABEL',mood:'COSMOTION · LABEL &amp; PLATFORM · 2015 – NOW',sub:'A cultural platform, an event series and an independent label, sustained for a decade.',dot:[96,100],
- html:'<img class="mark" src="img/cosmotion-logo.png" alt="COSMOTION" width="213" height="44">'+
- '<p class="lede">More than ten years producing experiences rooted in music, art, community and human connection.</p>'+
+ html: '<p class="lede">More than ten years producing experiences rooted in music, art, community and human connection.</p>'+
  '<div class="shots"><img src="img/cm-moon.jpg" alt="A DJ playing beneath a projected full moon" style="object-position:60% 45%" loading="lazy"><img src="img/cm-crowd.jpg" alt="A phone filming a neon-lit performance from the crowd" loading="lazy"><img src="img/cm-candles.jpg" alt="A DJ playing behind a wall of candles" style="object-position:45% 40%" loading="lazy"></div>'+
  '<div class="stats"><div><b>100+</b><span>events produced</span></div><div><b>15,000</b><span>mailing-list subscribers</span></div><div><b>10+</b><span>years running</span></div></div>'+
  F('BOOKED ARTISTS',['Just Emma','Lemurian','Sarkis Mikael','Noema','Eli Light','The Soul Brothers','Brian Cid','Allen Hulsey','KMLN','Nico Stojan','Oceanvs Orientalis','Fabian Krooss','Joeski','Unders','Modd','Caleesi &amp; Sarah Kreis','Bodaishin','Cioz','Kora','Anstacia','Sam Shure','Magician On Duty','Patrik Katch','McFly','Manumat','Crsto','Robert Roman','Novasi'],12)+
  F('PARTNERED EXPERIENCES',['Opulent Temple','Art With Me','Orijins','JunXion','Sonic Jungle','Stil Vor Talent','AESTHESIS','FAIRYTALES','ARTBOMB','Concourse Project','Indra’s Awarehouse'])+
  '<div class="links"><a class="lk lit" href="https://instagram.com/cosmotion.space">Instagram</a><a class="lk" href="https://linktr.ee/cosmotion.space">All COSMOTION links</a></div>'},
 booth:{t:'THE BOOTH',mood:'.. MAGIC // MUSIC ..',sub:'ZENTI. International DJ and music producer.',dot:[290,100],
- html:'<img class="mark" src="img/zenti-logo.png" alt="ZENTI" width="145" height="56" style="height:56px">'+
- '<p class="lede">Hypnotic, unpredictable musical journeys where deep grooves, worldly rhythms and cinematic textures converge.</p>'+
+ html:''+
+ '<p class="lede">ZENTI doesn’t just play the room. He helps conjure it.</p>'+
+ '<p>Beyond the decks, ZENTI has collaborated with promoters, artists and creators to elevate their events with the magic around the music: atmosphere, ritual, visuals and the quiet moments of wonder that turn a dance floor into a shared story. People come for the set and remember the spell.</p>'+
  '<p>Rooted in Austin and shaped by years immersed in underground scenes from New York and Miami to Burning Man, his sound moves fluidly between cultures, genres and emotions. Known for intuitive, emotionally driven sets, and for approaching every creation with heart, soul and intention.</p>'+
- '<div class="links"><a class="lk lit" href="https://open.spotify.com/artist/5cwPDq4NrVBXRySkiLMkiL">Listen on Spotify</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/original-tracks">Original tracks</a><a class="lk" href="https://soundcloud.com/zentimusic/sets/zenti-guest-podcasts">Guest podcasts</a><a class="lk" href="https://www.beatport.com/artist/zenti/1146352">Beatport</a><a class="lk" href="https://instagram.com/zentimusic">Instagram</a><a class="lk" href="https://drive.google.com/file/d/13JxnzFcBZDKWPX39h9uX-s_7mtdCrFCD/view">Press kit</a><a class="lk" href="#contact" data-book>Book ZENTI</a></div>'+
- '<div class="sec"><h4>ORIGINALS &amp; RELEASES</h4><div class="rel"><div><b>Find That Love</b><span>2026 · latest</span></div><div><b>Dust Bunny</b><span>2026</span></div><div><b>Boomin’ Now</b><span>2026</span></div><div><b>Zen Mood</b><span>2025 · EP</span></div><div><b>Zen Fur Elise</b><span>2025</span></div></div></div>'+
- F('FESTIVALS',['Envision Festival','TX Eclipse Festival','Lightning In A Bottle','LoveBurn','Electric Fuel Station'])+
- F('LABELS',['Still Play','Cafe De Anatolia','A Magic Sun','Lump Records','Kosa','COSMOTION'])+
- F('NOTABLE EVENTS / AFFILIATIONS',['ZERO NY','Sonic Jungle','JunXion','Gospel NY','Do Not Sit','Orijins','House Of Yes','Kazbah','iFeel NY','Love Medicine NY','ALTAR','Hqueue','Concourse ATX','Kingdom ATX','Rippers Row','Zephyr MX','Tierra Santa MIA','Koncept LA','Aesthesis LA','Something Else MIA','Caravan Of Light','Members LA','Luna ATX','Unveiled NY','Chetana NY','Opulent Temple','Nowhere ATX'],10)+
- F('SELECT ARTIST SUPPORT',['Lee Burridge','Bedouin','Monolink','Maceo Plex','WhoMadeWho','Dubfire','Stavroz','Armen Miran','Behrouz','Jan Blomqvist','Just Emma','Goldcap','Lemurian','Wild Dark','Feathered Sun','Sarkis Mikael','Unders','The Soul Brothers','Brian Cid','Allen Hulsey','KMLN','Seth Schwartz','Sabo','Nico Stojan','Township Rebellion','Maz','Rodriguez Jr.','YokoO','Atish','Oceanvs Orientalis','Martha Van Straaten','Fabian Krooss','Joeski','Caleesi &amp; Sarah Kreis','Enamour','Cioz','Kora','Anstacia','Parallelle','Superflu','Aiwaa'],10)+
- F('PODCASTS / MIX SERIES',['MagicianOnDuty','DesertHut','DoNotSit','TheMagicSun','HotSituations','Abracadabra','DeepHouseLA','SoundOfSymmetry','DeeperSounds','CirqueNoir','HusaSounds'])},
-garage:{t:'THE GARAGE',mood:'STARDUST GARAGE · VENUE · AUSTIN · 2025',sub:'A former automotive garage, built into a venue that still runs today.',dot:[69,236],
- html:'<p class="lede">I built the venue concept and the full business plan, then developed the space itself.</p>'+
+ '<div class="links"><a class="lk lit" href="https://zenti-epk.vercel.app" target="_blank" rel="noopener">ZENTI press kit</a></div>'},
+garage:{t:'THE GARAGE',mood:'STARDUST GARAGE · CO-FOUNDER · AUSTIN · 2025',sub:'A former automotive garage, built into a venue that still runs today.',dot:[69,236],
+ html:'<div class="cofound"><span class="badge">Co-Founder</span><p>Two Austin venues, both built from empty buildings into places people return to.</p><div class="pair"><button data-go="garage" class="on">Stardust Garage</button><button data-go="warehouse">NOWHERE</button></div></div>'+'<p class="lede">As co-founder, I built the venue concept and the full business plan, then developed the space itself.</p>'+
  '<p>A former automotive garage turned into a multi-use music and entertainment destination. I handed it over as a running business, and it still operates today.</p>'+
  '<div class="cols"><div><h4>VISION &amp; IDENTITY</h4><ul><li>Creative vision and concept</li><li>Venue identity, naming and brand</li><li>Spatial experience and production planning</li></ul></div><div><h4>CULTURE &amp; COMMUNITY</h4><ul><li>Music direction and talent programming</li><li>Artist and industry relationships</li><li>Marketing and community building</li></ul></div><div><h4>PRODUCTION &amp; OPERATIONS</h4><ul><li>Creative team assembly</li><li>Event production and activation</li><li>Operational planning and systems</li></ul></div></div>'+
  '<div class="stats"><div><b>~4,400</b><span>sq ft of indoor event space</span></div><div><b>800</b><span>capacity, plus outdoor areas</span></div></div>'+
  '<div class="links"><a class="lk" href="https://www.sdgatx.com">sdgatx.com</a></div>'},
-warehouse:{t:'THE WAREHOUSE',mood:'NOWHERE · VENUE · AUSTIN · 2026',sub:'Austin’s Conscious Creative Center. Come as you are. Become more.',dot:[212,236],
- html:'<img class="mark" src="img/nowhere-logo.png" alt="NOWHERE" width="84" height="84" style="height:84px">'+
- '<p class="lede">Part club, part gallery, part wellness space, launched in a 12,000 sq ft warehouse in the St. Elmo Arts District.</p>'+
+warehouse:{t:'THE WAREHOUSE',mood:'NOWHERE · CO-FOUNDER · AUSTIN · 2026',sub:'Austin’s Conscious Creative Center. Come as you are. Become more.',dot:[212,236],
+ html:'<div class="cofound"><span class="badge">Co-Founder</span><p>Two Austin venues, both built from empty buildings into places people return to.</p><div class="pair"><button data-go="garage">Stardust Garage</button><button data-go="warehouse" class="on">NOWHERE</button></div></div>'+'<p class="lede">Part club, part gallery, part wellness space, launched in a 12,000 sq ft warehouse in the St. Elmo Arts District.</p>'+
  '<div class="stats"><div><b>25</b><span>events produced</span></div><div><b>10,000</b><span>guests to date</span></div><div><b>$100K</b><span>revenue to date</span></div></div>'+
  '<div class="cols"><div><h4>THE CHALLENGE</h4><ul><li>Prove Austin wanted this before asking anyone to fund the finished vision: identity, recurring programming and a paying audience, built in an unfinished room.</li></ul></div><div><h4>MY ROLE</h4><ul><li>Co-Founder, Creative Director, Lead Producer and Programmer</li><li>Concept, programming, guest experience, brand, talent, marketing and execution</li></ul></div></div>'+
  '<div class="sec"><h4>PHASE I · MAY 22 – JULY 25, 2026</h4><div class="stats" style="border:0;padding:0"><div><b>10</b><span>consecutive weekends, none missed</span></div><div><b>20</b><span>event nights</span></div><div><b>$96K</b><span>gross revenue</span></div></div>'+
  '<div class="cols" style="margin-top:8px"><ul><li>A $30 door held all season, with advance sales growing week over week</li><li>Finished at peak: the final weekend set the record at $20,383</li><li>Ardalan, Sarkis Mikael and the official Adam Ten afterparty</li><li>Live painting, projection mapping, aerialists, vendors and gallery showcases</li></ul></div></div>'+
- '<div class="sec"><h4>THE VENUE PLAN · EIGHT ROOMS, EACH A DIFFERENT WORLD</h4><div class="nwrooms"><div class="list" role="tablist" aria-label="NOWHERE rooms">'+NW.map((r,i)=>'<button role="tab" data-nw="'+i+'" aria-selected="'+(i===0)+'">'+r[0]+'</button>').join('')+'</div><div id="nwd"></div></div></div>'+
  '<div class="links"><a class="lk" href="https://nowhereaustin.com">nowhereaustin.com</a></div>'},
 screen:{t:'THE SCREENING ROOM',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I came up as a film producer. That craft now goes into the media around the work.',dot:[343,236],
  html:'<div class="mm-banner" aria-hidden="true"><div class="mm-strip"><svg viewBox="0 0 1200 200" preserveAspectRatio="none"><defs><pattern id="perf" width="60" height="200" patternUnits="userSpaceOnUse"><rect x="18" y="14" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/><rect x="18" y="166" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/></pattern></defs><rect width="1200" height="200" fill="url(#perf)"/><line x1="0" y1="48" x2="1200" y2="48" stroke="#B8A27A"/><line x1="0" y1="152" x2="1200" y2="152" stroke="#B8A27A"/></svg></div><div class="mm-art"><svg class="mm-ap" viewBox="0 0 120 120" width="78" height="78"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="60" cy="60" r="52"/><polygon points="60,18 96,39 96,81 60,102 24,81 24,39"/><path d="M60 18 L60 102 M96 39 L24 81 M96 81 L24 39" opacity=".4"/><circle cx="60" cy="60" r="13"/></g></svg><span class="mm-wave">'+bars+'</span></div></div>'+
@@ -869,23 +907,14 @@ screen:{t:'THE SCREENING ROOM',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I 
 };
 const order=['label','booth','garage','warehouse','screen'];
 let cur='label';
-function nwShow(i){
-  const d=$('nwd');if(!d)return;
-  document.querySelectorAll('[data-nw]').forEach(b=>b.setAttribute('aria-selected',+b.dataset.nw===i));
-  d.innerHTML='';const h=document.createElement('h5');h.textContent=NW[i][0];
-  const m=document.createElement('p');m.className='m';m.textContent=NW[i][1];
-  const p=document.createElement('p');p.textContent=NW[i][2];d.append(h,m,p);
-}
 function enter(k,scroll){
   if(!ROOMS[k])return;cur=k;const r=ROOMS[k],el=$('room');
   el.innerHTML='<div class="room-in"><header class="rhead"><p class="mood">'+r.mood+'</p><h3>'+r.t+'</h3><p class="sub">'+r.sub+'</p></header>'+r.html+'</div>';
   document.querySelectorAll('#plan .rm').forEach(g=>g.classList.toggle('on',g.dataset.room===k));
   document.querySelectorAll('#roomTabs button').forEach(b=>{const on=b.dataset.room===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);if(on&&b.parentNode.scrollWidth>b.parentNode.clientWidth)b.parentNode.scrollTo({left:b.offsetLeft-b.parentNode.offsetLeft-16,behavior:'smooth'})});
   const y=$('you');y.setAttribute('cx',r.dot[0]);y.setAttribute('cy',r.dot[1]);
-  el.querySelectorAll('[data-nw]').forEach(b=>b.addEventListener('click',()=>nwShow(+b.dataset.nw)));
-  if(k==='warehouse')nwShow(0);
+  el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>enter(b.dataset.go,false)));
   el.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{b.previousElementSibling.querySelectorAll('[hidden]').forEach(s=>s.hidden=false);b.remove()}));
-  el.querySelectorAll('[data-book]').forEach(a=>a.addEventListener('click',()=>ftab(1)));
   if(scroll&&innerWidth<980)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
 }
 try{
@@ -900,7 +929,7 @@ try{
       }
     });
   });
-  const tabs=$('roomTabs');document.querySelectorAll('#plan .rm').forEach(g=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.room=g.dataset.room;b.textContent=(g.getAttribute('aria-label')||'').split(':').pop().trim();b.addEventListener('click',()=>enter(g.dataset.room,false));tabs.append(b)});
+  const tabs=$('roomTabs');document.querySelectorAll('#plan .rm').forEach(g=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.room=g.dataset.room;b.textContent=(g.getAttribute('aria-label')||'').split(':').pop().split(',')[0].trim();b.addEventListener('click',()=>enter(g.dataset.room,false));tabs.append(b)});
   document.querySelectorAll('a[data-room]').forEach(a=>a.addEventListener('click',()=>enter(a.dataset.room,false)));
   enter('label',false);
 }catch(_){}
@@ -915,7 +944,7 @@ try{
     grid.querySelectorAll('.eng').forEach(e=>e.classList.toggle('pick',on&&e.dataset.id===b.dataset.pick));
   }));
   grid.querySelectorAll('.ask').forEach(b=>b.addEventListener('click',()=>{
-    const card=b.closest('.eng');ftab(0);
+    const card=b.closest('.eng');
     $('f-type').value=card.dataset.type.replace('&amp;','&');
     const m=$('f-msg');if(!m.value)m.value='I’m interested in '+card.querySelector('h3').textContent+'. ';
     $('contact').scrollIntoView({behavior:reduce?'auto':'smooth'});
@@ -923,12 +952,7 @@ try{
 }catch(_){}
 
 /* ---------- forms ---------- */
-function ftab(i){
-  const t=[$('ft-0'),$('ft-1')],f=[$('inq'),$('zbook')];
-  t.forEach((b,j)=>b.setAttribute('aria-selected',j===i));f.forEach((x,j)=>x.hidden=j!==i);
-}
 try{
-  $('ft-0').addEventListener('click',()=>ftab(0));$('ft-1').addEventListener('click',()=>ftab(1));
   const v=id=>($(id).value||'').trim();
   const wire=(form,build,outId,txtId,noteId,copyId,mailId,subject)=>{
     form.addEventListener('submit',e=>{
@@ -945,11 +969,6 @@ try{
     });
   };
   wire($('inq'),()=>v('f-name')?('Hi Thomas,\n\n'+(v('f-msg')?v('f-msg')+'\n\n':'')+'Project type: '+v('f-type')+'\nTiming: '+v('f-when')+'\n\n'+v('f-name')+(v('f-org')?'\n'+v('f-org'):'')):'','out','out-text','out-note','copy','mail',()=>'Project inquiry: '+v('f-type'));
-  wire($('zbook'),()=>{
-    if(!v('z-name'))return '';
-    const rows=[['Event or venue',v('z-ev')],['Date',v('z-date')],['City',v('z-city')]].filter(r=>r[1]).map(r=>r[0]+': '+r[1]).join('\n');
-    return 'Hi Thomas,\n\nI’d like to book ZENTI.'+(rows?'\n\n'+rows:'')+(v('z-msg')?'\n\n'+v('z-msg'):'')+'\n\n'+v('z-name');
-  },'zout','zout-text','zout-note','zcopy','zmail',()=>'ZENTI booking inquiry');
 }catch(_){}
 
 /* ---------- scroll: progress, active link, reveals, count-up ---------- */
@@ -960,7 +979,7 @@ try{
   if('IntersectionObserver' in window){
     const links=[...document.querySelectorAll('#navlinks a')];
     const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
-    ['proof','arc','services','work','engage'].forEach(id=>{const s=$(id);if(s)so.observe(s)});
+    ['about','arc','services','proof','work','engage'].forEach(id=>{const s=$(id);if(s)so.observe(s)});
     if(!reduce){
       document.body.classList.add('anim');
       const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
@@ -1013,16 +1032,59 @@ try{
     // hero depth: content drifts against pointer; scroll lifts and fades it
     const hw=document.querySelector('.hero .wrap'),hero=$('top');let px=0,py=0,tick=false;
     const apply=()=>{tick=false;const y=Math.min(scrollY,innerHeight),k=y/innerHeight;
-      hw.style.transform='translate3d('+(px*-8).toFixed(1)+'px,'+(y*.18+py*-6).toFixed(1)+'px,0)';hw.style.opacity=(1-k*.9).toFixed(3)};
+      hw.style.transform='translate3d('+(px*-8).toFixed(1)+'px,'+(y*.18+py*-6).toFixed(1)+'px,0)';hw.style.opacity=(1-k*.55).toFixed(3)};
     const req=()=>{if(!tick){tick=true;requestAnimationFrame(apply)}};
     if(fine)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;req()});
-    addEventListener('scroll',()=>{if(scrollY<innerHeight*1.1)req()},{passive:true});
+    if(fine&&innerWidth>900)addEventListener('scroll',()=>{if(scrollY<innerHeight*1.1)req()},{passive:true});
     // portrait parallax
     const img=document.querySelector('.about figure img');
     if(img){let t2=false;const pa=()=>{t2=false;const r=img.parentElement.getBoundingClientRect(),c=(r.top+r.height/2-innerHeight/2)/innerHeight;if(Math.abs(c)<1.2)img.style.transform='scale(1.08) translate3d(0,'+(c*-22).toFixed(1)+'px,0)'};
       addEventListener('scroll',()=>{if(!t2){t2=true;requestAnimationFrame(pa)}},{passive:true});pa()}
   }
 }catch(_){document.body.classList.remove('intro')}
+
+
+/* ---------- 432 Hz ambience: generated live (no file), starts only when asked ---------- */
+try{
+  const btn=$('snd');let ctx=null,master=null,on=false;
+  const build=()=>{
+    ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=0;
+    // hall reverb from generated noise impulse
+    const rv=ctx.createConvolver(),len=ctx.sampleRate*5,ir=ctx.createBuffer(2,len,ctx.sampleRate);
+    for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3)}
+    rv.buffer=ir;
+    const dry=ctx.createGain();dry.gain.value=.35;const wet=ctx.createGain();wet.gain.value=.9;
+    const lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=900;lp.Q.value=.4;
+    const lfo=ctx.createOscillator(),lfoG=ctx.createGain();lfo.frequency.value=.035;lfoG.gain.value=420;lfo.connect(lfoG);lfoG.connect(lp.frequency);lfo.start();
+    lp.connect(dry);lp.connect(rv);rv.connect(wet);dry.connect(master);wet.connect(master);master.connect(ctx.destination);
+    // A = 432 Hz tuning: drone on A (108), E, A, C#, E, plus a soft high shimmer
+    const A=432,notes=[[A/4,.20,'sine'],[A/4*1.5,.10,'sine'],[A/2,.12,'triangle'],[A/2*1.25,.05,'sine'],[A*.75,.045,'sine'],[A,.022,'sine']];
+    notes.forEach(([f,g,type],i)=>{
+      [-1,1].forEach(side=>{
+        const o=ctx.createOscillator(),og=ctx.createGain(),pan=ctx.createStereoPanner?ctx.createStereoPanner():null;
+        o.type=type;o.frequency.value=f;o.detune.value=side*(3+i);og.gain.value=g/2;
+        const sw=ctx.createOscillator(),swg=ctx.createGain();sw.frequency.value=.02+i*.013;swg.gain.value=g/2*.8;sw.connect(swg);swg.connect(og.gain);sw.start();
+        o.connect(og);if(pan){pan.pan.value=side*.5;og.connect(pan);pan.connect(lp)}else og.connect(lp);o.start();
+      });
+    });
+    // soft air: filtered noise
+    const nb=ctx.createBuffer(1,ctx.sampleRate*4,ctx.sampleRate),nd=nb.getChannelData(0);for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
+    const ns=ctx.createBufferSource();ns.buffer=nb;ns.loop=true;const bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=864;bp.Q.value=.8;const ng=ctx.createGain();ng.gain.value=.012;
+    ns.connect(bp);bp.connect(ng);ng.connect(rv);ns.start();
+  };
+  const set=v=>{
+    on=v;btn.setAttribute('aria-pressed',v);btn.setAttribute('aria-label',v?'Mute 432 Hz ambience':'Play 432 Hz ambience');
+    if(v){if(!ctx)build();ctx.resume();const t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(.8,t+4)}
+    else if(ctx){const t=ctx.currentTime;master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(master.gain.value,t);master.gain.linearRampToValueAtTime(0,t+1.5);setTimeout(()=>{if(!on)ctx.suspend()},1700)}
+    try{localStorage.setItem('zc-sound',v?'1':'0')}catch(_){}
+  };
+  btn.addEventListener('click',()=>set(!on));
+  document.addEventListener('visibilitychange',()=>{if(!ctx)return;if(document.hidden)ctx.suspend();else if(on)ctx.resume()});
+  // browsers only allow sound after a tap/click: if the visitor turned it on before, resume on their first interaction
+  let pref=null;try{pref=localStorage.getItem('zc-sound')}catch(_){}
+  if(pref==='1'){const first=e=>{if(e.target&&e.target.closest&&e.target.closest('#snd'))return;removeEventListener('pointerdown',first);removeEventListener('keydown',first);if(!on)set(true)};addEventListener('pointerdown',first);addEventListener('keydown',first)}
+}catch(_){}
 
 /* ---------- cosmic fields: energy in motion, all connected ---------- */
 try{
@@ -1035,7 +1097,7 @@ try{
     o.pts=Array.from({length:n},()=>({x:Math.random()*o.w,y:Math.random()*o.h,vx:(Math.random()-.5)*.17,vy:(Math.random()-.5)*.17,r:Math.random()*1.4+.5}));
   };
   const geo=o=>{
-    const x=o.x,R=Math.min(o.h*.42,300),cx=o.w-Math.min(o.w*.24,330),cy=o.h*.42;o.a+=0.0011;
+    const x=o.x,R=Math.min(o.h*.33,290),cx=o.w-Math.min(o.w*.24,330),cy=o.h*.38;o.a+=0.0011;
     if(o.w<760)return;
     x.save();x.translate(cx,cy);x.rotate(o.a);x.strokeStyle='rgba(184,162,122,0.3)';x.lineWidth=1;
     x.beginPath();x.arc(0,0,R,0,Math.PI*2);x.stroke();
