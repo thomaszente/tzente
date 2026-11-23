@@ -1,4 +1,4 @@
-# Thomas Zente — Creative Direction & Experience Production
+# Z CREATIV — Creative Direction & Experience Studio (Thomas Zente)
 
 Static site. No build step: Vercel serves `index.html` and `img/` as they are.
 
