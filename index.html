@@ -705,6 +705,9 @@ input[type=date]{color-scheme:dark}
 
 .shots.sq img{aspect-ratio:1/1;height:auto;object-fit:cover;width:100%}
 .shots-cap{margin-top:-6px;font-size:12.5px;color:var(--text-mute);letter-spacing:.02em}
+.zv-banner{display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;position:relative}
+.zv-banner img{display:block;width:100%;height:auto;aspect-ratio:1600/667;object-fit:cover;transition:transform 1.2s var(--ease-out),filter .6s}
+.zv-banner:hover img{transform:scale(1.03);filter:brightness(1.08)}
 @media (prefers-reduced-motion:reduce){
   .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
   .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
@@ -1174,9 +1177,10 @@ warehouse:{t:'THE WAREHOUSE',mood:'NOWHERE · CO-FOUNDER · AUSTIN · 2026',sub:
  '<p class="shots-cap">Design concepts for the space: lounge, bar and art-house entry.</p>'+
  '<div class="links"><a class="lk" href="https://nowhereaustin.com">nowhereaustin.com</a></div>'},
 screen:{t:'MULTIMEDIA PRODUCTION',mood:'MULTIMEDIA · DIRECT &amp; PRODUCE',sub:'I came up as a film producer. That craft now goes into the media around the work.',dot:[343,236],
- html:'<div class="mm-banner" aria-hidden="true"><div class="mm-strip"><svg viewBox="0 0 1200 200" preserveAspectRatio="none"><defs><pattern id="perf" width="60" height="200" patternUnits="userSpaceOnUse"><rect x="18" y="14" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/><rect x="18" y="166" width="24" height="20" rx="5" fill="none" stroke="#B8A27A" stroke-width="1.5"/></pattern></defs><rect width="1200" height="200" fill="url(#perf)"/><line x1="0" y1="48" x2="1200" y2="48" stroke="#B8A27A"/><line x1="0" y1="152" x2="1200" y2="152" stroke="#B8A27A"/></svg></div><div class="mm-art"><svg class="mm-ap" viewBox="0 0 120 120" width="78" height="78"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="60" cy="60" r="52"/><polygon points="60,18 96,39 96,81 60,102 24,81 24,39"/><path d="M60 18 L60 102 M96 39 L24 81 M96 81 L24 39" opacity=".4"/><circle cx="60" cy="60" r="13"/></g></svg><span class="mm-wave">'+bars+'</span></div></div>'+
+ html:'<a class="zv-banner" href="https://www.youtube.com/@zentevisions" target="_blank" rel="noopener"><img src="img/zentevisions.jpg" alt="ZENTEVISIONS: a gold Z in a glowing ring above mountains at sunrise under the Milky Way" width="1600" height="667" loading="lazy"></a>'+
  '<p class="lede">The same eye that shapes a room shapes how it is filmed, cut and released.</p>'+
- '<div class="cols"><div><h4>FOR MUSIC</h4><ul><li>Music videos and visualizers</li><li>Release and campaign content</li><li>Live session and performance films</li></ul></div><div><h4>FOR EVENTS</h4><ul><li>Aftermovies and recap films</li><li>Livestreams and multi-camera capture</li><li>Documentary and behind-the-build series</li></ul></div><div><h4>FOR VENUES</h4><ul><li>Brand and launch films</li><li>Space tours and walkthroughs</li><li>Ongoing social and campaign content</li></ul></div></div>'}
+ '<div class="cols"><div><h4>FOR MUSIC</h4><ul><li>Music videos and visualizers</li><li>Release and campaign content</li><li>Live session and performance films</li></ul></div><div><h4>FOR EVENTS</h4><ul><li>Aftermovies and recap films</li><li>Livestreams and multi-camera capture</li><li>Documentary and behind-the-build series</li></ul></div><div><h4>FOR VENUES</h4><ul><li>Brand and launch films</li><li>Space tours and walkthroughs</li><li>Ongoing social and campaign content</li></ul></div></div>'+
+ '<div class="links"><a class="lk lit" href="https://www.youtube.com/@zentevisions" target="_blank" rel="noopener">ZENTEVISIONS on YouTube</a></div>'}
 };
 const order=['label','booth','garage','warehouse','screen'];
 let cur='label';
