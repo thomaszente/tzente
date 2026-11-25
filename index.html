@@ -568,6 +568,141 @@ input,textarea{width:100%;min-width:0}
 @media (max-width:980px){.snd{margin-left:auto}.nav .cta{margin-left:0}}
 @media (max-width:420px){.snd .lbl{display:none}.snd{padding:0 12px}}
 
+/* ======================= AMPLIFY: media-kit, not rate card ======================= */
+#amplify>.wrap{position:relative;z-index:1}
+.amp-stats{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.amp-stats li{padding:30px 22px 26px;display:flex;flex-direction:column;gap:10px}
+.amp-stats li+li{border-left:1px solid var(--hair)}
+.amp-stats li:first-child{padding-left:0}
+.amp-stats b{font-family:var(--display);font-weight:500;font-size:clamp(46px,5.6vw,76px);line-height:.95;background:linear-gradient(180deg,#f6e7c3,#b8a27a);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:lining-nums}
+.amp-stats span{font-size:14px;color:var(--text-dim);max-width:16em;line-height:1.45}
+@media (max-width:900px){.amp-stats{grid-template-columns:1fr 1fr}.amp-stats li:nth-child(3){border-left:0;padding-left:0}.amp-stats li:nth-child(n+3){border-top:1px solid var(--hair)}}
+@media (max-width:420px){.amp-stats li{padding:22px 14px 20px}.amp-stats li:nth-child(odd){padding-left:0}}
+.amp-aud{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:26px 0 0}
+.amp-aud p{color:var(--text-mute);font-size:14.5px;flex:1 1 320px;max-width:460px}
+.amp-aud ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.amp-aud li{font-family:var(--label);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);padding:8px 13px;border:1px solid var(--line);border-radius:999px}
+.amp-block{margin-top:clamp(56px,7vw,92px)}
+.amp-bh{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 24px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.amp-hint{font-size:13.5px;color:var(--text-mute)}
+.pk-swipe{display:none}
+@media (max-width:900px){.pk-swipe{display:block;order:3;width:100%}}
+.seg2{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg2 button{font-family:var(--label);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:9px 16px;border-radius:999px;color:var(--text-mute);transition:all .3s var(--ease)}
+.seg2 button[aria-selected="true"]{background:rgba(184,162,122,.14);color:var(--metal-lit)}
+/* package cards */
+.pk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1200px}
+.pk{position:relative;display:flex;flex-direction:column;gap:14px;padding:30px 28px 28px;border:1px solid var(--hair);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008));box-shadow:var(--sh-2);transition:transform .6s var(--ease-out),border-color .4s,box-shadow .5s;overflow:hidden;isolation:isolate}
+.pk::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .5s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(226,207,164,.12),transparent 50%)}
+.pk:hover{transform:translateY(-6px);border-color:rgba(184,162,122,.45)}
+.pk:hover::before{opacity:1}
+.pk.sig{border-color:rgba(184,162,122,.55);background:linear-gradient(180deg,rgba(184,162,122,.10),rgba(255,255,255,.01))}
+.pk.sig::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--metal-grad)}
+.pk-flag{position:absolute;top:18px;right:18px;font-family:var(--label);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:#14110b;background:var(--metal-grad);padding:5px 10px;border-radius:999px}
+.pk-name{font-family:var(--label);font-size:14px;letter-spacing:.34em;color:var(--metal-lit)}
+.pk-price{font-family:var(--display);font-size:68px;line-height:1;font-weight:500;color:var(--text)}
+.pk-price span{font-size:.45em;vertical-align:.9em;margin-right:4px;color:var(--metal)}
+.pk-lede{font-size:15px;color:var(--text-dim);min-height:3em}
+.pk ul{list-style:none;display:flex;flex-direction:column;gap:9px;padding-top:14px;border-top:1px solid var(--hair);flex:1}
+.pk li{font-size:14.5px;color:var(--text);padding-left:22px;position:relative}
+.pk li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:1px;background:var(--metal)}
+.pk .btn{margin-top:8px;justify-content:center}
+@media (max-width:900px){.pk-grid{grid-template-columns:1fr;max-width:520px}}
+/* compare */
+.pk-cmp{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--hair);border-radius:8px;background:rgba(255,255,255,.015)}
+.pk-cmp table{width:100%;min-width:560px;border-collapse:collapse}
+.pk-cmp th,.pk-cmp td{padding:15px 16px;text-align:center;border-bottom:1px solid var(--hair);font-size:14.5px}
+.pk-cmp thead th{font-family:var(--label);font-size:12px;letter-spacing:.28em;color:var(--metal-lit);font-weight:400}
+.pk-cmp thead th small{display:block;font-family:var(--display);font-size:26px;letter-spacing:0;color:var(--text);margin-top:4px}
+.pk-cmp tbody th{text-align:left;font-weight:400;color:var(--text-dim)}
+.pk-cmp td:nth-child(3),.pk-cmp th:nth-child(3){background:rgba(184,162,122,.06)}
+.pk-cmp .ck{color:var(--metal-lit)}
+.pk-cmp .dash{color:var(--line)}
+.pk-cmp tfoot td{border-bottom:0}
+.pk-cmp tbody tr{transition:background .3s}
+.pk-cmp tbody tr:hover{background:rgba(226,207,164,.04)}
+/* à la carte */
+.alc-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
+.alc-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.alc{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;text-align:left;padding:16px 18px;border:1px solid var(--hair);border-radius:6px;background:rgba(255,255,255,.015);transition:all .35s var(--ease)}
+.alc:hover{border-color:rgba(184,162,122,.45);background:rgba(184,162,122,.04)}
+.alc[aria-pressed="true"]{border-color:var(--metal);background:rgba(184,162,122,.09)}
+.alc-box{width:18px;height:18px;margin-top:2px;border:1px solid var(--metal);border-radius:4px;position:relative;transition:background .3s}
+.alc[aria-pressed="true"] .alc-box{background:var(--metal)}
+.alc[aria-pressed="true"] .alc-box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #14110b;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.alc-t b{display:block;font-weight:500;font-size:15px;color:var(--text)}
+.alc-t small{display:block;margin-top:4px;font-size:13px;color:var(--text-mute);line-height:1.45}
+.alc-p{font-family:var(--display);font-size:26px;line-height:1;color:var(--metal-lit)}
+.alc-sum{position:sticky;top:90px;padding:24px;border:1px solid var(--hair);border-radius:8px;background:linear-gradient(180deg,rgba(24,23,21,.8),rgba(12,12,12,.9));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--sh-2);display:flex;flex-direction:column;gap:10px}
+.alc-total{font-family:var(--display);font-size:60px;line-height:1;color:var(--text)}
+.alc-total span{font-size:.45em;vertical-align:.9em;margin-right:4px;color:var(--metal)}
+.alc-n{font-size:13.5px;color:var(--text-mute);min-height:2.8em}
+.alc-sum .btn{justify-content:center}
+.alc-sum .btn[disabled]{opacity:.4;pointer-events:none}
+@media (max-width:980px){.alc-wrap{grid-template-columns:1fr}.alc-sum{position:sticky;bottom:12px;top:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 16px;padding:14px 18px;z-index:5}.alc-sum .eyebrow{display:none}.alc-total{font-size:40px}.alc-n{flex:1;min-height:0}.alc-sum .btn{width:100%}}
+@media (max-width:640px){.alc-list{grid-template-columns:1fr}}
+/* monthly */
+.mo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--hair);border-radius:8px;overflow:hidden}
+.mo{padding:26px 22px;display:flex;flex-direction:column;gap:10px;transition:background .4s}
+.mo+.mo{border-left:1px solid var(--hair)}
+.mo:hover{background:rgba(184,162,122,.05)}
+.mo-name{font-family:var(--label);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--metal-lit);line-height:1.5}
+.mo-price{font-family:var(--display);font-size:44px;line-height:1;color:var(--text)}
+.mo-price small{font-family:var(--body);font-size:13px;color:var(--text-mute);margin-left:4px}
+.mo-d{font-size:14px;color:var(--text-dim);flex:1}
+.mo-go{align-self:flex-start;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--metal-lit);border-bottom:1px solid rgba(184,162,122,.4);padding-bottom:3px;transition:color .3s,border-color .3s}
+.mo-go:hover{color:var(--text);border-color:var(--metal-lit)}
+@media (max-width:900px){.mo-grid{grid-template-columns:1fr 1fr}.mo:nth-child(3){border-left:0}.mo:nth-child(n+3){border-top:1px solid var(--hair)}}
+@media (max-width:480px){.mo-grid{grid-template-columns:1fr}.mo+.mo{border-left:0;border-top:1px solid var(--hair)}}
+/* more + trust */
+.amp-more{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.amp-more .eyebrow{margin-bottom:18px}
+.amp-trust{padding-left:32px;border-left:1px solid;border-image:linear-gradient(180deg,var(--metal),transparent) 1}
+.amp-mot{font-family:var(--display);font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin-bottom:16px}
+.amp-mot em{font-style:italic;background:linear-gradient(90deg,#f6e7c3,#b8a27a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.amp-trust p{color:var(--text-dim);font-size:15.5px}
+.amp-trust .amp-fine{margin-top:14px;font-size:13px;color:var(--text-mute)}
+@media (max-width:860px){.amp-more{grid-template-columns:1fr;gap:34px}.amp-trust{padding-left:22px}}
+/* CTA + form */
+.amp-cta{margin-top:clamp(56px,7vw,92px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);padding:clamp(24px,4vw,48px);border:1px solid rgba(184,162,122,.4);border-radius:10px;background:radial-gradient(70% 90% at 0% 0%,rgba(226,207,164,.12),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.005));box-shadow:var(--sh-2);scroll-margin-top:80px}
+.amp-cta-h h3{font-size:clamp(34px,4vw,52px);margin:14px 0 12px}
+.amp-cta-h p{color:var(--text-dim)}
+.amp-cta form{display:flex;flex-direction:column;gap:18px}
+.amp-cta fieldset{border:0;padding:0;margin:0;min-width:0}
+.amp-cta legend{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);margin-bottom:10px;padding:0}
+.chks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid #2a2824;border-radius:6px;cursor:pointer;font-size:13.5px;color:var(--text-dim);transition:all .3s var(--ease);text-transform:none;letter-spacing:0}
+.chk:hover{border-color:#3a3630}
+.chk input{width:16px;height:16px;flex:none;margin:2px 0 0;accent-color:var(--metal);box-shadow:none}
+.chk:has(input:checked){border-color:var(--metal);background:rgba(184,162,122,.08);color:var(--text)}
+.chk.flash{animation:chkflash 1.2s var(--ease)}
+@keyframes chkflash{0%{box-shadow:0 0 0 0 rgba(226,207,164,.6)}100%{box-shadow:0 0 0 10px rgba(226,207,164,0)}}
+input[type=date]{color-scheme:dark}
+@media (max-width:860px){.amp-cta{grid-template-columns:1fr}}
+@media (max-width:560px){.chks{grid-template-columns:1fr}}
+
+/* refined service picker */
+.amp-top{align-self:flex-start;margin-top:8px}
+.chks{display:flex;flex-direction:column;gap:14px}
+.chg{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:start}
+.chg-h{font-family:var(--label);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--metal);padding-top:9px}
+.chg-l{display:flex;flex-wrap:wrap;gap:6px}
+.amp-cta .chk{display:inline-flex;align-items:center;gap:0;padding:7px 12px;border-radius:14px;font-family:var(--body);font-size:12.5px!important;letter-spacing:0!important;text-transform:none!important;color:var(--text-dim);background:rgba(0,0,0,.25)}
+.amp-cta .chk span{text-transform:none;letter-spacing:0}
+.amp-cta .chk input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.amp-cta .chk:has(input:focus-visible){outline:1px solid var(--metal-lit);outline-offset:2px}
+.amp-cta .chk:has(input:checked){color:#14110b;background:var(--metal-grad);border-color:transparent}
+.amp-cta .chk:has(input:checked) span::before{content:"✓ "}
+@media (max-width:560px){.chg{grid-template-columns:1fr;gap:6px}.chg-h{padding-top:0}}
+.amp-trust .amp-mot{font-family:var(--display);font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin-bottom:16px;color:var(--text)}
+/* packages swipe on phones */
+@media (max-width:900px){
+  .pk-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(82vw,380px);max-width:none;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 32px 14px;margin:0 -32px;scroll-padding:0 32px}
+  .pk-grid::-webkit-scrollbar{display:none}
+  .pk{scroll-snap-align:start}
+  .pk:hover{transform:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   .anim .rv:not(.seen){opacity:1;filter:none;transform:none}
   .intro .hero .wrap>*{opacity:1!important;transform:none!important;filter:none!important}
@@ -586,6 +721,7 @@ input,textarea{width:100%;min-width:0}
       <li><a href="#proof">Proof</a></li>
       <li><a href="#work">Projects</a></li>
       <li><a href="#engage">Engage</a></li>
+      <li><a href="#amplify">Amplify</a></li>
     </ul>
     <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Play 432 Hz ambience" title="432 Hz ambience"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="lbl">432 Hz</span></button>
     <a class="cta" href="#contact">Start a project</a>
@@ -599,6 +735,7 @@ input,textarea{width:100%;min-width:0}
   <a href="#proof"><small>03</small>Proof</a>
   <a href="#work"><small>04</small>Projects</a>
   <a href="#engage"><small>05</small>Engage</a>
+  <a href="#amplify"><small>06</small>Amplify</a>
   <a class="btn solid" href="#contact">Start a project</a>
 </div>
 
@@ -798,6 +935,136 @@ input,textarea{width:100%;min-width:0}
   </div>
 </section>
 
+<section class="mid cos" id="amplify">
+  <canvas class="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Community Marketing &amp; Event Amplification</p>
+      <h2>Reach the right people. Not just more people.</h2>
+      <p>Z CREATIV is more than a creative agency. Over a decade of producing events, building communities and activating nightlife and cultural spaces with COSMOTION has grown direct, trusted channels into Austin’s independent music and experiential scene. Your event can travel through them.</p>
+      <a class="btn solid amp-top" href="#ampForm">Amplify your event</a>
+    </div>
+
+    <ul class="amp-stats rv">
+      <li><b data-to="10000" data-suf="+">10,000+</b><span>email subscribers</span></li>
+      <li><b>1</b><span>dedicated COSMOTION WhatsApp community</span></li>
+      <li><b data-to="10" data-suf="+">10+</b><span>more local community groups and distribution channels</span></li>
+      <li><b data-to="10" data-suf="+">10+</b><span>years building community and producing events</span></li>
+    </ul>
+    <div class="amp-aud rv">
+      <p>Relationships with promoters, artists, venues and cultural tastemakers, and an audience aligned across</p>
+      <ul><li>Electronic music</li><li>Nightlife</li><li>Festivals</li><li>Arts</li><li>Wellness</li><li>Immersive experiences</li></ul>
+    </div>
+
+    <div class="amp-block">
+      <div class="amp-bh"><p class="eyebrow">Promotional packages</p><p class="amp-hint pk-swipe">Swipe for all three</p><div class="seg2" role="tablist" aria-label="Package view"><button role="tab" aria-selected="true" data-pv="cards">Packages</button><button role="tab" aria-selected="false" data-pv="compare">Compare</button></div></div>
+      <div class="pk-grid" id="pkCards">
+        <article class="pk" data-pk="amplify">
+          
+          <p class="pk-name">AMPLIFY</p>
+          <p class="pk-price"><span>$</span>350</p>
+          <p class="pk-lede">The essentials, for getting a night in front of the right crowd.</p>
+          <ul><li>Newsletter feature</li><li>COSMOTION WhatsApp promotion</li><li>Extended local community distribution</li></ul>
+          <button class="btn ghost pk-go" type="button" data-pick-svc="pkg-amplify">Choose Amplify</button>
+        </article>
+        <article class="pk sig" data-pk="elevate">
+          <span class="pk-flag">Signature</span>
+          <p class="pk-name">ELEVATE</p>
+          <p class="pk-price"><span>$</span>550</p>
+          <p class="pk-lede">A dedicated send and a second wave before the date.</p>
+          <ul><li>Dedicated email blast</li><li>COSMOTION WhatsApp promotion</li><li>Extended local community distribution</li><li>Community reminder push</li><li>Email campaign analytics</li></ul>
+          <button class="btn solid pk-go" type="button" data-pick-svc="pkg-elevate">Choose Elevate</button>
+        </article>
+        <article class="pk" data-pk="takeover">
+          
+          <p class="pk-name">TAKEOVER</p>
+          <p class="pk-price"><span>$</span>850</p>
+          <p class="pk-lede">The whole network, twice, with campaigns we write and design for you.</p>
+          <ul><li>Two dedicated email campaigns</li><li>Full community network activation</li><li>Reminder push</li><li>Custom email design and copywriting</li><li>Email campaign analytics</li></ul>
+          <button class="btn ghost pk-go" type="button" data-pick-svc="pkg-takeover">Choose Takeover</button>
+        </article>
+      </div>
+      <div class="pk-cmp" id="pkCmp" hidden>
+        <table><thead><tr><th scope="col"><span class="vh">Included</span></th><th scope="col">AMPLIFY<small>$350</small></th><th scope="col">ELEVATE<small>$550</small></th><th scope="col">TAKEOVER<small>$850</small></th></tr></thead>
+        <tbody><tr><th scope="row">Newsletter feature</th><td><span class=ck>✓</span></td><td><span class=dash>—</span></td><td><span class=dash>—</span></td></tr><tr><th scope="row">Dedicated email campaigns</th><td><span class=dash>—</span></td><td>1</td><td>2</td></tr><tr><th scope="row">COSMOTION WhatsApp promotion</th><td><span class=ck>✓</span></td><td><span class=ck>✓</span></td><td><span class=ck>✓</span></td></tr><tr><th scope="row">Extended local community distribution</th><td><span class=ck>✓</span></td><td><span class=ck>✓</span></td><td>Full network</td></tr><tr><th scope="row">Community reminder push</th><td><span class=dash>—</span></td><td><span class=ck>✓</span></td><td><span class=ck>✓</span></td></tr><tr><th scope="row">Custom email design &amp; copywriting</th><td><span class=dash>—</span></td><td><span class=dash>—</span></td><td><span class=ck>✓</span></td></tr><tr><th scope="row">Email campaign analytics</th><td><span class=dash>—</span></td><td><span class=ck>✓</span></td><td><span class=ck>✓</span></td></tr></tbody>
+        <tfoot><tr><td></td><td><button class="mo-go" type="button" data-pick-svc="pkg-amplify">Choose →</button></td><td><button class="mo-go" type="button" data-pick-svc="pkg-elevate">Choose →</button></td><td><button class="mo-go" type="button" data-pick-svc="pkg-takeover">Choose →</button></td></tr></tfoot></table>
+      </div>
+    </div>
+
+    <div class="amp-block">
+      <div class="amp-bh"><p class="eyebrow">À la carte</p><p class="amp-hint">Tap to build your own mix</p></div>
+      <div class="alc-wrap">
+        <div class="alc-list">
+          <button class="alc" type="button" aria-pressed="false" data-alc="newsletter" data-price="150"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Newsletter Feature</b><small>Your event featured in the COSMOTION newsletter.</small></span><span class="alc-p">$150</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="blast" data-price="350"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Dedicated Email Blast</b><small>A full email to the list, about your event alone.</small></span><span class="alc-p">$350</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="premium" data-price="550"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Premium Email Campaign with Reminder</b><small>A dedicated email plus a reminder send closer to the date.</small></span><span class="alc-p">$550</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="wa" data-price="100"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>COSMOTION WhatsApp Event Drop</b><small>Shared directly with the COSMOTION WhatsApp community.</small></span><span class="alc-p">$100</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="extended" data-price="200"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Extended Community Distribution</b><small>Shared across 10+ partner community groups and channels.</small></span><span class="alc-p">$200</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="full" data-price="250"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Full Community Activation</b><small>Every channel in the network, activated together.</small></span><span class="alc-p">$250</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="reminder" data-price="100"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Community Reminder Push</b><small>A second wave across the community before doors.</small></span><span class="alc-p">$100</span></button>
+          <button class="alc" type="button" aria-pressed="false" data-alc="design" data-price="100"><span class="alc-box" aria-hidden="true"></span><span class="alc-t"><b>Custom Email Design &amp; Copywriting</b><small>We write and design the email in your event’s look.</small></span><span class="alc-p">$100</span></button>
+        </div>
+        <aside class="alc-sum" aria-live="polite">
+          <p class="eyebrow">Your mix</p>
+          <p class="alc-total"><span>$</span><b id="alcTotal">0</b></p>
+          <p class="alc-n" id="alcN">Nothing selected yet</p>
+          <button class="btn solid" type="button" id="alcGo" disabled>Add to my inquiry</button>
+        </aside>
+      </div>
+    </div>
+
+    <div class="amp-block">
+      <div class="amp-bh"><p class="eyebrow">Monthly partnerships</p><p class="amp-hint">Recurring promotion for venues, promoters and event series</p></div>
+      <div class="mo-grid">
+        <article class="mo" data-mo="community"><p class="mo-name">Community Partner</p><p class="mo-price">$600<small>/month</small></p><p class="mo-d">A steady presence for a recurring night.</p><button class="mo-go" type="button" data-pick-svc="mo-community">Ask about this →</button></article>
+        <article class="mo" data-mo="growth"><p class="mo-name">Growth Partner</p><p class="mo-price">$1,200<small>/month</small></p><p class="mo-d">For a series building momentum month after month.</p><button class="mo-go" type="button" data-pick-svc="mo-growth">Ask about this →</button></article>
+        <article class="mo" data-mo="strategic"><p class="mo-name">Strategic Partner</p><p class="mo-price">$2,000<small>/month</small></p><p class="mo-d">For venues and promoters who make the network part of the plan.</p><button class="mo-go" type="button" data-pick-svc="mo-strategic">Ask about this →</button></article>
+        <article class="mo" data-mo="custom"><p class="mo-name">Custom Festival &amp; Large-Scale</p><p class="mo-price">Inquire<small></small></p><p class="mo-d">Festivals and large-scale campaigns, built to order.</p><button class="mo-go" type="button" data-pick-svc="mo-custom">Ask about this →</button></article>
+      </div>
+    </div>
+
+    <div class="amp-block amp-more">
+      <div>
+        <p class="eyebrow">Additional opportunities</p>
+        <ul class="net-list"><li>Social media amplification</li><li>Ticketing affiliate partnerships</li><li>VIP table referrals</li><li>Strategic promotional consulting</li><li>Community development</li><li>Cross-promotional partnerships</li><li>Custom event marketing campaigns</li></ul>
+      </div>
+      <div class="amp-trust">
+        <p class="amp-mot">Built through culture. <em>Powered by community.</em></p>
+        <p>Real communities, authentic connections, meaningful reach. This is not generic digital advertising or purchased audience data. These communities were cultivated over years of producing experiences and building genuine relationships.</p>
+        <p class="amp-fine">All campaigns are curated and distributed by our team, subject to brand alignment, audience relevance, subscriber consent and community guidelines. We do not sell subscriber information or provide unrestricted access to private communities.</p>
+      </div>
+    </div>
+
+    <div class="amp-cta" id="ampForm">
+      <div class="amp-cta-h">
+        <p class="eyebrow">Amplify your event</p>
+        <h3>Tell us about the night.</h3>
+        <p>Share the essentials and we’ll come back with the right mix for your event and your audience.</p>
+      </div>
+      <form id="amp" novalidate>
+        <div class="row2">
+          <div class="field"><label for="a-name">Your name</label><input id="a-name" autocomplete="name"></div>
+          <div class="field"><label for="a-event">Event or brand</label><input id="a-event" autocomplete="organization"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="a-type">Event type</label>
+            <select id="a-type"><option>Club night / DJ event</option><option>Concert / live music</option><option>Festival</option><option>Recurring event series</option><option>Venue launch or opening</option><option>Wellness / sound healing / retreat</option><option>Art / immersive experience</option><option>Brand activation</option><option>Other</option></select></div>
+          <div class="field"><label for="a-date">Event date</label><input id="a-date" type="date"></div>
+        </div>
+        <fieldset class="field"><legend>Promotional services</legend><div class="chks"><div class="chg"><span class="chg-h">Packages</span><div class="chg-l"><label class="chk"><input type="checkbox" name="a-svc" value="AMPLIFY package — $350" data-svc="pkg-amplify"><span>AMPLIFY · $350</span></label><label class="chk"><input type="checkbox" name="a-svc" value="ELEVATE package — $550" data-svc="pkg-elevate"><span>ELEVATE · $550</span></label><label class="chk"><input type="checkbox" name="a-svc" value="TAKEOVER package — $850" data-svc="pkg-takeover"><span>TAKEOVER · $850</span></label></div></div><div class="chg"><span class="chg-h">À la carte</span><div class="chg-l"><label class="chk"><input type="checkbox" name="a-svc" value="Newsletter Feature — $150" data-svc="alc-newsletter"><span>Newsletter Feature · $150</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Dedicated Email Blast — $350" data-svc="alc-blast"><span>Dedicated Email Blast · $350</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Premium Email Campaign with Reminder — $550" data-svc="alc-premium"><span>Premium Email Campaign with Reminder · $550</span></label><label class="chk"><input type="checkbox" name="a-svc" value="COSMOTION WhatsApp Event Drop — $100" data-svc="alc-wa"><span>COSMOTION WhatsApp Event Drop · $100</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Extended Community Distribution — $200" data-svc="alc-extended"><span>Extended Community Distribution · $200</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Full Community Activation — $250" data-svc="alc-full"><span>Full Community Activation · $250</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Community Reminder Push — $100" data-svc="alc-reminder"><span>Community Reminder Push · $100</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Custom Email Design &amp; Copywriting — $100" data-svc="alc-design"><span>Custom Email Design &amp; Copywriting · $100</span></label></div></div><div class="chg"><span class="chg-h">Monthly</span><div class="chg-l"><label class="chk"><input type="checkbox" name="a-svc" value="Community Partner — $600/month" data-svc="mo-community"><span>Community Partner · $600/month</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Growth Partner — $1,200/month" data-svc="mo-growth"><span>Growth Partner · $1,200/month</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Strategic Partner — $2,000/month" data-svc="mo-strategic"><span>Strategic Partner · $2,000/month</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Custom festival / large-scale campaign" data-svc="mo-custom"><span>Custom festival / large-scale campaign</span></label></div></div><div class="chg"><span class="chg-h">More</span><div class="chg-l"><label class="chk"><input type="checkbox" name="a-svc" value="Social media amplification" data-svc="x-social"><span>Social media amplification</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Ticketing affiliate partnership" data-svc="x-ticket"><span>Ticketing affiliate partnership</span></label><label class="chk"><input type="checkbox" name="a-svc" value="VIP table referrals" data-svc="x-vip"><span>VIP table referrals</span></label><label class="chk"><input type="checkbox" name="a-svc" value="Strategic promotional consulting" data-svc="x-consult"><span>Strategic promotional consulting</span></label></div></div></div></fieldset>
+        <div class="row2">
+          <div class="field"><label for="a-budget">Budget</label>
+            <select id="a-budget"><option>Not sure yet</option><option>Under $350</option><option>$350–$550</option><option>$550–$850</option><option>$850–$2,000</option><option>$2,000+</option><option>Monthly partnership</option></select></div>
+          <div class="field"><label for="a-tix">Ticketing link</label><input id="a-tix" type="url" inputmode="url" placeholder="https://"></div>
+        </div>
+        <div class="field"><label for="a-msg">Anything else?</label><textarea id="a-msg" placeholder="Lineup, audience, goals, timing of announcements…"></textarea></div>
+        <button class="btn solid" type="submit" style="align-self:flex-start">Amplify my event</button>
+        <div class="out" id="a-out" role="status" aria-live="polite"><pre id="a-out-text"></pre><div class="acts"><button class="btn ghost" type="button" id="a-copy">Copy message</button><a class="btn ghost" id="a-mail" href="#">Open in email</a></div><small id="a-out-note"></small></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="cos" id="contact">
   <canvas class="field" aria-hidden="true"></canvas>
   <div class="wrap contact-grid">
@@ -971,6 +1238,47 @@ try{
   wire($('inq'),()=>v('f-name')?('Hi Thomas,\n\n'+(v('f-msg')?v('f-msg')+'\n\n':'')+'Project type: '+v('f-type')+'\nTiming: '+v('f-when')+'\n\n'+v('f-name')+(v('f-org')?'\n'+v('f-org'):'')):'','out','out-text','out-note','copy','mail',()=>'Project inquiry: '+v('f-type'));
 }catch(_){}
 
+
+/* ---------- amplify: package view, à la carte builder, picks → form, inquiry ---------- */
+try{
+  const form=$('amp'),boxes=[...form.querySelectorAll('input[name=a-svc]')];
+  const pick=(key,flash=true)=>{const b=boxes.find(x=>x.dataset.svc===key);if(!b)return;b.checked=true;if(flash){const l=b.closest('.chk');l.classList.remove('flash');void l.offsetWidth;l.classList.add('flash')}};
+  const go=()=>$('ampForm').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  document.querySelectorAll('[data-pick-svc]').forEach(b=>b.addEventListener('click',()=>{
+    const k=b.dataset.pickSvc;if(k.startsWith('pkg-'))boxes.filter(x=>x.dataset.svc.startsWith('pkg-')).forEach(x=>x.checked=false);
+    pick(k);const bud={'pkg-amplify':'$350–$550','pkg-elevate':'$550–$850','pkg-takeover':'$850–$2,000'}[k]||(k.startsWith('mo-')?'Monthly partnership':null);if(bud)$('a-budget').value=bud;go()}));
+  // package view toggle
+  document.querySelectorAll('[data-pv]').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.pv==='compare';
+    document.querySelectorAll('[data-pv]').forEach(x=>x.setAttribute('aria-selected',x===b));$('pkCards').hidden=c;$('pkCmp').hidden=!c}));
+  // spotlight on package cards
+  if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.pk').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+  // à la carte builder
+  const alcs=[...document.querySelectorAll('.alc')];let shown=0;
+  const sum=()=>{const on=alcs.filter(a=>a.getAttribute('aria-pressed')==='true'),t=on.reduce((n,a)=>n+ +a.dataset.price,0);
+    const el=$('alcTotal'),from=shown,t0=performance.now();shown=t;
+    if(reduce)el.textContent=t.toLocaleString('en-US');else{const st=k=>{const p=Math.min(1,(k-t0)/450);el.textContent=Math.round(from+(t-from)*(1-Math.pow(1-p,3))).toLocaleString('en-US');if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)}
+    $('alcN').textContent=on.length?on.length+(on.length===1?' service':' services')+' · listed prices':'Nothing selected yet';$('alcGo').disabled=!on.length};
+  alcs.forEach(a=>a.addEventListener('click',()=>{a.setAttribute('aria-pressed',a.getAttribute('aria-pressed')!=='true');sum()}));
+  $('alcGo').addEventListener('click',()=>{alcs.filter(a=>a.getAttribute('aria-pressed')==='true').forEach(a=>pick('alc-'+a.dataset.alc));const t=shown;
+    const b=$('a-budget');b.value=t<350?'Under $350':t<=550?'$350–$550':t<=850?'$550–$850':t<=2000?'$850–$2,000':'$2,000+';go()});
+  // inquiry
+  const val=id=>($(id).value||'').trim();
+  form.addEventListener('submit',e=>{e.preventDefault();
+    const out=$('a-out'),txt=$('a-out-text'),note=$('a-out-note');
+    if(!val('a-name')){note.textContent='Add your name, then try again.';txt.textContent='';out.classList.add('show');return}
+    const svcs=boxes.filter(b=>b.checked).map(b=>'• '+b.value);
+    let d=val('a-date');if(d){try{d=new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',year:'numeric'})}catch(_){}}
+    const msg='Hi Thomas,\n\nI’d like to amplify '+(val('a-event')||'my event')+' through the COSMOTION community.\n\n'+
+      'Event type: '+val('a-type')+'\nDate: '+(d||'TBD')+'\nBudget: '+val('a-budget')+'\nTickets: '+(val('a-tix')||'Not live yet')+
+      '\n\nServices I’m interested in:\n'+(svcs.length?svcs.join('\n'):'• Not sure yet, would love a recommendation')+
+      (val('a-msg')?'\n\n'+val('a-msg'):'')+'\n\n'+val('a-name')+(val('a-event')?'\n'+val('a-event'):'');
+    txt.textContent=msg;
+    $('a-mail').href='mailto:thomaszente@gmail.com?subject='+encodeURIComponent('Amplify inquiry: '+(val('a-event')||val('a-type'))+(d?' · '+d:''))+'&body='+encodeURIComponent(msg);
+    note.textContent='Your message is ready. Copy it or open it in your email app, then send it to thomaszente@gmail.com.';out.classList.add('show');
+    out.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'})});
+  $('a-copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('a-out-text').textContent);$('a-out-note').textContent='Copied. Paste it into an email to thomaszente@gmail.com.'}catch(_){$('a-out-note').textContent='Copying isn’t available here. Select the text above and copy it manually.'}});
+}catch(_){}
+
 /* ---------- scroll: progress, active link, reveals, count-up ---------- */
 try{
   const prog=$('prog');
@@ -979,7 +1287,7 @@ try{
   if('IntersectionObserver' in window){
     const links=[...document.querySelectorAll('#navlinks a')];
     const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
-    ['about','arc','services','proof','work','engage'].forEach(id=>{const s=$(id);if(s)so.observe(s)});
+    ['about','arc','services','proof','work','engage','amplify'].forEach(id=>{const s=$(id);if(s)so.observe(s)});
     if(!reduce){
       document.body.classList.add('anim');
       const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');ro.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
